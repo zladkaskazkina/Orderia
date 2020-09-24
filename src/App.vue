@@ -1,5 +1,14 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+
+    <AuthLayout />
+    <StartLayout />
+    <ProfilLayout />
+  </div>
+
+  
+
+
 </template>
 <script>
 import AuthLayout from "@/layouts/AuthLayout.vue";
