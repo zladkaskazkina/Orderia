@@ -1,42 +1,50 @@
 <template>
+  <!-- Pro vyrobce -->
   <div id="registration">
     <h2>Přidejte se k nám</h2>
     <h3>
-      Pokud chcete prodávat přes Orderii,<br />
-      vytvořte si zde jednoduše svůj profil
+      Pokud chcete prodávat přes Orderii,
+      <br />vytvořte si zde jednoduše svůj profil
     </h3>
-    <form class="form-table">
+    <form class="form-card" @submit.prevent="submitForm">
       <div class="form-input">
-        <label for="">Název firmy</label>
-        <input type="text" name="" />
+        <label for="brand">Název firmy</label>
+        <input id="brand" name="brand" type="text" v-model.trim="userBrand" />
       </div>
       <div class="form-input">
-        <label for="">IČO</label>
-        <input type="text" name="" />
+        <label for="userID">IČO</label>
+        <input id="userID" type="text" name="userID" v-model.number="userID" />
       </div>
       <div class="form-input">
-        <label for="">Kategorie zboží</label>
-        <input type="text" name="" />
+        <label for>Kategorie zboží</label>
+        <select name="category" id="category" v-model="category">
+          <option value="food">Jídlo</option>
+          <option value="drogery">Drogerie</option>
+          <option value="toys">Hračky</option>
+        </select>
       </div>
       <div class="form-input">
-        <label for="">Stránky</label>
-        <input type="text" name="" />
+        <label for>Stránky</label>
+        <input type="text" name />
       </div>
       <div class="form-input">
-        <label for="">Kontaktní osoba</label>
-        <input type="text" name="" />
+        <label for>Kontaktní osoba</label>
+        <input type="text" name />
       </div>
       <div class="form-input">
-        <label for="">Kontaktní telefonní číslo</label>
-        <input type="text" name="" />
+        <label for>Kontaktní telefonní číslo</label>
+        <input type="text" name />
       </div>
       <div class="form-input">
-        <label for="">Kontaktní e-mail</label>
-        <input type="text" name="" />
+        <label for>Kontaktní e-mail</label>
+        <input type="text" name />
       </div>
       <div class="form-input">
-        <label for="">Heslo</label>
-        <input type="text" name="" />
+        <label for>Heslo</label>
+        <input type="text" name />
+      </div>
+      <div class="card-action">
+        <button type="submit">Register</button>
       </div>
     </form>
   </div>
@@ -47,6 +55,18 @@
 
 export default {
   name: "Registration",
+  data() {
+    return {
+      userBrand: "",
+      userID: null,
+      category: "food"
+    };
+  },
+  methods: {
+    submitForm() {
+      console.log(this.userBrand);
+    }
+  }
 };
 </script>
 
@@ -60,7 +80,7 @@ export default {
   box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
-.form-table {
+.form-card {
   width: 70%;
   margin: 0 auto;
 }

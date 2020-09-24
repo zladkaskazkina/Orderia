@@ -15,7 +15,7 @@ const routes = [
     name: "Login",
     meta: {layout: 'empty'},
     // lazy-loaded 
-    component: () =>
+    component: () => 
       import ("../views/Login.vue")
   },
   {
