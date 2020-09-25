@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Registration from "../views/Registration.vue";
+import Home from "../views/Home";
+import Login from "../views/Login";
+import Registration from "../views/Registration";
 
 Vue.use(VueRouter);
 
@@ -8,23 +10,21 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: '../views/Home.vue'
+    component: Home
   },
   {
     path: "/login",
     name: "Login",
-    meta: {layout: 'empty'},
-    // lazy-loaded 
-    component: () => 
-      import ("../views/Login.vue")
+    meta: { layout: "empty" },
+    // lazy-loaded
+    component: Login
   },
   {
     path: "/registrace",
     name: "Registration",
-    meta: {layout: 'empty'},
-    // lazy-loaded 
-    component: () =>
-      import ("../views/Registration.vue")
+    meta: { layout: "empty" },
+    // lazy-loaded
+    component: Registration
   }
 ];
 

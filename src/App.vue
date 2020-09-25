@@ -1,27 +1,19 @@
 <template>
   <div id="app">
-
-    <AuthLayout />
-    <StartLayout />
-    <ProfilLayout />
+    <h1>APP</h1>
+    <router-link to="/">Home</router-link>
+    <router-link to="/login">login</router-link>
+    <router-link to="/registrace">Registrace</router-link>
+    <router-view></router-view>
   </div>
-
-  
-
-
 </template>
+
 <script>
-import AuthLayout from "@/layouts/AuthLayout.vue";
-import StartLayout from "@/layouts/StartLayout.vue";
-import ProfilLayout from "@/layouts/ProfilLayout.vue";
 export default {
-  components: {
-    AuthLayout,
-    StartLayout,
-    ProfilLayout
-  }
+  name: "App",
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-<style>
-@import "assets/index.css";
-</style>
