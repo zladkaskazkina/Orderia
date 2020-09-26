@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home";
 import Login from "../views/Login";
 import Registration from "../views/Registration";
+import StartLayout from "../layouts/StartLayout";
 
 Vue.use(VueRouter);
 
@@ -10,7 +11,8 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    meta: { layout: StartLayout }
   },
   {
     path: "/login",

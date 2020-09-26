@@ -1,7 +1,18 @@
 <template>
   <div class="mainPage">
-    <main class="main-content">
-      <router-view />
-    </main>
+    <MainNavbar />
+    <Footer />
   </div>
 </template>
+<script>
+import MainNavbar from "../components/MainNavbar";
+import Footer from "../components/Footer";
+
+export default {
+  name: "StartLayout",
+  components: {
+    MainNavbar,
+    Footer,
+  },
+};
+</script>
