@@ -22,14 +22,12 @@
           ></v-text-field>
           <v-text-field v-model.number="userID" label="IČO"></v-text-field>
 
-          <div class="form-input">
-            <label for>Kategorie zboží</label>
-            <select name="category" id="category" v-model="category">
-              <option value="food">Jídlo</option>
-              <option value="drogery">Drogerie</option>
-              <option value="toys">Hračky</option>
-            </select>
-          </div>
+          <v-select
+            v-model="category"
+            :items="items"
+            label="Kategorie zboží"
+            required
+          ></v-select>
 
           <v-text-field label="Webové stránky"></v-text-field>
           <v-text-field label="Kontaktní osoba"></v-text-field>
@@ -58,6 +56,7 @@ export default {
       userID: null,
       category: "food",
       userEmail: "",
+      items: ["Jídlo", "Drogerie", "Hračky", "Item 4"],
     };
   },
   methods: {
