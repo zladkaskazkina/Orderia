@@ -1,5 +1,9 @@
 <template>
-  <div></div>
+  <main>
+    <v-content>
+      <!-- /// -->
+    </v-content>
+  </main>
 </template>
 <script>
 // @ is an alias to /src

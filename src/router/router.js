@@ -5,7 +5,7 @@ import Home from "../views/Home";
 import Login from "../views/Login";
 import Registration from "../views/Registration";
 import StartLayout from "../layouts/StartLayout";
-
+import AuthLayout from "../layouts/AuthLayout";
 Vue.use(VueRouter);
 
 const routes = [
@@ -18,14 +18,14 @@ const routes = [
   {
     path: "/login",
     name: "Login",
-    meta: { layout: "empty" },
+    meta: { layout: AuthLayout },
     // lazy-loaded
     component: Login
   },
   {
     path: "/registrace",
     name: "Registration",
-    meta: { layout: "empty" },
+    meta: { layout: AuthLayout },
     // lazy-loaded
     component: Registration
   }

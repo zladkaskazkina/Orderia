@@ -1,12 +1,21 @@
 <template>
   <div class="nav">
-    <router-link to="/" class="brand">Home</router-link>
-    <nav>
-      <router-link class="nav-item" to="/login">login</router-link>
-      <router-link class="nav-item" to="/registrace">Registrace</router-link>
-    </nav>
-
-    <router-view></router-view>
+    <v-toolbar>
+      <v-btn flat>
+        <router-link class="nav-item" to="/login">Přihlásit se</router-link>
+      </v-btn>
+      <v-spacer></v-spacer>
+      <v-toolbar-title>
+        <router-link to="/" class="brand"> Orderia </router-link>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn flat>
+        <router-link class="nav-item" to="/registrace">
+          Registrovat se
+        </router-link>
+      </v-btn>
+      <router-view></router-view>
+    </v-toolbar>
   </div>
 </template>
 
@@ -18,15 +27,8 @@
   color: #39b982;
   text-decoration: none;
 }
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-}
+
 .nav-item {
-  box-sizing: border-box;
-  margin: 0 5px;
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
 }
@@ -34,5 +36,8 @@
 <script>
 export default {
   name: "MainNavbar",
+  data() {
+    return {};
+  },
 };
 </script>
