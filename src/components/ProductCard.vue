@@ -1,59 +1,81 @@
 <template>
   <div>
     <v-container fluid class="product-form">
-      <v-card>
-        <v-row>
+      <v-card class="pa-4">
+        <v-card-title class="headline ma-2">
+          <h2>Nový produkt</h2>
+        </v-card-title>
+        <v-row no-gutters class="ma-2" style="height: 300px">
           <v-col>
             <v-file-input
-              label="Fotografie"
-              icon="mdi-camera"
+              label="Vložte fotografie"
               name="productPhoto"
               outlined
             ></v-file-input>
           </v-col>
-          <v-col>
-            <v-row>
+          <v-col offset-md="1">
+            <v-row no-gutters class="mr-2">
               <v-text-field label="Název" outlined></v-text-field>
             </v-row>
-            <v-row>
+            <v-row no-gutters class="mr-2">
               <v-textarea label="Popis" outlined counter="300"></v-textarea>
             </v-row>
           </v-col>
         </v-row>
-        <v-row>
-            <v-col>
-        <v-select :items="stock" label="Dostupnost" outlined></v-select>
-        <v-text-field label="Skladové zásoby" outlined></v-text-field>
-            </v-col>
-            <v-col>
-        <v-textarea label="Složení" outlined></v-textarea>
-            </v-col>
+        <v-row no-gutters class="ma-2">
+          <v-col>
+            <v-select :items="stock" label="Dostupnost" outlined></v-select>
+            <v-text-field label="Skladové zásoby" outlined></v-text-field>
+          </v-col>
+          <v-col offset-md="1" class="mr-2">
+            <v-textarea label="Složení" outlined></v-textarea>
+          </v-col>
         </v-row>
-        <v-text-field label="Objem" outlined></v-text-field>
-        <v-select :items="units" label="Jednotka" outlined></v-select>
-        <span>Cena</span>
-        <v-text-field label="Základní cena" outlined></v-text-field>
-        <v-text-field label="Cena VIP partnera" outlined></v-text-field>
-        <v-text-field label="Individuální cena" outlined></v-text-field>
-        <v-select :items="vat" label="DPH" outlined></v-select>
-        <v-text-field label="Doporučená cena" outlined></v-text-field>
-        <v-sheet outlined>
-          <span>Alergeny</span>
-          <v-checkbox label="1"></v-checkbox>
-          <v-checkbox label="2"></v-checkbox>
-          <v-checkbox label="3"></v-checkbox>
-          <v-checkbox label="4"></v-checkbox>
-          <v-checkbox label="5"></v-checkbox>
-          <v-checkbox label="6"></v-checkbox>
-          <v-checkbox label="7"></v-checkbox>
-          <v-checkbox label="8"></v-checkbox>
-          <v-checkbox label="9"></v-checkbox>
-          <v-checkbox label="10"></v-checkbox>
-          <v-checkbox label="11"></v-checkbox>
-          <v-checkbox label="12"></v-checkbox>
-          <v-checkbox label="13"></v-checkbox>
-          <v-checkbox label="14"></v-checkbox>
-        </v-sheet>
+        <v-row no-gutters class="ma-2">
+          <v-col>
+            <v-text-field label="Objem" outlined></v-text-field>
+          </v-col>
+          <v-col md="2" class="mr-2">
+            <v-select :items="units" label="Jednotka" outlined></v-select>
+          </v-col>
+        </v-row>
+
+        <v-row no-gutters class="ma-2">
+          <v-col>
+            <span class="font-weight-medium">Cena</span>
+            <v-text-field label="Základní cena" outlined></v-text-field>
+            <v-text-field label="Cena VIP partnera" outlined></v-text-field>
+            <v-text-field label="Individuální cena" outlined></v-text-field>
+            <v-select :items="vat" label="DPH" outlined></v-select>
+            <v-text-field label="Doporučená cena" outlined></v-text-field>
+          </v-col>
+
+          <v-col offset-md="1" class="mr-2">
+            <span class="font-weight-medium">Alergeny</span>
+            <v-sheet outlined class="px-4">
+              <v-row no-gutters>
+                <v-col>
+                  <v-checkbox label="1"></v-checkbox>
+                  <v-checkbox label="2"></v-checkbox>
+                  <v-checkbox label="3"></v-checkbox>
+                  <v-checkbox label="4"></v-checkbox>
+                  <v-checkbox label="5"></v-checkbox>
+                  <v-checkbox label="6"></v-checkbox>
+                  <v-checkbox label="7"></v-checkbox>
+                </v-col>
+                <v-col>
+                  <v-checkbox label="8"></v-checkbox>
+                  <v-checkbox label="9"></v-checkbox>
+                  <v-checkbox label="10"></v-checkbox>
+                  <v-checkbox label="11"></v-checkbox>
+                  <v-checkbox label="12"></v-checkbox>
+                  <v-checkbox label="13"></v-checkbox>
+                  <v-checkbox label="14"></v-checkbox>
+                </v-col>
+              </v-row>
+            </v-sheet>
+          </v-col>
+        </v-row>
         <v-select
           :items="productCategories"
           label="Kategorie"
@@ -79,6 +101,8 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
+.headline {
+  justify-content: center;
+}
 </style>
