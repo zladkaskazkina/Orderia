@@ -31,7 +31,7 @@
     <v-divider></v-divider>
 
     <v-card-actions>
-      <v-btn outlined x-small color="info">Registrovat se</v-btn>
+      <v-btn outlined color="info">Registrovat se</v-btn>
       <v-spacer></v-spacer>
       <v-btn color="info">Přihlásit se</v-btn>
     </v-card-actions>

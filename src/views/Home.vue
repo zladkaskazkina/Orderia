@@ -5,16 +5,14 @@
       eos odit mollitia hic a culpa iusto temporibus facere dolorum soluta ab
       unde vero non, inventore iure quod aliquid reprehenderit.
     </p>
+    <v-btn flat router to="/test"> test </v-btn>
   </v-container>
 </template>
 
 <script>
-
-
 // @ is an alias to /src
 export default {
   name: "Home",
-  components: {
-  }
+  components: {},
 };
 </script>
