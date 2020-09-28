@@ -1,12 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+// Views
 import Home from "../views/Home";
 import Login from "../views/Login";
 import Registration from "../views/Registration";
+import Test from "../views/Test";
+import Dodavatel from "../views/Dodavatel";
+// Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
-import Test from "../views/Test";
+import ProfilLayout from "../layouts/ProfilLayout";
+
 
 Vue.use(VueRouter);
 
@@ -34,8 +38,14 @@ const routes = [
   {
     path: "/test",
     name: "Test",
-    meta: { layout: "empty"},
+    meta: { layout: AuthLayout},
     component: Test
+  },
+  {
+    path: "/dodavatel",
+    name: "Dodavatel",
+    meta: { layout: ProfilLayout},
+    component: Dodavatel
   }
 ];
 

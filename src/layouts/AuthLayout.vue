@@ -2,8 +2,12 @@
   <v-content class="grey lighten-4">
     <v-toolbar app>
       <v-spacer></v-spacer>
-      <v-toolbar-title>
-        <router-link to="/" class="brand"> Orderia </router-link>
+      <v-toolbar-title
+        @click="$router.push('/')"
+        style="cursor:pointer"
+        class="headline text-uppercase success--text"
+      >
+        Orderia
       </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>

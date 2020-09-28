@@ -1,23 +1,24 @@
 <template>
   <nav>
-    <v-toolbar app flat>
-      <v-btn flat color="primary" class="ml-5" router to="/login">
+    <v-toolbar app flat class="pa-5">
+      <v-btn color="primary" class="ml-5 pa-5 darken-2" router to="/login">
         Přihlásit se <br />
-        <span small>jako odběratel</span>
+        jako odběratel
       </v-btn>
       <v-spacer></v-spacer>
 
       <v-toolbar-title
         @click="$router.push('/')"
         style="cursor:pointer"
-        class="headline text-uppercase success--text"
+        class="headline text-uppercase error--text"
       >
         Orderia
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-btn color="secondary" class="mr-5" flat router to="/registrace">
-        Registrovat se
+      <v-btn color="secondary" class="mr-5 darken-2 pa-5" router to="/login">
+        Přihlásit se <br />
+        jako dodavatel
       </v-btn>
     </v-toolbar>
   </nav>

@@ -24,7 +24,7 @@
 <style lang="scss" scoped></style>
 <script>
 export default {
-  name: "ObchodSidebar",
+  name: "ObchodBar",
   data() {
     return {
       links: [

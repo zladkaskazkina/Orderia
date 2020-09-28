@@ -1,14 +1,35 @@
 <template>
-  <v-container fluid class="fill-height">
+  <v-content class="fill-height">
     <v-row class="pa-3 fill-height">
       <v-col md6>
         <v-card class="pa-5 fill-height" color="primary">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit
-            repellat, eos odit mollitia hic a culpa iusto temporibus facere
-            dolorum soluta ab unde vero non, inventore iure quod aliquid
-            reprehenderit.
-          </p>
+          <v-list three-line>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Content here</v-list-item-title>
+                <v-list-item-subtitle
+                  >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Assumenda itaque obcaecati nostrum in aspernatur praesentium
+                  deserunt. Dolore mollitia cumque esse qui reprehenderit saepe
+                  provident nobis quis, ea vero praesentium
+                  eaque!</v-list-item-subtitle
+                >
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Other</v-list-item-title>
+                <v-list-item-subtitle
+                  >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsum ducimus sit eius facilis incidunt facere numquam nisi?
+                  Nihil non doloribus nobis veritatis, architecto asperiores
+                  animi laborum quia delectus tenetur
+                  rerum?</v-list-item-subtitle
+                >
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
         </v-card>
       </v-col>
       <v-col md6>
@@ -17,7 +38,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </v-content>
 </template>
 
 <script>
