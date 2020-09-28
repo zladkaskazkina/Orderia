@@ -37,6 +37,7 @@
     </v-card-actions>
   </v-card>
 </template>
+<<<<<<< Updated upstream
 <style lang="scss" scoped></style>
 
 <script>
@@ -88,3 +89,10 @@ export default {
   },
 };
 </script>
+=======
+<style lang="scss" scoped>
+label {
+  margin: 0;
+}
+</style>
+>>>>>>> Stashed changes

@@ -4,8 +4,13 @@ import VueRouter from "vue-router";
 import Home from "../views/Home";
 import Login from "../views/Login";
 import Registration from "../views/Registration";
+<<<<<<< Updated upstream
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
+=======
+import Test from "../views/Test";
+
+>>>>>>> Stashed changes
 Vue.use(VueRouter);
 
 const routes = [
@@ -28,6 +33,12 @@ const routes = [
     meta: { layout: AuthLayout },
     // lazy-loaded
     component: Registration
+  },
+  {
+    path: "/test",
+    name: "Test",
+    meta: { layout: "empty"},
+    component: Test
   }
 ];
 
