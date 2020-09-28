@@ -88,3 +88,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+label {
+  margin: 0;
+}
+</style>

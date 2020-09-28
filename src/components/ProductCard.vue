@@ -1,110 +1,84 @@
 <template>
-    <div class="productCard">
-        <form class="form-card" id="productForm">
-            <div class="input-field">
-                <label for="productImage">Nahrajte fotografii</label>
-                <input id="productImage" type="file" />
-            </div>
-            <div class="input-field">
-                <label for="productName">Název</label>
-                <input id="productName" type="text" />
-            </div>
-            <div class="input-field">
-                <label for="productDescription">Popis</label>
-                <textarea id="productDescription" maxlength=300> </textarea> 
-            </div>
-            <div class="dropdown-field">
-                <label for="productAvailability">Dostupnost</label>
-                <select id="productAvailability" name="dostupnost" size=2>
-                    <option value="available">Skladem</option>
-                    <option value="unavailable">Nedostupné</option>
-                </select>
-            </div>
-            <div class="input-field">
-                <label for="productStock">Skladové zásoby</label>
-                <input id="productStock" type="number" />
-            </div>
-            <div class="input-field">
-                <label for="productIngredients">Složení</label>
-                <textarea id="productIngredients"></textarea> 
-            </div>
-            <div class="input-field">
-                <label for="productVolume">Objem</label>
-                <input id="productVolume" type="number" />
-                <select id="volumeUnit" name="jednotka">
-                    <!-- doplnit option value a dalsi jednotky -->
-                    <option>ks</option>
-                    <option>ml</option>
-                    <option>l</option>
-                    <option>g</option>
-                    <option>kg</option>
-                </select>
-            <div class="input-field">
-                <label for="productPrice">Základní cena</label>
-                <input id="productPrice" type="number" />
-            </div>
-            <div class="input-field">
-                <label for="vipPrice">Cena VIP partnera</label>
-                <input id="vipPrice" type="number" />
-            </div>
-            <div class="input-field">
-                <label for="individualPrice">Individualní cena</label>
-                <input id="individualPrice" type="number" />
-            </div>
-            <div class="dropdown-field">
-                <label for="VAT">DPH</label>
-                <select id="VAT" name="VAT">
-                    <!-- doplnit option value -->
-                    <option>15%</option>
-                    <option>21%</option>
-                    <option>10%</option>
-                    <option>bez DPH</option>
-                </select>
-            </div>
-            <div class="input-field">
-                <label for="recommendedPrice">Doporučená cena</label>
-                <input id="recomenndedPrice" type="number" />
-            </div>
-            <div class="alergens">
-                <span>Alergeny</span>
-                <div class="checkbox-area">
-                    <!-- uvadet jen cislo nebo cely nazev? jak zapsat name? -->
-                    <input id="alergen1" type="checkbox" name="" value="1"/>
-                    <input id="alergen1" type="checkbox" name=""  value="2"/>
-                    <input id="alergen1" type="checkbox" name="" value="3"/>
-                    <input id="alergen1" type="checkbox" name="" value="4"/>
-                    <input id="alergen1" type="checkbox" name="" value="5"/>
-                    <input id="alergen1" type="checkbox" name="" value="6"/>
-                    <input id="alergen1" type="checkbox" name="" value="7"/>
-                    <input id="alergen1" type="checkbox" name="" value="8"/>
-                    <input id="alergen1" type="checkbox" name="" value="9"/>
-                    <input id="alergen1" type="checkbox" name="" value="10"/>
-                    <input id="alergen1" type="checkbox" name="" value="11"/>
-                    <input id="alergen1" type="checkbox" name="" value="12"/>
-                    <input id="alergen1" type="checkbox" name="" value="13"/>
-                    <input id="alergen1" type="checkbox" name="" value="14"/>
-                </div>
-            </div>
-            <div class="dropdown-field">
-                <label for="productCategory">Kategorie</label>
-                <select id="productCategory" name="productCategory" multiple="multiple">
-                    <!-- navrh rozdeleni kategorii -->
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                </select>
-            </div>
-            <div class="input-field">
-                <label for="productBarcode">Čárový kód</label>
-                <input id="productBarcode" type="number" />
-            </div>
-        </form>
-    </div>
-
+  <div>
+    <v-container fluid class="product-form">
+      <v-card>
+        <v-row>
+          <v-col>
+            <v-file-input
+              label="Fotografie"
+              icon="mdi-camera"
+              name="productPhoto"
+              outlined
+            ></v-file-input>
+          </v-col>
+          <v-col>
+            <v-row>
+              <v-text-field label="Název" outlined></v-text-field>
+            </v-row>
+            <v-row>
+              <v-textarea label="Popis" outlined counter="300"></v-textarea>
+            </v-row>
+          </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
+        <v-select :items="stock" label="Dostupnost" outlined></v-select>
+        <v-text-field label="Skladové zásoby" outlined></v-text-field>
+            </v-col>
+            <v-col>
+        <v-textarea label="Složení" outlined></v-textarea>
+            </v-col>
+        </v-row>
+        <v-text-field label="Objem" outlined></v-text-field>
+        <v-select :items="units" label="Jednotka" outlined></v-select>
+        <span>Cena</span>
+        <v-text-field label="Základní cena" outlined></v-text-field>
+        <v-text-field label="Cena VIP partnera" outlined></v-text-field>
+        <v-text-field label="Individuální cena" outlined></v-text-field>
+        <v-select :items="vat" label="DPH" outlined></v-select>
+        <v-text-field label="Doporučená cena" outlined></v-text-field>
+        <v-sheet outlined>
+          <span>Alergeny</span>
+          <v-checkbox label="1"></v-checkbox>
+          <v-checkbox label="2"></v-checkbox>
+          <v-checkbox label="3"></v-checkbox>
+          <v-checkbox label="4"></v-checkbox>
+          <v-checkbox label="5"></v-checkbox>
+          <v-checkbox label="6"></v-checkbox>
+          <v-checkbox label="7"></v-checkbox>
+          <v-checkbox label="8"></v-checkbox>
+          <v-checkbox label="9"></v-checkbox>
+          <v-checkbox label="10"></v-checkbox>
+          <v-checkbox label="11"></v-checkbox>
+          <v-checkbox label="12"></v-checkbox>
+          <v-checkbox label="13"></v-checkbox>
+          <v-checkbox label="14"></v-checkbox>
+        </v-sheet>
+        <v-select
+          :items="productCategories"
+          label="Kategorie"
+          multiple
+          outlined
+        ></v-select>
+        <v-text-field label="Čárový kód" outlined></v-text-field>
+      </v-card>
+    </v-container>
+  </div>
 </template>
+
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      stock: ["Skladem", "Nedostupné", "Vyprodáno"],
+      units: ["ks", "g", "kg", "ml", "l"],
+      vat: ["15%", "21%", "10%", "bez DPH"],
+      productCategories: ["trvanlivé", "mléčné", "maso"]
+    };
+  }
+};
 </script>
+
+
 <style lang="scss" scoped>
 </style>

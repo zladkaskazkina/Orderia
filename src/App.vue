@@ -4,6 +4,7 @@
       <router-view />
     </component>
   </v-app>
+ 
 </template>
 
 <script>
