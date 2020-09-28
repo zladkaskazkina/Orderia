@@ -1,35 +1,23 @@
 <template>
-  <div class="nav">
-    <v-toolbar>
-      <v-btn flat>
-        <router-link class="nav-item" to="/login">Přihlásit se</router-link>
+  <nav>
+    <v-toolbar app flat>
+      <v-btn flat router to="/login">
+        Přihlásit se
       </v-btn>
       <v-spacer></v-spacer>
-      <v-toolbar-title>
+      <v-toolbar-title class="headline text-uppercase">
         <router-link to="/" class="brand"> Orderia </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat>
-        <router-link class="nav-item" to="/registrace">
-          Registrovat se
-        </router-link>
+      <v-btn flat router to="/registrace">
+        Registrovat se
       </v-btn>
-      <router-view></router-view>
     </v-toolbar>
-  </div>
+  </nav>
 </template>
-
 <style scoped>
 .brand {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
   color: #39b982;
-  text-decoration: none;
-}
-
-.nav-item {
-  color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
 }
 </style>

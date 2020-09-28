@@ -1,6 +1,6 @@
 <template>
-  <div class="nav">
-    <v-toolbar>
+  <v-content class="grey lighten-4">
+    <v-toolbar app>
       <v-spacer></v-spacer>
       <v-toolbar-title>
         <router-link to="/" class="brand"> Orderia </router-link>
@@ -8,7 +8,7 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <router-view></router-view>
-  </div>
+  </v-content>
 </template>
 <script>
 export default {

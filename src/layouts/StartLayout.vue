@@ -1,6 +1,9 @@
 <template>
   <div class="mainPage">
     <MainNavbar />
+    <v-content>
+      <router-view />
+    </v-content>
     <Footer />
   </div>
 </template>
