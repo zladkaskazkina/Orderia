@@ -1,11 +1,11 @@
 <template>
-  <div class="mainPage">
+  <v-content class="fill-height mainPage">
     <MainNavbar />
-    <v-content>
-      <router-view />
-    </v-content>
+
+    <router-view />
+
     <Footer />
-  </div>
+  </v-content>
 </template>
 <script>
 import MainNavbar from "../components/MainNavbar";
