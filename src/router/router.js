@@ -5,6 +5,7 @@ import Home from "../views/Home";
 import Login from "../views/Login";
 import Registration from "../views/Registration";
 import Test from "../views/Test";
+import Test2 from "../views/Test2";
 import Dodavatel from "../views/Dodavatel";
 // Layouts
 import StartLayout from "../layouts/StartLayout";
@@ -40,6 +41,12 @@ const routes = [
     name: "Test",
     meta: { layout: AuthLayout},
     component: Test
+  },
+  {
+    path: "/test2",
+    name: "Test2",
+    meta: { layout: AuthLayout},
+    component: Test2
   },
   {
     path: "/dodavatel",
