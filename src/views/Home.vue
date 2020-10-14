@@ -35,6 +35,7 @@
       <v-col md6>
         <v-card class="pa-5 fill-height" color="secondary">
           <v-btn flat router to="/test"> test </v-btn>
+          <v-btn flat router to="/test2"> test2 </v-btn>
         </v-card>
       </v-col>
     </v-row>
