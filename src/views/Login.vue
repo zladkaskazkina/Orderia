@@ -32,7 +32,7 @@
       <v-divider></v-divider>
 
       <v-card-actions>
-        <v-btn outlined color="success" router to="/registrace"
+        <v-btn outlined color="success" router to="dodavatel/registrace"
           >Registrovat se</v-btn
         >
         <v-spacer></v-spacer>

@@ -6,6 +6,7 @@ import Login from "../views/Login";
 import Registration from "../views/Registration";
 import Test from "../views/Test";
 import Dodavatel from "../views/Dodavatel";
+import Products from "../views/Products";
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -25,14 +26,12 @@ const routes = [
     path: "/login",
     name: "Login",
     meta: { layout: AuthLayout },
-    // lazy-loaded
     component: Login
   },
   {
-    path: "/registrace",
+    path: "dodavatel/registrace",
     name: "Registration",
     meta: { layout: AuthLayout },
-    // lazy-loaded
     component: Registration
   },
   {
@@ -46,6 +45,12 @@ const routes = [
     name: "Dodavatel",
     meta: { layout: ProfilLayout},
     component: Dodavatel
+  },
+  {
+    path: "/dodavatel/produkty",
+    name: "Products",
+    meta: { layout: ProfilLayout},
+    component: Products
   }
 ];
 

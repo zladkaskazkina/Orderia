@@ -5,15 +5,14 @@
 </template>
 
 <script>
-import ProductCard from "./../components/ProductCard.vue";
+import ProductCard from "./../components/ProductAddCard.vue";
 
 export default {
   name: "Test",
   components: {
-    productCard: ProductCard
-  }
+    productCard: ProductCard,
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
