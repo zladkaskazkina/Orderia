@@ -8,6 +8,7 @@ import Test from "../views/Test";
 import Test2 from "../views/Test2";
 import Dodavatel from "../views/Dodavatel";
 import Products from "../views/Products";
+import Partneri from "../views/Partneri";
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -58,6 +59,12 @@ const routes = [
     name: "Products",
     meta: { layout: ProfilLayout},
     component: Products
+  },
+  {
+    path: "/dodavatel/partneri",
+    name: "Partneri",
+    meta: { layout: ProfilLayout},
+    component: Partneri
   }
 ];
 

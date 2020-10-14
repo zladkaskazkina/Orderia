@@ -15,7 +15,7 @@
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </v-fab-transition>
-    <v-row>
+    <v-row class="mx-5">
       <v-col v-for="card in cards" :key="card.id" cols="4">
         <v-card class="mx-auto" max-width="400">
           <v-img
@@ -68,6 +68,22 @@ export default {
           stock: 6,
           id: "12345078",
         },
+        {
+          title: "Rohlik makovy",
+          src: "",
+          route: "/products/rohlik-makovy",
+          price: 3.15,
+          stock: 3,
+          id: "12345678",
+        },
+        {
+          title: "Rohlik obyc",
+          src: "",
+          route: "/products/rohlik-obyc",
+          price: 3.05,
+          stock: 6,
+          id: "12345078",
+        },
       ],
     };
   },
@@ -80,6 +96,7 @@ export default {
   top: 0;
   right: 0;
   position: absolute;
+  z-index: 1;
   margin: 0 0 16px 16px;
 }
 </style>
