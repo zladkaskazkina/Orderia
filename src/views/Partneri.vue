@@ -17,15 +17,15 @@
     </v-fab-transition>
     <v-row class="mx-5">
       <v-col v-for="partner in partners" :key="partner.id" cols="4">
-        <v-card class="mx-auto text-center" max-width="400">
-          <v-img
-            :src="partner.src"
-            class="white--text align-end"
-            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            height="200px"
-          >
-            <v-card-title v-text="partner.title"></v-card-title>
-          </v-img>
+        <v-card class="mx-auto" max-width="400">
+          <div class="text-center">
+            <v-avatar size="56" class="mt-8">
+              <img alt="user" :src="partner.src" />
+            </v-avatar>
+          </div>
+
+          <v-card-title>{{ partner.title }}</v-card-title>
+
           <v-card-subtitle class="pb-0">
             {{ partner.city }}
           </v-card-subtitle>
@@ -99,7 +99,8 @@ export default {
       partners: [
         {
           title: "Rohlik CZ",
-          src: "",
+          src:
+            "https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg",
           route: "/partner/rohlik-cz",
           city: "Praha",
           id: "12345678",

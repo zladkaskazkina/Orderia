@@ -1,5 +1,5 @@
 <template>
-  <v-content class="fill-height">
+  <v-main>
     <SupSidebar />
     <v-app-bar clipped-left app>
       <v-spacer></v-spacer>
@@ -16,7 +16,7 @@
     <router-view />
 
     <Footer />
-  </v-content>
+  </v-main>
 </template>
 <script>
 import Footer from "../components/Footer";

@@ -1,5 +1,5 @@
 <template>
-  <v-content class="fill-height">
+  <v-main class="fill-height">
     <v-row class="pa-3 fill-height">
       <v-col md6>
         <v-card class="pa-5 fill-height" color="primary">
@@ -39,7 +39,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-content>
+  </v-main>
 </template>
 
 <script>

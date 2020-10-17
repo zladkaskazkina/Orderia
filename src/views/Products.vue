@@ -74,7 +74,7 @@ export default {
           route: "/products/rohlik-makovy",
           price: 3.15,
           stock: 3,
-          id: "12345678",
+          id: "12345978",
         },
         {
           title: "Rohlik obyc",
@@ -82,7 +82,7 @@ export default {
           route: "/products/rohlik-obyc",
           price: 3.05,
           stock: 6,
-          id: "12345078",
+          id: "12345378",
         },
       ],
     };
