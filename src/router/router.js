@@ -10,6 +10,7 @@ import Dodavatel from "../views/Dodavatel";
 import Products from "../views/Products";
 import Partneri from "../views/Partneri";
 import Objednavky from "../views/Objednavky";
+import Reklamace from "../views/Dodavatel/Reklamace";
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -32,7 +33,7 @@ const routes = [
     component: Login
   },
   {
-    path: "dodavatel/registrace",
+    path: "/registrace",
     name: "Registration",
     meta: { layout: AuthLayout },
     component: Registration
@@ -72,6 +73,12 @@ const routes = [
     name: "Objednavky",
     meta: { layout: ProfilLayout},
     component: Objednavky
+  },
+  {
+    path: "/dodavatel/reklamace",
+    name: "Reklamace",
+    meta: { layout: ProfilLayout},
+    component: Reklamace
   }
 ];
 

@@ -21,6 +21,8 @@
 </template>
 <script>
 export default {
+  name: ProductName,
+  props: {},
   data() {
     return {};
   },

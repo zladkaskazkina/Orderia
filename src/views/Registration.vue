@@ -1,6 +1,6 @@
 <template>
   <!-- Pro vyrobce -->
-  <v-app>
+  <div>
     <v-card
       width="600px"
       class="mx-auto mt-5 mb-5"
@@ -37,12 +37,12 @@
         </v-form>
       </v-card-text>
       <v-card-actions>
-        <v-btn color="info">Registrovat se</v-btn>
+        <v-btn color="success">Registrovat se</v-btn>
         <v-spacer></v-spacer>
-        <v-btn outlined x-small color="info">Přihlásit se</v-btn>
+        <v-btn outlined color="success">Přihlásit se</v-btn>
       </v-card-actions>
     </v-card>
-  </v-app>
+  </div>
 </template>
 
 <script>

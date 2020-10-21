@@ -1,6 +1,6 @@
 <template>
   <v-content class="grey lighten-4">
-    <v-toolbar app>
+    <v-toolbar>
       <v-spacer></v-spacer>
       <v-toolbar-title
         @click="$router.push('/')"

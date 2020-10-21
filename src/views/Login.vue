@@ -32,7 +32,7 @@
       <v-divider></v-divider>
 
       <v-card-actions>
-        <v-btn outlined color="success" router to="dodavatel/registrace"
+        <v-btn outlined color="success" router to="/registrace"
           >Registrovat se</v-btn
         >
         <v-spacer></v-spacer>
@@ -46,7 +46,7 @@
 <script>
 import { email, required, minLength } from "vuelidate/lib/validators";
 export default {
-  name: "Registration",
+  name: "Login",
   data() {
     return {
       showPassword: false,

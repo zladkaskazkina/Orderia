@@ -5,7 +5,16 @@
       :items="orders"
       :items-per-page="15"
       class="elevation-1 ma-5"
-    ></v-data-table>
+    >
+      <template>
+        <v-icon small class="mr-2" @click="editItem(item)">
+          mdi-pencil
+        </v-icon>
+        <v-icon small @click="deleteItem(item)">
+          mdi-delete
+        </v-icon>
+      </template>
+    </v-data-table>
   </div>
 </template>
 
@@ -28,6 +37,7 @@ export default {
         { text: "Termin dodani", value: "due" },
         { text: "Hodnota", value: "total" },
         { text: "Status", value: "status" },
+        { text: "Actions", value: "actions", sortable: false },
       ],
       orders: [
         {
