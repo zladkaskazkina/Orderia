@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar app flat class="pa-5">
+    <v-toolbar app class="main-bar">
       <v-btn color="primary" class="ml-5 pa-5 darken-2" router to="/login">
         Přihlásit se <br />
         jako odběratel
@@ -37,3 +37,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.main-bar {
+  z-index: 1;
+}
+</style>
