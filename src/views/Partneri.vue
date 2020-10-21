@@ -16,68 +16,35 @@
       </v-btn>
     </v-fab-transition>
     <v-row class="mx-5">
-      <v-col v-for="partner in partners" :key="partner.id" cols="4">
+      <v-col v-for="shop in shops" :key="shop.id" cols="4">
         <v-card class="mx-auto" max-width="400">
           <div class="text-center">
             <v-avatar size="56" class="mt-8">
-              <img alt="user" :src="partner.src" />
+              <img alt="user" :src="shop.src" />
             </v-avatar>
           </div>
 
-          <v-card-title>{{ partner.title }}</v-card-title>
+          <v-card-title>{{ shop.name }}</v-card-title>
 
           <v-card-subtitle class="pb-0">
-            {{ partner.city }}
+            {{ shop.address }}
           </v-card-subtitle>
 
           <v-card-text>
-            <v-row align="center" class="mx-0">
-              <v-rating
-                :value="4.5"
-                color="amber"
-                dense
-                half-increments
-                readonly
-                size="14"
-              ></v-rating>
-
-              <div class="grey--text ml-4">
-                4.5 (413)
-              </div>
-            </v-row>
-
             <div class="my-4 subtitle-1">
-              on-line supermarket
-            </div>
-
-            <div>
-              Nakupujte vše, co potřebujete, na jedné stránce
+              {{ shop.web }}
             </div>
           </v-card-text>
 
           <v-divider class="mx-4"></v-divider>
 
-          <v-card-title>Pravidelne objednavky</v-card-title>
-
-          <v-card-text>
-            <v-chip-group
-              v-model="selection"
-              active-class="deep-purple accent-4 white--text"
-              column
-            >
-              <v-chip>Pondeli</v-chip>
-
-              <v-chip>Streda</v-chip>
-
-              <v-chip>Patek</v-chip>
-
-              <v-chip>Sobota</v-chip>
-            </v-chip-group>
-          </v-card-text>
-
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="reserve">
+            <v-btn color="deep-purple lighten-2" text @click="sendMsg">
               Napsat
+            </v-btn>
+            <v-spacer></v-spacer>
+            <v-btn color="deep-purple lighten-2" text @click="sendMsg">
+              Objednavky
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -96,40 +63,57 @@ export default {
       fab: false,
       hidden: false,
       tabs: null,
-      partners: [
+      shops: [
         {
-          title: "Rohlik CZ",
+          name: "Rohlik CZ",
           src:
             "https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg",
           route: "/partner/rohlik-cz",
-          city: "Praha",
+          address: "Praha",
+          type: "on-line",
+          email: "rohlik@gmail.com",
           id: "12345678",
+          web: "rohlik.cz",
         },
         {
-          title: "Kosik CZ",
-          src: "",
-          route: "/products/kosik-cz",
-          city: "Praha",
-          id: "12345078",
+          name: "kosik CZ",
+          src:
+            "https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg",
+          route: "/partner/kosik-cz",
+          address: "Brno",
+          type: "kamenny obchod",
+          email: "kosik@gmail.com",
+          id: "12346678",
+          web: "kosik.cz",
         },
         {
-          title: "Slevomat",
-          src: "",
-          route: "/products/slevomat",
-          city: "Praha",
-          id: "12345678",
+          name: "slevomat CZ",
+          src:
+            "https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg",
+          route: "/partner/slevomat-cz",
+          address: "Praha",
+          type: "on-line",
+          email: "slevomat@gmail.com",
+          id: "12345778",
+          web: "slevomat.cz",
         },
         {
-          title: "La Bohemia",
-          src: "",
-          route: "/products/la-bohemia",
-          city: "Praha",
-          id: "12345078",
+          name: "sklizeno CZ",
+          src:
+            "https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg",
+          route: "/partner/sklizeno-cz",
+          address: "Praha",
+          type: "on-line",
+          email: "sklizeno@gmail.com",
+          id: "12355678",
+          web: "sklizeno.cz",
         },
       ],
     };
   },
-  methods: {},
+  methods: {
+    sendMsg() {},
+  },
 };
 </script>
 

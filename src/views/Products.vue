@@ -26,14 +26,12 @@
           >
             <v-card-title v-text="card.title"></v-card-title>
           </v-img>
-          <v-card-subtitle class="pb-0">
-            {{ card.price }}
-          </v-card-subtitle>
+          <v-card-subtitle class="pb-0"> {{ card.price }} Kč </v-card-subtitle>
 
           <v-card-text class="text--primary">
-            <div>{{ card.stock }}</div>
+            <div>{{ card.stock }} ks</div>
 
-            <div>{{ card.id }}</div>
+            <div>id {{ card.id }}</div>
           </v-card-text>
         </v-card>
       </v-col>

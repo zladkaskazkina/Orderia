@@ -9,6 +9,7 @@ import Test2 from "../views/Test2";
 import Dodavatel from "../views/Dodavatel";
 import Products from "../views/Products";
 import Partneri from "../views/Partneri";
+import Objednavky from "../views/Objednavky";
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -65,6 +66,12 @@ const routes = [
     name: "Partneri",
     meta: { layout: ProfilLayout},
     component: Partneri
+  },
+  {
+    path: "/dodavatel/objednavky",
+    name: "Objednavky",
+    meta: { layout: ProfilLayout},
+    component: Objednavky
   }
 ];
 

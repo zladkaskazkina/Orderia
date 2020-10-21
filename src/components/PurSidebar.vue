@@ -28,10 +28,13 @@ export default {
   data() {
     return {
       links: [
-        { icon: "dashboard", text: "Hlavni", route: "/hlavni" },
-        { icon: "dashboard", text: "Hlavni", route: "/hlavni" },
-        { icon: "dashboard", text: "Hlavni", route: "/hlavni" },
-        { icon: "dashboard", text: "Hlavni", route: "/hlavni" },
+        { text: "Hlavni", route: "/odberatel" },
+        { text: "Muj profil", route: "/odberatel/profil" },
+        { text: "Objednavky", route: "/odberatel/objednavky" },
+        { text: "Sortiment", route: "/odberatel/sortiment" },
+        { text: "Partneři", route: "/odberatel/partneri" },
+        { text: "Statistiky", route: "/odberatel/statistiky" },
+        { text: "Reklamace", route: "/odberatel/reklamace" },
       ],
     };
   },

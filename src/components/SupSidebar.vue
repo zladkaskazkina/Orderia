@@ -28,6 +28,7 @@ export default {
     return {
       links: [
         { text: "Hlavni", route: "/dodavatel" },
+        { text: "Muj profil", route: "/dodavatel/profil" },
         { text: "Objednavky", route: "/dodavatel/objednavky" },
         { text: "Produkty", route: "/dodavatel/produkty" },
         { text: "Partneři", route: "/dodavatel/partneri" },
