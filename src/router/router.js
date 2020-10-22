@@ -11,6 +11,7 @@ import Products from "../views/Products";
 import Partneri from "../views/Partneri";
 import Objednavky from "../views/Objednavky";
 import Reklamace from "../views/Dodavatel/Reklamace";
+import Statistiky from "../views/Dodavatel/Statistiky";
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -79,6 +80,12 @@ const routes = [
     name: "Reklamace",
     meta: { layout: ProfilLayout},
     component: Reklamace
+  },
+  {
+    path: "/dodavatel/statistiky",
+    name: "Statistiky",
+    meta: { layout: ProfilLayout},
+    component: Statistiky
   }
 ];
 

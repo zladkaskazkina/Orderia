@@ -16,71 +16,55 @@
       </v-btn>
     </v-fab-transition>
     <v-row class="mx-5">
-      <v-col v-for="card in cards" :key="card.id" cols="4">
-        <v-card class="mx-auto" max-width="400">
-          <v-img
-            :src="card.src"
-            class="white--text align-end"
-            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            height="200px"
-          >
-            <v-card-title v-text="card.title"></v-card-title>
-          </v-img>
-          <v-card-subtitle class="pb-0"> {{ card.price }} Kč </v-card-subtitle>
-
-          <v-card-text class="text--primary">
-            <div>{{ card.stock }} ks</div>
-
-            <div>id {{ card.id }}</div>
-          </v-card-text>
-        </v-card>
-      </v-col>
+      <ProductItem
+        v-for="product in products"
+        :key="product.id"
+        :productData="product"
+        cols="4"
+      />
     </v-row>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import ProductItem from "../components/ProductItem.vue";
 export default {
   name: "Products",
+  components: { ProductItem },
   data() {
     return {
       fab: false,
       hidden: false,
       tabs: null,
-      cards: [
+      products: [
         {
-          title: "Rohlik makovy",
-          src: "",
-          route: "/products/rohlik-makovy",
-          price: 3.15,
-          stock: 3,
-          id: "12345678",
+          id: 12345678,
+          name: "Rohlik makovy",
+          image: "rohlik-makovy.jpeg",
+          price: 2.45,
+          available: true,
         },
         {
-          title: "Rohlik obyc",
-          src: "",
-          route: "/products/rohlik-obyc",
-          price: 3.05,
-          stock: 6,
-          id: "12345078",
+          id: 12345679,
+          name: "Rohlik makovy",
+          image: "rohlik-makovy.jpeg",
+          price: 2.45,
+          available: true,
         },
         {
-          title: "Rohlik makovy",
-          src: "",
-          route: "/products/rohlik-makovy",
-          price: 3.15,
-          stock: 3,
-          id: "12345978",
+          id: 12345670,
+          name: "Rohlik makovy",
+          image: "rohlik-makovy.jpeg",
+          price: 2.45,
+          available: true,
         },
         {
-          title: "Rohlik obyc",
-          src: "",
-          route: "/products/rohlik-obyc",
-          price: 3.05,
-          stock: 6,
-          id: "12345378",
+          id: 12347670,
+          name: "Rohlik makovy",
+          image: "rohlik-makovy.jpeg",
+          price: 2.45,
+          available: true,
         },
       ],
     };

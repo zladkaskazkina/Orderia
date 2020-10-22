@@ -7,6 +7,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "resolutions": {
+    "eslint-loader": "2.1.2"
+  },
   "dependencies": {
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
