@@ -2,8 +2,8 @@
   <v-main>
     <v-row class="fill-height" no-gutters>
       <v-col>
-        <v-sheet class="fill-height supplier-main">
-          <v-row no-gutters class="px-12 py-10">
+        <v-sheet class="fill-height supplier-main pa-8">
+          <v-row no-gutters class="mx-16 px-10 py-10">
             <p class="home-text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Assumenda itaque obcaecati nostrum in aspernatur praesentium
@@ -12,31 +12,36 @@
             </p>
           </v-row>
           <v-row no-gutters class="py-10">
-            <v-btn flat class="mx-auto" router to="/login">
+            <v-btn dark class="mx-auto registration" router to="/registrace">
               Registrovat se jako dodavatel</v-btn
             >
             <!-- VYTVOŘIT REGISTRATION PAGE? -->
           </v-row>
           <v-row no-gutters justify="center" class="py-10">
-            <ul class="home-text">
+            <ul class="home-text hp-list">
               <li>Lorem ipsum dolor sit amet consectetur, adipisicing.</li>
               <li>Assumenda itaque obcaecati nostrum in aspernatur.</li>
               <li>Dolore mollitia cumque esse qui reprehenderit.</li>
             </ul>
           </v-row>
 
-          <v-row no-gutters justify="center"  class="py-10">
-            <v-img 
-            max-height="200"
-            max-width="300"
-            src="https://thumbs.gfycat.com/ApprehensiveHardKomododragon-mobile.jpg">
+          <v-row no-gutters justify="center" class="py-10">
+            <v-img
+              max-height="200"
+              max-width="300"
+              src="https://thumbs.gfycat.com/ApprehensiveHardKomododragon-mobile.jpg"
+            >
             </v-img>
           </v-row>
         </v-sheet>
       </v-col>
+      <!-- opravit pozicovani -->
+      <v-btn text absolute class="how">
+        <v-btn-title>JAK TO FUNGUJE?</v-btn-title>
+      </v-btn>
       <v-col>
-        <v-sheet class="fill-height buyer-main">
-          <v-row no-gutters class="px-12 py-10">
+        <v-sheet class="fill-height buyer-main pa-8">
+          <v-row no-gutters class="mx-16 px-10 py-10">
             <p class="home-text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Assumenda itaque obcaecati nostrum in aspernatur praesentium
@@ -45,23 +50,24 @@
             </p>
           </v-row>
           <v-row no-gutters class="py-10">
-            <v-btn flat class="mx-auto" router to="/login">
+            <v-btn dark class="mx-auto registration" router to="/registrace">
               Registrovat se jako odběratel</v-btn
             >
             <!-- VYTVOŘIT REGISTRATION PAGE? -->
           </v-row>
           <v-row no-gutters justify="center" class="py-10">
-            <ul class="home-text">
+            <ul class="home-text hp-list">
               <li>Lorem ipsum dolor sit amet consectetur, adipisicing.</li>
               <li>Assumenda itaque obcaecati nostrum in aspernatur.</li>
               <li>Dolore mollitia cumque esse qui reprehenderit.</li>
             </ul>
           </v-row>
-           <v-row no-gutters justify="center" class="py-10">
-            <v-img 
-            max-height="200"
-            max-width="300"
-            src="https://thumbs.gfycat.com/ApprehensiveHardKomododragon-mobile.jpg">
+          <v-row no-gutters justify="center" class="py-10">
+            <v-img
+              max-height="200"
+              max-width="300"
+              src="https://thumbs.gfycat.com/ApprehensiveHardKomododragon-mobile.jpg"
+            >
             </v-img>
           </v-row>
           <v-row class="ma-5" no-gutters>
@@ -95,7 +101,33 @@ export default {
 
 .home-text {
   text-align: center;
-  color: #431c5d;
+  color: #082940;
   list-style: none;
+  margin: 0;
 }
+
+.hp-list {
+  padding: 0;
+}
+
+.registration {
+  text-transform: none;
+  background-color: #082940 !important;
+  border-radius: 1px;
+}
+
+.how {
+  background-color: #ffffff;
+  border: solid 2px #082940;
+  border-radius: 1px;
+  width: 400px;
+  height: 50px;
+  opacity: 0.8;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-40%, -40%);
+  transform: translate(-50%, -50%);
+}
+
+
 </style>
