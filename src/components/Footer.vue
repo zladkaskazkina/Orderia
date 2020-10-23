@@ -4,7 +4,7 @@
       <v-row no-gutters>
         <v-col class="pr-16 mr-16">
           <v-list dense flat class="left-menu">
-            <v-list-item v-for="link in links" :key="link" text>
+            <v-list-item v-for="link in links" :key="link" text color>
               {{ link }}
             </v-list-item>
           </v-list>
@@ -73,7 +73,7 @@ export default {
   font-size: 12px;
   justify-content: center;
   display: grid;
-}
+  }
 
 
 </style>

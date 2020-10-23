@@ -13,7 +13,7 @@
           </v-toolbar-title>
         </v-col>
         <v-col cols="2" class="d-flex justify-end">
-          <v-btn dark color="#082940" class="mr-5 pa-4" router to="/login">
+          <v-btn dark color="#082940" class="mr-5 pa-4 login-btn" router to="/login">
             Přihlásit se
           </v-btn>
         </v-col>
@@ -38,5 +38,9 @@ export default {
 <style lang="scss" scoped>
 .main-bar {
   z-index: 1;
+}
+
+.login-btn {
+  border-radius: 1px;
 }
 </style>
