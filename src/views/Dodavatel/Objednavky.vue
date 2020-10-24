@@ -143,7 +143,7 @@ export default {
       console.log(event.id + " is clicked");
       const id = event.id;
       // this.$router.push({ name: "objednavky", params: { id } }); // -> /user/123
-      this.$router.push({ path: `/objednavky/${id}` });
+      this.$router.push({ path: `/dodavatel/objednavky/${id}` });
     }
   }
 };

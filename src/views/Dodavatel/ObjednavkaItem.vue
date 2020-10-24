@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div>User {{ $route.params.id }}</div>
+    <v-card>
+      <v-card-title> User {{ $route.params.id }} </v-card-title>
+    </v-card>
+    <div></div>
   </div>
 </template>
 
