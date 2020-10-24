@@ -9,10 +9,12 @@ import Dodavatel from "../views/Dodavatel";
 import Products from "../views/Dodavatel/Products";
 import Partneri from "../views/Partneri";
 import Objednavky from "../views/Dodavatel/Objednavky";
+import ObjednavkaItem from "../views/Dodavatel/ObjednavkaItem";
 import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
 import ProductNew from "../views/Dodavatel/ProductNew";
 import Profil from "../views/Dodavatel/Profil";
+
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -76,6 +78,11 @@ const routes = [
     name: "Objednavky",
     meta: { layout: ProfilLayout},
     component: Objednavky
+  },
+  {
+    path: "/dodavatel/objednavky/:id",
+    meta: { layout: ProfilLayout},
+    component: ObjednavkaItem
   },
   {
     path: "/dodavatel/reklamace",

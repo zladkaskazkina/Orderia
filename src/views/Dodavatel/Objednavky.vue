@@ -141,7 +141,9 @@ export default {
   methods: {
     handleClick(event) {
       console.log(event.id + " is clicked");
-      this.$router.push("/dodavatel");
+      const id = event.id;
+      // this.$router.push({ name: "objednavky", params: { id } }); // -> /user/123
+      this.$router.push({ path: `/objednavky/${id}` });
     }
   }
 };
