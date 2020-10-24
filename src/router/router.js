@@ -6,9 +6,9 @@ import Login from "../views/Login";
 import Registration from "../views/Registration";
 import Test2 from "../views/Test2";
 import Dodavatel from "../views/Dodavatel";
-import Products from "../views/Products";
+import Products from "../views/Dodavatel/Products";
 import Partneri from "../views/Partneri";
-import Objednavky from "../views/Objednavky";
+import Objednavky from "../views/Dodavatel/Objednavky";
 import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
 import ProductNew from "../views/Dodavatel/ProductNew";
@@ -46,6 +46,7 @@ const routes = [
     meta: { layout: AuthLayout},
     component: Test2
   },
+  // Dodavatel
   {
     path: "/dodavatel",
     name: "Dodavatel",
@@ -94,6 +95,7 @@ const routes = [
     meta: { layout: ProfilLayout},
     component: Profil
   },
+  // Odberatel
 ];
 
 const router = new VueRouter({

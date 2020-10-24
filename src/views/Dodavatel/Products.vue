@@ -28,7 +28,7 @@
 
 <script>
 // @ is an alias to /src
-import ProductItem from "../components/ProductItem.vue";
+import ProductItem from "@/components/ProductItem.vue";
 export default {
   name: "Products",
   components: { ProductItem },
