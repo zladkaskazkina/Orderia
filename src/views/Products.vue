@@ -10,7 +10,7 @@
         right
         class="btn--float"
         router
-        to="/test"
+        to="/dodavatel/produkty/novy"
       >
         <v-icon>mdi-plus</v-icon>
       </v-btn>
@@ -43,33 +43,33 @@ export default {
           name: "Rohlik makovy",
           image: "rohlik-makovy.jpeg",
           price: 2.45,
-          available: true,
+          available: true
         },
         {
           id: 12345679,
           name: "Rohlik makovy",
           image: "rohlik-makovy.jpeg",
           price: 2.45,
-          available: true,
+          available: true
         },
         {
           id: 12345670,
           name: "Rohlik makovy",
           image: "rohlik-makovy.jpeg",
           price: 2.45,
-          available: true,
+          available: true
         },
         {
           id: 12347670,
           name: "Rohlik makovy",
           image: "rohlik-makovy.jpeg",
           price: 2.45,
-          available: true,
-        },
-      ],
+          available: true
+        }
+      ]
     };
   },
-  methods: {},
+  methods: {}
 };
 </script>
 

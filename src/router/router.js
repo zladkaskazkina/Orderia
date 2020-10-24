@@ -4,7 +4,6 @@ import VueRouter from "vue-router";
 import Home from "../views/Home";
 import Login from "../views/Login";
 import Registration from "../views/Registration";
-import Test from "../views/Test";
 import Test2 from "../views/Test2";
 import Dodavatel from "../views/Dodavatel";
 import Products from "../views/Products";
@@ -12,6 +11,7 @@ import Partneri from "../views/Partneri";
 import Objednavky from "../views/Objednavky";
 import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
+import ProductNew from "../views/Dodavatel/ProductNew";
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -40,12 +40,6 @@ const routes = [
     component: Registration
   },
   {
-    path: "/test",
-    name: "Test",
-    meta: { layout: AuthLayout},
-    component: Test
-  },
-  {
     path: "/test2",
     name: "Test2",
     meta: { layout: AuthLayout},
@@ -62,6 +56,12 @@ const routes = [
     name: "Products",
     meta: { layout: ProfilLayout},
     component: Products
+  },
+  {
+    path: "/dodavatel/produkty/novy",
+    name: "ProductNew",
+    meta: { layout: ProfilLayout},
+    component: ProductNew
   },
   {
     path: "/dodavatel/partneri",

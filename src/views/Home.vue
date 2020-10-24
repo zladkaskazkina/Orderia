@@ -72,7 +72,6 @@
           </v-row>
           <v-row class="ma-5" no-gutters>
             <div class="mx-auto">
-              <v-btn flat router to="/test"> test </v-btn>
               <v-btn flat router to="/test2"> test2 </v-btn>
             </div>
           </v-row>
@@ -128,6 +127,4 @@ export default {
   -ms-transform: translate(-40%, -40%);
   transform: translate(-50%, -50%);
 }
-
-
 </style>

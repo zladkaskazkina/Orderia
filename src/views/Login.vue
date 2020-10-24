@@ -36,7 +36,9 @@
           >Registrovat se</v-btn
         >
         <v-spacer></v-spacer>
-        <v-btn color="success" router to="/dodavatel">Přihlásit se</v-btn>
+        <v-btn color="success" @click="submitForm" router to="/dodavatel"
+          >Přihlásit se</v-btn
+        >
       </v-card-actions>
     </v-card>
   </v-container>
@@ -52,12 +54,12 @@ export default {
       showPassword: false,
       email: "",
       password: null,
-      category: "food",
+      category: "food"
     };
   },
   validations: {
     email: { email, required },
-    password: { required, minLength: minLength(6) },
+    password: { required, minLength: minLength(6) }
   },
   computed: {
     emailErrors() {
@@ -74,7 +76,7 @@ export default {
         errors.push("Password must be at least 6 characters long");
       !this.$v.password.required && errors.push("Password is required");
       return errors;
-    },
+    }
   },
   methods: {
     submitForm() {
@@ -88,8 +90,9 @@ export default {
           this.submitStatus = "OK";
         }, 500);
       }
-    },
-  },
+      this.$router.push("/dodavatel");
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
