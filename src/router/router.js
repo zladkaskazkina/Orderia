@@ -12,6 +12,7 @@ import Partneri from "../views/Partneri";
 import Objednavky from "../views/Objednavky";
 import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
+import Profil from "../views/Dodavatel/Profil";
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -86,6 +87,12 @@ const routes = [
     name: "Statistiky",
     meta: { layout: ProfilLayout},
     component: Statistiky
+  },
+  {
+    path: "/dodavatel/profil",
+    name: "Profil",
+    meta: { layout: ProfilLayout},
+    component: Profil
   }
 ];
 
