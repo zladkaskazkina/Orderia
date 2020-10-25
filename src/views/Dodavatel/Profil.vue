@@ -8,10 +8,14 @@
           </h3>
         </v-card-title>
         <v-row no-gutters class="pa-6 mx-4">
-          <v-col cols="4" class="text-center" >
-             <h5 class="py-4">Logo</h5>
+          <v-col cols="4" class="text-center">
+            <h5 class="py-4">Logo</h5>
             <v-avatar class="profile" size="164">
-              <img src="@/assets/images/user1.png" max-width="100px" alt="Logo" />
+              <img
+                src="@/assets/images/user1.png"
+                max-width="100px"
+                alt="Logo"
+              />
             </v-avatar>
           </v-col>
           <v-col class="pt-6">
@@ -57,25 +61,8 @@
         </v-row>
 
         <v-row no-gutters class="pa-6">
-          <v-col cols="2" class="mx-4">
-            <h5>Typ</h5>
-          </v-col>
-          <v-col cols="2" class="mx-4"> 
-              <v-checkbox
-              label="Online">
-              </v-checkbox>
-              
-          </v-col>
-          <v-col cols="2" class="mx-4">
-              <v-checkbox
-              label="Kamenna prodejna">
-              </v-checkbox>
-          </v-col>
-        </v-row>
-
-        <v-row no-gutters class="pa-6">
           <v-col class="mx-4">
-            <h5>Adresa obchodu/provozovny</h5>
+            <h5>Adresa</h5>
           </v-col>
         </v-row>
 
@@ -206,38 +193,47 @@
             </v-text-field>
           </v-col>
           <v-col class="mx-4">
-            <v-text-field
-              v-model="form.companyPhone"
-              label="Telefon"
-              outlined
-            >
+            <v-text-field v-model="form.companyPhone" label="Telefon" outlined>
             </v-text-field>
           </v-col>
         </v-row>
 
         <v-row no-gutters class="pa-6">
           <v-col class="mx-4">
-            <h5>Objednavky</h5>
-          </v-col>
-        </v-row>
+            <v-row no-gutters>
+                <h5>Objednavky</h5>
+            </v-row>
 
-        <v-row no-gutters class="pa-6">
-          <v-col cols="2" class="mx-4">
-            <v-select
-              outlined
-              label="Mena"
-              :items="form.currency"
-              :menu-props="{ offsetY: true }"
-            >
-            </v-select>
+            <v-row no-gutters>
+              <v-col>
+                <v-select
+                  outlined
+                  label="Mena"
+                  :items="form.currency"
+                  :menu-props="{ offsetY: true }"
+                >
+                </v-select>
+              </v-col>
+              <v-col class="mx-4">
+                <v-text-field
+                  outlined
+                  label="Minimalni objednavka"
+                  v-model="form.minOrder"
+                >
+                </v-text-field>
+              </v-col>
+            </v-row>
           </v-col>
-          <v-col cols="2" class="mx-4">
-            <v-text-field
-              outlined
-              label="Minimalni objednavka"
-              v-model="form.minOrder"
-            >
-            </v-text-field>
+
+          <v-col class="mx-4">
+            <v-row>
+              <h5>Moznosti dopravy</h5>
+            </v-row>
+            <v-row>
+                <v-combobox
+                outlined>
+                </v-combobox>
+            </v-row>
           </v-col>
         </v-row>
 
