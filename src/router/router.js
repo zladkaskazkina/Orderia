@@ -6,13 +6,15 @@ import Login from "../views/Login";
 import Registration from "../views/Registration";
 import Test2 from "../views/Test2";
 import Dodavatel from "../views/Dodavatel";
-import Products from "../views/Products";
+import Products from "../views/Dodavatel/Products";
 import Partneri from "../views/Partneri";
-import Objednavky from "../views/Objednavky";
+import Objednavky from "../views/Dodavatel/Objednavky";
+import ObjednavkaItem from "../views/Dodavatel/ObjednavkaItem";
 import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
 import ProductNew from "../views/Dodavatel/ProductNew";
 import Profil from "../views/Dodavatel/Profil";
+
 // Layouts
 import StartLayout from "../layouts/StartLayout";
 import AuthLayout from "../layouts/AuthLayout";
@@ -46,6 +48,7 @@ const routes = [
     meta: { layout: AuthLayout},
     component: Test2
   },
+  // Dodavatel
   {
     path: "/dodavatel",
     name: "Dodavatel",
@@ -77,6 +80,11 @@ const routes = [
     component: Objednavky
   },
   {
+    path: "/dodavatel/objednavky/:id",
+    meta: { layout: ProfilLayout},
+    component: ObjednavkaItem
+  },
+  {
     path: "/dodavatel/reklamace",
     name: "Reklamace",
     meta: { layout: ProfilLayout},
@@ -94,6 +102,7 @@ const routes = [
     meta: { layout: ProfilLayout},
     component: Profil
   },
+  // Odberatel
 ];
 
 const router = new VueRouter({

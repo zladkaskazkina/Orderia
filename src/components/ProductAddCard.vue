@@ -1,12 +1,14 @@
 <template>
   <v-container fluid class="product-form">
     <v-card class="pa-4">
-      <v-card-title class="headline ma-2 error--text" >
+      <v-card-title class="headline ma-2 error--text">
         <h3>Nový produkt</h3>
       </v-card-title>
       <v-row no-gutters class="ma-2" style="height: 300px">
         <v-col>
           <v-file-input
+            :rules="rules"
+            accept="image/png, image/jpeg, image/bmp"
             label="Vložte fotografie"
             name="productPhoto"
             outlined
@@ -96,6 +98,12 @@
 export default {
   data() {
     return {
+      rules: [
+        value =>
+          !value ||
+          value.size < 2000000 ||
+          "Foto produktu musi byt mensi nez 2 MB!"
+      ],
       stock: ["Skladem", "Nedostupné", "Vyprodáno"],
       units: ["ks", "g", "kg", "ml", "l"],
       vat: ["15%", "21%", "10%", "bez DPH"],
@@ -113,5 +121,4 @@ export default {
 .alergen-box {
   border: thin 1px rgb(118, 118, 118);
 }
-
 </style>
