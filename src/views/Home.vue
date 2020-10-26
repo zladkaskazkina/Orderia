@@ -70,11 +70,6 @@
             >
             </v-img>
           </v-row>
-          <v-row class="ma-5" no-gutters>
-            <div class="mx-auto">
-              <v-btn flat router to="/test2"> test2 </v-btn>
-            </div>
-          </v-row>
         </v-sheet>
       </v-col>
     </v-row>

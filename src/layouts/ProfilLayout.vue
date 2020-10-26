@@ -26,7 +26,7 @@ export default {
   name: "StartLayout",
   components: {
     SupSidebar,
-    Footer,
-  },
+    Footer
+  }
 };
 </script>

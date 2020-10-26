@@ -62,6 +62,7 @@
             </v-card-title>
             <v-card-subtitle>Cislo objednavky</v-card-subtitle>
           </v-card>
+          <v-btn class="ma-2" outlined color="indigo"> Vice </v-btn>
         </v-card>
       </v-col>
     </v-row>
