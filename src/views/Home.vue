@@ -3,7 +3,7 @@
     <v-row class="fill-height" no-gutters>
       <v-col>
         <v-sheet class="fill-height supplier-main pa-8">
-          <v-row no-gutters class="mx-16 px-10 py-10">
+          <v-row no-gutters class="mx-16 px-10 py-10" justify="center">
             <ul class="home-check-text">
               <li>
                 <img
@@ -84,7 +84,7 @@
 
       <v-col>
         <v-sheet class="fill-height buyer-main pa-8">
-          <v-row no-gutters class="mx-16 px-10 py-10">
+          <v-row no-gutters class="mx-16 px-10 py-10" justify="center">
             <ul class="home-check-text">
               <li>
                 <img
@@ -193,10 +193,11 @@ export default {
   list-style: none;
   margin: 0;
   background: none;
+  
 }
 
 .hp-list {
-  padding: 0;
+  margin: 0;
   color: #082940;
 }
 
