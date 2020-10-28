@@ -144,6 +144,7 @@ export default {
       const id = event.id;
       // this.$router.push({ name: "objednavky", params: { id } }); // -> /user/123
       this.$router.push({ path: `/dodavatel/objednavky/${id}` });
+      console.log(event.shopName + " is clicked")
     }
   }
 };

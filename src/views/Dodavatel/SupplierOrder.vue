@@ -1,15 +1,16 @@
 <template>
   <v-container fluid class="supplier-order">
     <v-card class="pa-4">
-      <v-card-title class="headline ma-2">
-        <h2>Objednávka</h2>
+      <v-card-title class="justify-center ma-2">
+        <h3>Objednávka</h3>
       </v-card-title>
+
+      <v-row no-gutters class="order-num">
+        <span>Číslo objednávky: {{ $route.params.id }}</span>
+      </v-row>
       <div class="customer-data">
         <v-row no-gutters>
-          <span>Číslo objednávky: {{ $route.params.id }}</span>
-        </v-row>
-        <v-row no-gutters>
-          <span>Odběratel</span>
+          <span>Odberatel</span>
         </v-row>
         <v-row no-gutters>
           <span>Adresa</span>
@@ -18,27 +19,12 @@
       <v-divider></v-divider>
 
       <div class="order-main">
-        <v-row no-gutters>
-          <v-col>
-            <span> </span>
-            <span>KÓD PRODUKTU</span>
-          </v-col>
-          <v-col>
-            <span>NÁZEV PRODUKTU</span>
-          </v-col>
-          <v-col>
-            <span>KS</span>
-          </v-col>
-          <v-col>
-            <span>CENA/ks</span>
-          </v-col>
-          <v-col>
-            <span>CELKEM</span>
-          </v-col>
-        </v-row>
-        <v-row no-gutters>
-          <!-- doplnovani polozek -->
-        </v-row>
+        <v-data-table
+         :headers="headers"
+         hide-default-footer
+        >
+        </v-data-table>
+
       </div>
       <v-divider></v-divider>
       <div>
@@ -86,12 +72,31 @@
 
 <script>
 export default {
-  name: "SupplierOrder"
+  name: "SupplierOrder",
+  data() {
+    return {
+      headers: [
+        { text: 'Kód produktu',
+          align: 'start',
+          sortable: true
+        },
+        { text: 'Název produktu'},
+        { text: 'Ks'},
+        { text: 'Cena za kus'},
+        { text: 'Celkem'},
+      ]
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.headline {
-  justify-content: center;
+.order-num {
+  border: solid 1px rgba(0, 0, 0, 0.12);
+  padding: 10px;
+}
+.customer-data {
+  border: solid 1px rgba(0, 0, 0, 0.12);
+  padding: 10px;
 }
 </style>
