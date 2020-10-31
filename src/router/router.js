@@ -4,15 +4,19 @@ import VueRouter from "vue-router";
 import Home from "../views/Home";
 import Login from "../views/Login";
 import Registration from "../views/Registration";
-import SupplierOrder from "../views/Dodavatel/SupplierOrder";
+import OrderItem from "../views/Dodavatel/OrderItem";
 import Dodavatel from "../views/Dodavatel";
 import Products from "../views/Dodavatel/Products";
 import Partneri from "../views/Partneri";
-import Objednavky from "../views/Dodavatel/Objednavky";
+import Objednavky from "../views/Dodavatel/OrderList";
 import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
 import ProductNew from "../views/Dodavatel/ProductNew";
 import Profil from "../views/Dodavatel/Profil";
+import Odberatel from "../views/Odberatel/Odberatel";
+import OrderList from "../views/Odberatel/OrderList";
+import Partners from "../views/Odberatel/Partneri";
+import Sortiment from "../views/Odberatel/Sortiment";
 
 // Layouts
 import StartLayout from "../layouts/StartLayout";
@@ -74,9 +78,9 @@ const routes = [
   },
   {
     path: "/dodavatel/objednavky/:id",
-    name: "SupplierOrder",
+    name: "OrderItem",
     meta: { layout: ProfilLayout },
-    component: SupplierOrder
+    component: OrderItem
   },
   {
     path: "/dodavatel/reklamace",
@@ -95,8 +99,32 @@ const routes = [
     name: "Profil",
     meta: { layout: ProfilLayout },
     component: Profil
-  }
+  },
   // Odberatel
+  {
+    path: "/odberatel/objednavky",
+    name: "OrderList",
+    meta: { layout: ProfilLayout },
+    component: OrderList
+  },
+  {
+    path: "/odberatel",
+    name: "Odberatel",
+    meta: { layout: ProfilLayout },
+    component: Odberatel
+  },
+  {
+    path: "/odberatel/partneri",
+    name: "Partners",
+    meta: { layout: ProfilLayout },
+    component: Partners
+  },
+  {
+    path: "/odberatel/sortiment",
+    name: "Sortiment",
+    meta: { layout: ProfilLayout },
+    component: Sortiment
+  }
 ];
 
 const router = new VueRouter({

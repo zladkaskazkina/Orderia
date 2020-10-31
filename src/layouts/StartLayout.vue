@@ -15,7 +15,7 @@ export default {
   name: "StartLayout",
   components: {
     MainNavbar,
-    Footer,
-  },
+    Footer
+  }
 };
 </script>

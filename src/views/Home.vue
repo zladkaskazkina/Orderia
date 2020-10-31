@@ -52,12 +52,11 @@
               Registrovat se jako dodavatel</v-btn
             >
             <!-- VYTVOŘIT REGISTRATION PAGE? -->
-
           </v-row>
           <v-row no-gutters class="pt-4" justify="center">
-          <h5 class="how">
-            JAK TO FUNGUJE?
-          </h5>
+            <h5 class="how">
+              JAK TO FUNGUJE?
+            </h5>
           </v-row>
 
           <v-row no-gutters justify="center" class="py-4">
@@ -135,9 +134,9 @@
             <!-- VYTVOŘIT REGISTRATION PAGE? -->
           </v-row>
           <v-row no-gutters justify="center" class="pt-4">
-          <h5 class="how">
-            JAK TO FUNGUJE?
-          </h5>
+            <h5 class="how">
+              JAK TO FUNGUJE?
+            </h5>
           </v-row>
           <v-row no-gutters justify="center" class="py-4">
             <ul class="hp-list">
@@ -160,7 +159,6 @@
       </v-col>
     </v-row>
   </v-main>
-  
 </template>
 
 <script>
@@ -201,11 +199,8 @@ export default {
   border-radius: 1px;
 }
 
-
 .how {
   color: #082940;
-
-
 }
 
 .checkmark {

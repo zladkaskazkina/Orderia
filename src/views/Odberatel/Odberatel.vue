@@ -1,0 +1,109 @@
+<template>
+  <div>
+    <v-container fluid>
+      <h1>Nástěnka</h1>
+      <div class="display-1 font-weight-thin">
+        Historie objednavek
+        <v-btn class="ma-2" outlined color="indigo" @click="byMonths">
+          Mesic
+        </v-btn>
+        <v-btn class="ma-2" outlined color="indigo" @click="byWeeks">
+          Tyden
+        </v-btn>
+      </div>
+
+      <v-sparkline
+        :fill="fill"
+        line-width="2"
+        padding="4"
+        :smooth="radius || false"
+        :value="value"
+        auto-draw
+      >
+        <template v-slot:label="item"> ${{ item.value }} </template>
+      </v-sparkline>
+    </v-container>
+    <v-row>
+      <v-col cols="6">
+        <v-card flat tile class="mx-5 pa-5 success">
+          <v-card-title>Moje posledni objednavky</v-card-title>
+          <v-card class="mb-5" v-for="item in lastOrders" :key="item.id">
+            <v-card-title class="headline">
+              Nazev firmy
+            </v-card-title>
+            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
+          </v-card>
+          <v-card class="mb-5">
+            <v-card-title class="headline">
+              Nazev firmy
+            </v-card-title>
+            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
+          </v-card>
+          <v-card class="mb-5">
+            <v-card-title class="headline">
+              Nazev firmy
+            </v-card-title>
+            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
+          </v-card>
+          <v-btn class="ma-2" outlined color="indigo"> Vice </v-btn>
+        </v-card>
+      </v-col>
+      <v-col cols="6">
+        <v-card flat tile class="mx-5 pa-5 success">
+          <v-card-title>Nedodane objednavky</v-card-title>
+          <v-card class="mb-5">
+            <v-card-title class="headline">
+              Nazev firmy
+            </v-card-title>
+            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
+          </v-card>
+          <v-card class="mb-5">
+            <v-card-title class="headline">
+              Nazev firmy
+            </v-card-title>
+            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
+          </v-card>
+          <v-card class="mb-5">
+            <v-card-title class="headline">
+              Nazev firmy
+            </v-card-title>
+            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
+          </v-card>
+          <v-btn class="ma-2" outlined color="indigo"> Vice </v-btn>
+        </v-card>
+      </v-col>
+    </v-row>
+  </div>
+</template>
+
+<script>
+// import { mapState } from "vuex";
+// @ is an alias to /src
+export default {
+  name: "Odberatel",
+  components: {},
+  data: () => ({
+    fill: true,
+    padding: 8,
+    radius: 10,
+    value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8],
+    width: 2
+  }),
+  // computed() {
+  //   ...mapState({
+  //   // ...
+  // })
+  // };
+  created() {
+    this.$store.dispatch("orders/getOrders");
+  },
+  methods: {
+    byMonths() {
+      //
+    },
+    byWeeks() {
+      //
+    }
+  }
+};
+</script>

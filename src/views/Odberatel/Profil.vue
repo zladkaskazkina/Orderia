@@ -8,10 +8,14 @@
           </h3>
         </v-card-title>
         <v-row no-gutters class="pa-6 mx-4">
-          <v-col cols="4" class="text-center" >
-             <h5 class="py-4">Logo</h5>
+          <v-col cols="4" class="text-center">
+            <h5 class="py-4">Logo</h5>
             <v-avatar class="profile" size="164">
-              <img src="@/assets/images/user1.png" max-width="100px" alt="Logo" />
+              <img
+                src="@/assets/images/user1.png"
+                max-width="100px"
+                alt="Logo"
+              />
             </v-avatar>
           </v-col>
           <v-col class="pt-6">
@@ -60,16 +64,11 @@
           <v-col cols="2" class="mx-4">
             <h5>Typ</h5>
           </v-col>
-          <v-col cols="2" class="mx-4"> 
-              <v-checkbox
-              label="Online">
-              </v-checkbox>
-              
+          <v-col cols="2" class="mx-4">
+            <v-checkbox label="Online"> </v-checkbox>
           </v-col>
           <v-col cols="2" class="mx-4">
-              <v-checkbox
-              label="Kamenna prodejna">
-              </v-checkbox>
+            <v-checkbox label="Kamenna prodejna"> </v-checkbox>
           </v-col>
         </v-row>
 
@@ -206,11 +205,7 @@
             </v-text-field>
           </v-col>
           <v-col class="mx-4">
-            <v-text-field
-              v-model="form.companyPhone"
-              label="Telefon"
-              outlined
-            >
+            <v-text-field v-model="form.companyPhone" label="Telefon" outlined>
             </v-text-field>
           </v-col>
         </v-row>
@@ -295,6 +290,4 @@ export default {
 };
 </script>
 
-
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
