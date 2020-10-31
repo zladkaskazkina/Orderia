@@ -76,7 +76,8 @@ const routes = [
     path: "/dodavatel/objednavky/:id",
     name: "SupplierOrder",
     meta: { layout: ProfilLayout },
-    component: SupplierOrder
+    component: SupplierOrder,
+    props: true,
   },
   {
     path: "/dodavatel/reklamace",
