@@ -80,7 +80,8 @@ const routes = [
     path: "/dodavatel/objednavky/:id",
     name: "OrderItem",
     meta: { layout: ProfilLayout },
-    component: OrderItem
+    component: OrderItem,
+    props: true
   },
   {
     path: "/dodavatel/reklamace",

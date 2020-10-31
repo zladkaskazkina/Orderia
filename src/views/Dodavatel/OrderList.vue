@@ -45,14 +45,14 @@ export default {
           text: "Faktura",
           align: "start",
           sortable: true,
-          value: "id"
+          value: "id",
         },
         { text: "Datum", value: "date" },
         { text: "Odberatel", value: "shopName" },
         { text: "Termin dodani", value: "due" },
         { text: "Hodnota", value: "total" },
         { text: "Status", value: "status" },
-        { text: "Actions", value: "actions", sortable: false }
+        { text: "Actions", value: "actions", sortable: false },
       ],
       orders: [
         {
@@ -61,7 +61,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2110202859",
@@ -69,7 +69,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2140202059",
@@ -77,7 +77,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2100202059",
@@ -85,7 +85,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2110205059",
@@ -93,7 +93,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2110235059",
@@ -101,7 +101,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2125202059",
@@ -109,7 +109,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2110202399",
@@ -117,7 +117,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2110402059",
@@ -125,7 +125,7 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
+          status: "vyrizena",
         },
         {
           id: "2112802059",
@@ -133,9 +133,9 @@ export default {
           shopName: "Rohlik",
           due: "21.10.2020",
           total: 4000,
-          status: "vyrizena"
-        }
-      ]
+          status: "vyrizena",
+        },
+      ],
     };
   },
   methods: {
@@ -144,8 +144,9 @@ export default {
       const id = event.id;
       // this.$router.push({ name: "objednavky", params: { id } }); // -> /user/123
       this.$router.push({ path: `/dodavatel/objednavky/${id}` });
-    }
-  }
+      console.log(event.shopName + " is clicked");
+    },
+  },
 };
 </script>
 
