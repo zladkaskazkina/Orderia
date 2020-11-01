@@ -10,7 +10,7 @@
         >
           <v-card-title>
             <router-link
-              :to="{ name: 'product', params: { id: productData.id } }"
+              :to="{ name: 'ProductItem', params: { id: productData.id } }"
             >
               {{ productData.title }}
             </router-link>
@@ -24,6 +24,7 @@
           <div>{{ productData.description }}</div>
 
           <div>ID produktu: {{ productData.id }}</div>
+          <div>Skladem: {{ productData.stock }} Ks</div>
         </v-card-text>
       </v-card>
     </v-col>

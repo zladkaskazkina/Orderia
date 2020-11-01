@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card v-if="product">
+    <v-card v-if="product" class="ma-5 pa-10">
       <v-img
         :src="product.image"
         class="white--text align-end"
@@ -8,10 +8,11 @@
         height="200px"
       ></v-img>
       <v-card-title> {{ product.title }} </v-card-title>
-      <v-card-subtitle class="pb-0">
-        {{ product.price }}
-      </v-card-subtitle>
-      <p>{{ product.description }}</p>
+      <v-card-subtitle class="pb-0"> {{ product.price }} Kč </v-card-subtitle>
+      <v-card-text>
+        <div>{{ product.description }}</div>
+        <div>Slozeni: {{ product.ingredients }}</div>
+      </v-card-text>
     </v-card>
     <div></div>
   </div>
@@ -28,7 +29,7 @@ export default {
   },
   computed: {
     product() {
-      return this.$store.state.modules.product;
+      return this.$store.state.products.product;
     }
   },
   mounted() {
