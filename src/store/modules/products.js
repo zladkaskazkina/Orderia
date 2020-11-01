@@ -14,6 +14,11 @@ const actions = {
     axios.get(`/api/products/${productId}`).then(response => {
       commit("SET_PRODUCT", response.data);
     });
+  },
+  createProduct({ commit }) {
+    axios.post(`/api/products`).then(response => {
+      commit("CREATE_PRODUCT", response.data);
+    });
   }
 };
 const mutations = {
@@ -22,6 +27,9 @@ const mutations = {
   },
   SET_PRODUCT(state, product) {
     state.product = product;
+  },
+  CREATE_PRODUCT(state, product) {
+    state.products.push(product);
   }
 };
 export default {

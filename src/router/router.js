@@ -69,7 +69,8 @@ const routes = [
     path: "/dodavatel/produkty/:id",
     name: "ProductItem",
     meta: { layout: ProfilLayout },
-    component: ProductItem
+    component: ProductItem,
+    props: true
   },
   {
     path: "/dodavatel/partneri",
@@ -87,8 +88,8 @@ const routes = [
     path: "/dodavatel/objednavky/:id",
     name: "OrderItem",
     meta: { layout: ProfilLayout },
-    component: OrderItem
-    // props: true
+    component: OrderItem,
+    props: true
   },
   {
     path: "/dodavatel/reklamace",
