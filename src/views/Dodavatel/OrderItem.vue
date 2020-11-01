@@ -6,7 +6,7 @@
       </v-card-title>
       <v-btn @click="print" absolute top right class="success"><v-icon>mdi-printer</v-icon></v-btn>
       <!-- propisovat pres props?? nechybi jeste jedna komponenta?? -->
-      <v-row no-gutters class="pa-5 border">
+      <v-row no-gutters class="pa-5 ma-5 border">
         <v-col cols="7">
           <p class="shop-name">Rohlik CZ</p>
           <p class="font-weight-medium">Kontakt:</p>
@@ -21,7 +21,7 @@
         </v-col>
       </v-row>
 
-      <v-row no-gutters class="pa-5 my-2 border">
+      <v-row no-gutters class="pa-5 ma-5 border">
         <v-col cols="7">
           <p class="font-weight-medium">Fakturační adresa:</p>
           <p>Velká Pecka s.r.o.</p>
@@ -35,7 +35,12 @@
           <p>Velká Pecka s.r.o.</p>
           <p>Sokolovská 100/94</p>
           <p>186 00 Praha 8 – Karlín</p>
+          <br>
+          <span class="font-weight-medium">Zpusob platby:</span> <span>prevodem</span>
         </v-col>
+      </v-row>
+      <v-row no-gutters class="px-9 pt-5">
+      <h3>Souhrn objednavky:</h3>
       </v-row>
 
       <div class="order-main py-6 px-4">
@@ -46,9 +51,11 @@
           hide-default-footer
           show-select
         >
+        <!--  
           <template #item.totalPrice="{item}">
             {{ item.price * item.quantity }}
           </template>
+          -->
 
           <template slot="body.append">
             <tr>
@@ -67,12 +74,14 @@
               <td>150</td>
               <td>150</td>
             </tr>
-            <tr>
+            <tr class="primary">
               <th></th>
-              <th>Suma celkem</th>
+              <th>Celkem k platbe</th>
+              <th></th>
             </tr>
           </template>
         </v-data-table>
+        
       </div>
       <v-row no-gutters justify="end" class="pa-4">
         <v-btn color="error">PŘIJMOUT OBJEDNÁVKU</v-btn>
@@ -91,6 +100,7 @@ export default {
         { text: "Název produktu", value: "productName" },
         { text: "Ks", value: "quantity" },
         { text: "Cena za kus", value: "price" },
+        { text: "Cena s DPH", value: "" },
         { text: "Celkem", value: "totalPrice" }
       ],
       orderedProducts: [
