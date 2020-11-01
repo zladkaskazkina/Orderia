@@ -6,8 +6,8 @@
       </v-card-title>
       <v-row no-gutters class="ma-2" style="height: 300px">
         <v-col>
-          <div class="dropbox cell">
-            <multiple-file />
+          <div class="dropbox">
+            <multiple-file></multiple-file>
           </div>                
         
         </v-col>
@@ -124,10 +124,5 @@ export default {
 .alergen-box {
   border: thin 1px rgb(118, 118, 118);
 }
-.dropbox {
-  outline: solid 1px grey;
-  min-height: 200px;
-  padding: 10px 10px;
-  cursor: pointer;
-}
+
 </style>
