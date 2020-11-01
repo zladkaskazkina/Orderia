@@ -26,7 +26,7 @@
 </template>
 <script>
 export default {
-  name: "image-input",
+  name: "image-uploader",
   data: () => ({
     errorDialog: null,
     errorText: "",

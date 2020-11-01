@@ -10,13 +10,27 @@
         <v-row no-gutters class="pa-6 mx-4">
           <v-col cols="4" class="text-center">
             <h5 class="py-4">Logo</h5>
-            <v-avatar class="profile" size="164">
-              <img
-                src="@/assets/images/user1.png"
-                max-width="100px"
-                alt="Logo"
-              />
-            </v-avatar>
+
+            <image-uploader v-model="avatar">
+              <div slot="activator">
+                <v-avatar
+                  size="160px"
+                  v-ripple
+                  v-if="!avatar"
+                  class="grey lighten-3 mb-3"
+                >
+                  <span>Přidejte logo</span>
+                </v-avatar>
+                <v-avatar size="160px" v-ripple v-else class="mb-3">
+                  <img :src="avatar.imageURL" alt="logo" />
+                </v-avatar>
+              </div>
+            </image-uploader>
+            <div v-if="avatar && saved == false">
+              <v-btn class="primary" @click="uploadImage" :loading="saving"
+                >Uložit</v-btn
+              >
+            </div>
           </v-col>
           <v-col class="pt-6">
             <v-row no-gutters class="py-4">
@@ -201,7 +215,7 @@
         <v-row no-gutters class="pa-6">
           <v-col class="mx-4">
             <v-row no-gutters>
-                <h5>Objednavky</h5>
+              <h5>Objednavky</h5>
             </v-row>
 
             <v-row no-gutters>
@@ -230,9 +244,7 @@
               <h5>Moznosti dopravy</h5>
             </v-row>
             <v-row>
-                <v-combobox
-                outlined>
-                </v-combobox>
+              <v-combobox outlined> </v-combobox>
             </v-row>
           </v-col>
         </v-row>
@@ -247,11 +259,19 @@
   </div>
 </template>
 <script>
+import ImageUploader from "./../../components/ImageUploader.vue";
+
 export default {
   name: "Profil",
+  components: {
+    ImageUploader: ImageUploader,
+  },
 
   data() {
     return {
+      avatar: null,
+      saving: false,
+      saved: false,
       loading: false,
       form: {
         userName: "Kokos",
@@ -287,6 +307,24 @@ export default {
       selectedCategories: [],
       category: ["Trvanlive", "Maso", "Mlecne vyrobky", "Ovoce", "Zelenina"]
     };
+  },
+    watch:{
+    avatar: {
+      handler: function() {
+        this.saved = false
+      },
+      deep: true
+    }
+  },
+  methods: {
+    uploadImage() {
+      this.saving = true
+      setTimeout(() => this.savedAvatar(), 1000)
+    },
+    savedAvatar() {
+      this.saving = false
+      this.saved = true
+    }
   }
 };
 </script>
