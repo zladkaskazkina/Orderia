@@ -6,6 +6,7 @@
           class="white--text align-end"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
           height="200px"
+          :src="productData.image"
         >
           <v-card-title>
             <router-link
@@ -16,13 +17,13 @@
           </v-card-title>
         </v-img>
         <v-card-subtitle class="pb-0">
-          {{ productData.price }} Korun
+          {{ productData.price }} Kč
         </v-card-subtitle>
 
         <v-card-text class="text--primary">
-          <div>{{ productData.available }}</div>
+          <div>{{ productData.description }}</div>
 
-          <div>{{ productData.id }}</div>
+          <div>ID produktu: {{ productData.id }}</div>
         </v-card-text>
       </v-card>
     </v-col>

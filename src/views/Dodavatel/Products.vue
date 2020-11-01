@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     products() {
-      return this.$store.state.modules.products;
+      return this.$store.state.products.products;
     }
   },
   mounted() {
