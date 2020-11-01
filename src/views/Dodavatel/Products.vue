@@ -37,38 +37,16 @@ export default {
     return {
       fab: false,
       hidden: false,
-      tabs: null,
-      products: [
-        {
-          id: 12345678,
-          name: "Rohlik makovy",
-          image: "rohlik-makovy.jpeg",
-          price: 2.45,
-          available: true
-        },
-        {
-          id: 12345679,
-          name: "Rohlik makovy",
-          image: "rohlik-makovy.jpeg",
-          price: 2.45,
-          available: true
-        },
-        {
-          id: 12345670,
-          name: "Rohlik makovy",
-          image: "rohlik-makovy.jpeg",
-          price: 2.45,
-          available: true
-        },
-        {
-          id: 12347670,
-          name: "Rohlik makovy",
-          image: "rohlik-makovy.jpeg",
-          price: 2.45,
-          available: true
-        }
-      ]
+      tabs: null
     };
+  },
+  computed: {
+    products() {
+      return this.$store.state.products; // jak upresnit ze z modulu products?
+    }
+  },
+  mounted() {
+    this.$store.dispatch("products/getProducts");
   },
   methods: {
     openItem(event) {

@@ -7,7 +7,13 @@
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
           height="200px"
         >
-          <v-card-title v-text="productData.name"></v-card-title>
+          <v-card-title>
+            <router-link
+              :to="{ name: 'product', params: { id: productData.id } }"
+            >
+              {{ productData.title }}
+            </router-link>
+          </v-card-title>
         </v-img>
         <v-card-subtitle class="pb-0">
           {{ productData.price }}
@@ -30,11 +36,11 @@ export default {
       type: Object,
       default() {
         return {};
-      },
-    },
+      }
+    }
   },
   data() {
     return {};
-  },
+  }
 };
 </script>

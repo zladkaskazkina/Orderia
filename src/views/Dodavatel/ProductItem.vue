@@ -1,7 +1,17 @@
 <template>
   <div>
-    <v-card>
-      <v-card-title> Product {{ $route.params.id }} </v-card-title>
+    <v-card v-if="product">
+      <v-img
+        :src="product.image"
+        class="white--text align-end"
+        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+        height="200px"
+      ></v-img>
+      <v-card-title> {{ product.title }} </v-card-title>
+      <v-card-subtitle class="pb-0">
+        {{ product.price }}
+      </v-card-subtitle>
+      <p>{{ product.description }}</p>
     </v-card>
     <div></div>
   </div>
@@ -12,8 +22,17 @@
 
 export default {
   name: "ProductItem",
+  props: ["id"],
   data() {
     return {};
+  },
+  computed: {
+    product() {
+      return this.$store.state.product; // jak upresnit ze z modulu products?
+    }
+  },
+  mounted() {
+    this.$store.dispatch("products/getProduct", this.id);
   },
   methods: {}
 };
