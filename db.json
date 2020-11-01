@@ -1,10 +1,51 @@
 {
   "products": [
     {
-      "id": 12345678,
-      "name": "Rohlik makovy",
-      "image": "rohlik-makovy.jpeg",
-      "price": 2.45,
+      "id": 1,
+      "title": "Risotto rajcatove",
+      "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
+      "price": 129,
+      "producer": "Na italske farme s.r.o.",
+      "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
+      "slozeni": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
+      "type": "trvanlive jidlo",
+      "weight": 0.22,
+      "available": true
+    },
+    {
+      "id": 2,
+      "title": "Risotto hribkove",
+      "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
+      "price": 129,
+      "producer": "Na italske farme s.r.o.",
+      "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
+      "slozeni": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
+      "type": "trvanlive jidlo",
+      "weight": 0.22,
+      "available": true
+    },
+    {
+      "id": 3,
+      "title": "Risotto dynove",
+      "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
+      "price": 129,
+      "producer": "Na italske farme s.r.o.",
+      "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
+      "slozeni": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
+      "type": "trvanlive jidlo",
+      "weight": 0.22,
+      "available": true
+    },
+    {
+      "id": 4,
+      "title": "Risotto safranove",
+      "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
+      "price": 129,
+      "producer": "Na italske farme s.r.o.",
+      "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
+      "slozeni": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
+      "type": "trvanlive jidlo",
+      "weight": 0.22,
       "available": true
     }
   ]

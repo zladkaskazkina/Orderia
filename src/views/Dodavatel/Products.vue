@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     products() {
-      return this.$store.state.products; // jak upresnit ze z modulu products?
+      return this.$store.state.modules.products;
     }
   },
   mounted() {
@@ -52,7 +52,6 @@ export default {
     openItem(event) {
       console.log(event.id + " is clicked");
       const id = event.id;
-      // this.$router.push({ name: "objednavky", params: { id } }); // -> /user/123
       this.$router.push({ path: `/dodavatel/produkty/${id}` });
     }
   }

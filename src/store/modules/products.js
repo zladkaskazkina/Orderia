@@ -6,17 +6,17 @@ const state = {
 const getters = {};
 const actions = {
   getProducts({ commit }) {
-    axios.get("/api/products").then(response => {
+    axios.get("http://localhost:3000/products/").then(response => {
       commit("SET_PRODUCTS", response.data);
     });
   },
   getProduct({ commit }, productId) {
-    axios.get(`/api/products/${productId}`).then(response => {
+    axios.get(`http://localhost:3000/products/${productId}`).then(response => {
       commit("SET_PRODUCT", response.data);
     });
   },
   createProduct({ commit }) {
-    axios.post(`/api/products`).then(response => {
+    axios.post(`http://localhost:3000/products/`).then(response => {
       commit("CREATE_PRODUCT", response.data);
     });
   }

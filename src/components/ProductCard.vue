@@ -16,7 +16,7 @@
           </v-card-title>
         </v-img>
         <v-card-subtitle class="pb-0">
-          {{ productData.price }}
+          {{ productData.price }} Korun
         </v-card-subtitle>
 
         <v-card-text class="text--primary">

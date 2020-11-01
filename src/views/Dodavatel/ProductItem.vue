@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     product() {
-      return this.$store.state.product; // jak upresnit ze z modulu products?
+      return this.$store.state.modules.product;
     }
   },
   mounted() {
