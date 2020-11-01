@@ -16,11 +16,12 @@
       </v-btn>
     </v-fab-transition>
     <v-row class="mx-5">
-      <ProductItem
+      <ProductCard
         v-for="product in products"
         :key="product.id"
         :productData="product"
         cols="4"
+        @click="openItem"
       />
     </v-row>
   </div>
@@ -28,10 +29,10 @@
 
 <script>
 // @ is an alias to /src
-import ProductItem from "@/components/ProductItem.vue";
+import ProductCard from "@/components/ProductCard.vue";
 export default {
   name: "Products",
-  components: { ProductItem },
+  components: { ProductCard },
   data() {
     return {
       fab: false,
@@ -69,7 +70,14 @@ export default {
       ]
     };
   },
-  methods: {}
+  methods: {
+    openItem(event) {
+      console.log(event.id + " is clicked");
+      const id = event.id;
+      // this.$router.push({ name: "objednavky", params: { id } }); // -> /user/123
+      this.$router.push({ path: `/dodavatel/produkty/${id}` });
+    }
+  }
 };
 </script>
 

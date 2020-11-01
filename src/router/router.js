@@ -7,11 +7,12 @@ import Registration from "../views/Registration";
 import OrderItem from "../views/Dodavatel/OrderItem";
 import Dodavatel from "../views/Dodavatel";
 import Products from "../views/Dodavatel/Products";
+import ProductItem from "../views/Dodavatel/ProductItem";
 import Partneri from "../views/Partneri";
 import Objednavky from "../views/Dodavatel/OrderList";
 import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
-import ProductNew from "../views/Dodavatel/ProductNew";
+import AddProduct from "../views/Dodavatel/AddProduct";
 import Profil from "../views/Dodavatel/Profil";
 import Odberatel from "../views/Odberatel/Odberatel";
 import OrderList from "../views/Odberatel/OrderList";
@@ -60,9 +61,15 @@ const routes = [
   },
   {
     path: "/dodavatel/produkty/novy",
-    name: "ProductNew",
+    name: "AddProduct",
     meta: { layout: ProfilLayout },
-    component: ProductNew
+    component: AddProduct
+  },
+  {
+    path: "/dodavatel/produkty/:id",
+    name: "ProductItem",
+    meta: { layout: ProfilLayout },
+    component: ProductItem
   },
   {
     path: "/dodavatel/partneri",
@@ -80,8 +87,8 @@ const routes = [
     path: "/dodavatel/objednavky/:id",
     name: "OrderItem",
     meta: { layout: ProfilLayout },
-    component: OrderItem,
-    props: true
+    component: OrderItem
+    // props: true
   },
   {
     path: "/dodavatel/reklamace",

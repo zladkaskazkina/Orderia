@@ -11,7 +11,7 @@
 // @ is an alias to /src
 
 export default {
-  name: "SingleProduct",
+  name: "ProductItem",
   data() {
     return {};
   },

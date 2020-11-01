@@ -4,7 +4,9 @@
       <v-card-title class="justify-left">
         <h3>Objednávka č. {{ $route.params.id }}</h3>
       </v-card-title>
-      <v-btn @click="print" absolute top right class="success"><v-icon>mdi-printer</v-icon></v-btn>
+      <v-btn @click="print" absolute top right class="success"
+        ><v-icon>mdi-printer</v-icon></v-btn
+      >
       <!-- propisovat pres props?? nechybi jeste jedna komponenta?? -->
       <v-row no-gutters class="pa-5 border">
         <v-col cols="7">
@@ -46,7 +48,7 @@
           hide-default-footer
           show-select
         >
-          <template #item.totalPrice="{item}">
+          <template>
             {{ item.price * item.quantity }}
           </template>
 
@@ -83,7 +85,7 @@
 
 <script>
 export default {
-  name: "SupplierOrder",
+  name: "OrderItem",
   data() {
     return {
       headers: [
@@ -128,9 +130,9 @@ export default {
       // sum data in give key (property)
       return this.orderedProducts.reduce((a, b) => a + (b[key] || 0), 0);
     },
-    print () {
+    print() {
       // Pass the element id here
-      this.$htmlToPaper('printMe');
+      this.$htmlToPaper("printMe");
     }
   }
 };

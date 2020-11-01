@@ -155,10 +155,6 @@
             >
             </v-img>
           </v-row>
-<<<<<<< HEAD
-=======
-         
->>>>>>> 3e98f8089c902dd4c447bc5b8e4ae014f4575240
         </v-sheet>
       </v-col>
     </v-row>
@@ -190,7 +186,6 @@ export default {
   list-style: none;
   margin: 0;
   background: none;
-  
 }
 
 .hp-list {
