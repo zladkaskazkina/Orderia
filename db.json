@@ -7,10 +7,10 @@
       "price": 129,
       "producer": "Na italske farme s.r.o.",
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
-      "slozeni": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
+      "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
       "weight": 0.22,
-      "available": true
+      "stock": 3
     },
     {
       "id": 2,
@@ -19,10 +19,10 @@
       "price": 129,
       "producer": "Na italske farme s.r.o.",
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
-      "slozeni": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
+      "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
       "weight": 0.22,
-      "available": true
+      "stock": 3
     },
     {
       "id": 3,
@@ -31,22 +31,154 @@
       "price": 129,
       "producer": "Na italske farme s.r.o.",
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
-      "slozeni": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
+      "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
       "weight": 0.22,
-      "available": true
+      "stock": 3
     },
     {
       "id": 4,
       "title": "Risotto safranove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
-      "price": 129,
+      "price": 159,
       "producer": "Na italske farme s.r.o.",
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
-      "slozeni": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
+      "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
       "weight": 0.22,
-      "available": true
+      "stock": 3
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "status": "nevyrizena",
+      "transport_price": 50,
+      "total_price": 656,
+      "producer": "Na italske farme s.r.o.",
+      "customer": "Kosik",
+      "created_at": "2020-10-31 20:51:37",
+      "items": [
+        { "id": 2, "title": "Risotto safranove", "quantity": 3, "price": 159 },
+        { "title": "Risotto rajcatove", "quantity": 1, "price": 129 }
+      ]
+    },
+    {
+      "id": 2,
+      "status": "nevyrizena",
+      "transport_price": 50,
+      "total_price": 656,
+      "producer": "Na italske farme s.r.o.",
+      "customer": "Scuk.cz",
+      "created_at": "2020-10-31 20:51:37",
+      "items": [
+        { "id": 2, "title": "Risotto safranove", "quantity": 3, "price": 159 },
+        { "title": "Risotto rajcatove", "quantity": 1, "price": 129 }
+      ]
+    },
+    {
+      "id": 3,
+      "status": "ceka na schvaleni",
+      "transport_price": 50,
+      "total_price": 656,
+      "producer": "Nase kase",
+      "customer": "Scuk.cz",
+      "created_at": "2020-10-31 20:51:37",
+      "items": [
+        { "id": 2, "title": "Risotto safranove", "quantity": 3, "price": 159 },
+        { "title": "Risotto rajcatove", "quantity": 1, "price": 129 }
+      ]
+    },
+    {
+      "id": 4,
+      "status": "vyrizena",
+      "transport_price": 50,
+      "total_price": 656,
+      "producer": "Na italske farme s.r.o.",
+      "customer": "Scuk.cz",
+      "created_at": "2020-10-31 20:51:37",
+      "items": [
+        { "id": 2, "title": "Risotto safranove", "quantity": 3, "price": 159 },
+        { "title": "Risotto rajcatove", "quantity": 1, "price": 129 }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "role": "dodavatel",
+      "ico": 456789056789,
+      "company_name": "Na italske farme s.r.o.",
+      "name": "",
+      "email": "naitalskefarme@gmail.com",
+      "password": "123456",
+      "phone": "773503153",
+      "address": {
+        "city": "Prague",
+        "street": "Olgy Havlove",
+        "number": 10,
+        "postale_code": 13000
+      },
+      "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
+      "web": "naitalskefarme.cz",
+      "dph": true
+    },
+    {
+      "id": 2,
+      "role": "odberatel",
+      "ico": 456783756789,
+      "company_name": "Scuk",
+      "name": "",
+      "email": "naitalskefarme@gmail.com",
+      "password": "534829",
+      "phone": "773543153",
+      "address": {
+        "city": "Prague",
+        "street": "Olgy Havlove",
+        "number": 10,
+        "postale_code": 13000
+      },
+      "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
+      "web": "scuk.cz",
+      "dph": true
+    },
+    {
+      "id": 3,
+      "role": "dodavatel",
+      "ico": 493789056789,
+      "company_name": "Nase kase s.r.o.",
+      "name": "",
+      "email": "info@nasekase.com",
+      "password": "123456",
+      "phone": "773983153",
+      "address": {
+        "city": "Prague",
+        "street": "Olgy Havlove",
+        "number": 10,
+        "postale_code": 13000
+      },
+      "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
+      "web": "nasekase.cz",
+      "dph": true
+    },
+    {
+      "id": 4,
+      "role": "odberatel",
+      "ico": 456789196789,
+      "company_name": "Kosik",
+      "name": "",
+      "email": "info@kosik.cz",
+      "password": "128556",
+      "phone": "773508653",
+      "address": {
+        "city": "Prague",
+        "street": "Olgy Havlove",
+        "number": 10,
+        "postale_code": 13000
+      },
+      "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
+      "web": "kosik.cz",
+      "dph": true
     }
   ]
 }
