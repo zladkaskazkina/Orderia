@@ -90,7 +90,9 @@ export default {
           this.submitStatus = "OK";
         }, 500);
       }
-      this.$router.push("/dodavatel");
+      this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
+        this.$router.push("/dodavatel");
+      });
     }
   }
 };
