@@ -73,7 +73,7 @@ export default {
           type: "on-line",
           email: "rohlik@gmail.com",
           id: "12345678",
-          web: "rohlik.cz",
+          web: "rohlik.cz"
         },
         {
           name: "kosik CZ",
@@ -84,7 +84,7 @@ export default {
           type: "kamenny obchod",
           email: "kosik@gmail.com",
           id: "12346678",
-          web: "kosik.cz",
+          web: "kosik.cz"
         },
         {
           name: "slevomat CZ",
@@ -95,7 +95,7 @@ export default {
           type: "on-line",
           email: "slevomat@gmail.com",
           id: "12345778",
-          web: "slevomat.cz",
+          web: "slevomat.cz"
         },
         {
           name: "sklizeno CZ",
@@ -106,13 +106,13 @@ export default {
           type: "on-line",
           email: "sklizeno@gmail.com",
           id: "12355678",
-          web: "sklizeno.cz",
-        },
-      ],
+          web: "sklizeno.cz"
+        }
+      ]
     };
   },
   methods: {
-    sendMsg() {},
+    sendMsg() {}
   },
 };
 </script>

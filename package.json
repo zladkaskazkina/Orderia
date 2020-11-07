@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "json:server": "json-server --watch db.json"
   },
   "resolutions": {
     "eslint-loader": "2.1.2"
@@ -13,6 +14,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "json-server": "^0.16.2",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-html-to-paper": "^1.3.1",

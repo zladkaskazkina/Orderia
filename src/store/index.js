@@ -4,6 +4,9 @@ import axios from "axios";
 import orders from "./modules/orders";
 import users from "./modules/users";
 import products from "./modules/products";
+import auth from "./modules/auth";
+
+
 
 Vue.use(Vuex, axios);
 
@@ -14,7 +17,8 @@ export const store = new Vuex.Store({
   modules: {
     orders,
     users,
-    products
+    products,
+    auth,
   },
   getters: {}
 });

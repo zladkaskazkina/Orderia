@@ -6,13 +6,10 @@
       </v-card-title>
       <v-row no-gutters class="ma-2" style="height: 300px">
         <v-col>
-          <v-file-input
-            :rules="rules"
-            accept="image/png, image/jpeg, image/bmp"
-            label="Vložte fotografie"
-            name="productPhoto"
-            outlined
-          ></v-file-input>
+          <div class="dropbox">
+            <multiple-file></multiple-file>
+          </div>                
+        
         </v-col>
         <v-col offset-md="1">
           <v-row no-gutters class="mr-2">
@@ -95,20 +92,26 @@
 </template>
 
 <script>
+import MultipleFile from "./../../components/MultipleFile.vue";
+
+
 export default {
+  components: {
+    MultipleFile: MultipleFile,
+  },
+  
   data() {
     return {
-      rules: [
-        value =>
-          !value ||
-          value.size < 2000000 ||
-          "Foto produktu musi byt mensi nez 2 MB!"
-      ],
+      
       stock: ["Skladem", "Nedostupné", "Vyprodáno"],
       units: ["ks", "g", "kg", "ml", "l"],
       vat: ["15%", "21%", "10%", "bez DPH"],
       productCategories: ["trvanlivé", "mléčné", "maso"]
     };
+  },
+  
+  methods: {
+    
   }
 };
 </script>
@@ -121,4 +124,5 @@ export default {
 .alergen-box {
   border: thin 1px rgb(118, 118, 118);
 }
+
 </style>

@@ -36,7 +36,7 @@
           >Registrovat se</v-btn
         >
         <v-spacer></v-spacer>
-        <v-btn color="success" @click="submitForm" router to="/dodavatel"
+        <v-btn color="success" @click="submitForm"
           >Přihlásit se</v-btn
         >
       </v-card-actions>
@@ -46,15 +46,16 @@
 <style lang="scss" scoped></style>
 
 <script>
+import User from '../models/user';
 import { email, required, minLength } from "vuelidate/lib/validators";
 export default {
   name: "Login",
   data() {
     return {
+      email: '',
+      password: '',
       showPassword: false,
-      email: "",
-      password: null,
-      category: "food"
+      category: "food",
     };
   },
   validations: {
@@ -80,7 +81,7 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$v.$touch();
+      //this.$v.$touch();
       if (this.$v.$invalid) {
         this.submitStatus = "ERROR";
       } else {
@@ -90,10 +91,23 @@ export default {
           this.submitStatus = "OK";
         }, 500);
       }
-      this.$router.push("/dodavatel");
-    }
+
+      if (this.email && this.password){
+        let user = new User(this.email, this.password);
+        this.$store.dispatch("auth/login", user);
+
+        let loggedIn = this.$store.state.auth.status.loggedIn;
+        if(loggedIn){
+          this.$router.push("/dodavatel");
+          console.log("joo");
+        }
+        else{
+          console.log("nee");
+        }
+      }
+    } 
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 label {
