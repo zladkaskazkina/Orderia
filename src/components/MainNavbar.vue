@@ -12,13 +12,52 @@
             Orderia
           </v-toolbar-title>
         </v-col>
-        <v-col cols="2" class="d-flex justify-end">
-          <v-btn dark color="#082940" class="mr-5 pa-4 login-btn" router to="/login">
+        <v-col class="d-flex">
+          <v-btn
+            dark
+            color="#082940"
+            class="mr-5 pa-4 login-btn"
+            router
+            to="/login"
+          >
             Přihlásit se
           </v-btn>
         </v-col>
-        <v-col cols="2" class="d-flex justify-end">
+        <v-col class="d-flex justify-end">
+          <v-menu
+            bottom
+            offset-y
+            v-bind:close-on-content-click="false"
+            v-model="menu"
+          >
           
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                depressed
+                color="transparent"
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-icon x-large class="ikona-user" color="black"
+                  >mdi-account-circle</v-icon
+                >
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item>
+                <router-link to="/dodavatel">
+                  <v-btn class="my-2" v-on:click="menu = false">
+                    Profil
+                  </v-btn>
+                </router-link>
+              </v-list-item>
+              <v-list-item>
+                <v-btn>
+                  Odhlásit
+                </v-btn>
+              </v-list-item>
+            </v-list>
+          </v-menu>
         </v-col>
       </v-row>
     </v-toolbar>
@@ -34,7 +73,10 @@
 export default {
   name: "MainNavbar",
   data() {
-    return {};
+    return {
+      menu: false,
+      offset: true,
+    };
   }
 };
 </script>
