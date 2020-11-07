@@ -21,7 +21,7 @@
         :key="product.id"
         :productData="product"
         cols="3"
-        @click="openItem"
+        @openIt="openItem"
       />
     </v-row>
   </div>
@@ -43,17 +43,21 @@ export default {
   },
   computed: {
     products() {
-      return this.$store.state.products.products;
+      return this.$store.state[`${this.role}Products`].products;
     }
   },
   mounted() {
-    this.$store.dispatch(`${this.role}/products/getProducts/`);
+    this.$store.dispatch(`${this.role}Products/getProducts`, null, {
+      root: true
+    });
   },
   methods: {
     openItem(event) {
-      console.log(event.id + " is clicked");
-      const id = event.id;
-      this.$router.push({ path: `/dodavatel/produkty/${id}` });
+      console.log(event);
+      this.$router.push({
+        name: "ProductItem",
+        params: { id: event, role: this.role }
+      });
     }
   }
 };

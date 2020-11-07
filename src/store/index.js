@@ -3,7 +3,8 @@ import Vuex from "vuex";
 import axios from "axios";
 import orders from "./modules/orders";
 import users from "./modules/users";
-import products from "./modules/products";
+import producerProducts from "./modules/producerProducts";
+import buyerProducts from "./modules/buyerProducts";
 import auth from "./modules/auth";
 import cart from "./modules/cart";
 
@@ -14,9 +15,10 @@ export const store = new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
+    producerProducts,
+    buyerProducts,
     orders,
     users,
-    products,
     auth,
     cart
   },

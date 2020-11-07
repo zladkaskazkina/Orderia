@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-col>
-      <v-card class="mx-auto" max-width="400">
+      <v-card class="mx-auto" max-width="400" @click="clickIt">
         <v-img
           class="white--text align-end"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -9,11 +9,7 @@
           :src="productData.image"
         >
           <v-card-title>
-            <router-link
-              :to="{ name: 'ProductItem', params: { id: productData.id } }"
-            >
-              {{ productData.title }}
-            </router-link>
+            {{ productData.title }}
           </v-card-title>
         </v-img>
         <v-card-subtitle class="pb-0">
@@ -33,16 +29,16 @@
 <script>
 export default {
   name: "ProductItem",
-  props: {
-    productData: {
-      type: Object,
-      default() {
-        return {};
-      }
-    }
-  },
+  props: ["productData"],
   data() {
     return {};
+  },
+  methods: {
+    clickIt() {
+      this.$emit("openIt", this.productData.id);
+      console.log(this.productData.id);
+    }
   }
 };
+//              :to="{ name: 'ProductItem', params: { id: productData.id } }"
 </script>
