@@ -73,7 +73,7 @@
         </v-card>
       </v-col>
       <v-col>
-        <h3>{{currentUser.username}}</h3>
+        <h3>{{ currentUser.username }}</h3>
       </v-col>
     </v-row>
   </div>
@@ -104,7 +104,7 @@ export default {
   // })
   // };
   created() {
-   // this.$store.dispatch("orders/getOrders");
+    // this.$store.dispatch("orders/getOrders");
   },
   methods: {
     byMonths() {
@@ -116,7 +116,7 @@ export default {
   },
   mounted() {
     if (!this.currentUser) {
-      this.$router.push('/login');
+      this.$router.push("/login");
     }
   }
 };

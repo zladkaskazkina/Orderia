@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     sendMsg() {}
-  },
+  }
 };
 </script>
 

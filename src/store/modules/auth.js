@@ -1,17 +1,15 @@
-import AuthService from '../../services/auth-service';
+import AuthService from "../../services/auth-service";
 
-const user = JSON.parse(localStorage.getItem('user'));
+const user = JSON.parse(localStorage.getItem("user"));
 const initialState = user
   ? { status: { loggedIn: true }, user }
   : { status: { loggedIn: false }, user: null };
 
-
-  
-  const state = initialState;
-  const getters = {};
-  const actions = {
-    login({ commit }, user) {
-      /*return AuthService.login(user).then(
+const state = initialState;
+const getters = {};
+const actions = {
+  login({ commit }, user) {
+    /*return AuthService.login(user).then(
         user => {
           commit('loginSuccess', user);
           return Promise.resolve(user);
@@ -21,24 +19,21 @@ const initialState = user
           return Promise.reject(error);
         }
       );*/
-      
-      let authResponse = AuthService.login(user);
-      if(authResponse !== null)
-      {
-          commit('loginSuccess', authResponse);
-          return authResponse;
-      }
-      else
-      {
-          commit('loginFailure');
-          return null;
-      }
-    },
-    logout({ commit }) {
-      AuthService.logout();
-      commit('logout');
+
+    let authResponse = AuthService.login(user);
+    if (authResponse !== null) {
+      commit("loginSuccess", authResponse);
+      return authResponse;
+    } else {
+      commit("loginFailure");
+      return null;
     }
-   /* register({ commit }, user) {
+  },
+  logout({ commit }) {
+    AuthService.logout();
+    commit("logout");
+  }
+  /* register({ commit }, user) {
       return AuthService.register(user).then(
         response => {
           commit('registerSuccess');
@@ -50,34 +45,33 @@ const initialState = user
         }
       );
     }*/
-  };
+};
 
-  const mutations = {
-    loginSuccess(state, user) {
-      state.status.loggedIn = true;
-      state.user = user;
-    },
-    loginFailure(state) {
-      state.status.loggedIn = false;
-      state.user = null;
-    },
-    logout(state) {
-      state.status.loggedIn = false;
-      state.user = null;
-    },
-    registerSuccess(state) {
-      state.status.loggedIn = false;
-    },
-    registerFailure(state) {
-      state.status.loggedIn = false;
-    }
-  };
+const mutations = {
+  loginSuccess(state, user) {
+    state.status.loggedIn = true;
+    state.user = user;
+  },
+  loginFailure(state) {
+    state.status.loggedIn = false;
+    state.user = null;
+  },
+  logout(state) {
+    state.status.loggedIn = false;
+    state.user = null;
+  },
+  registerSuccess(state) {
+    state.status.loggedIn = false;
+  },
+  registerFailure(state) {
+    state.status.loggedIn = false;
+  }
+};
 
 export default {
   namespaced: true,
   state,
   getters,
   actions,
-  mutations,
-}
-
+  mutations
+};

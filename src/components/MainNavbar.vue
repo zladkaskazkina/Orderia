@@ -30,14 +30,8 @@
             v-bind:close-on-content-click="false"
             v-model="menu"
           >
-          
             <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                depressed
-                color="transparent"
-                v-bind="attrs"
-                v-on="on"
-              >
+              <v-btn depressed color="transparent" v-bind="attrs" v-on="on">
                 <v-icon x-large class="ikona-user" color="black"
                   >mdi-account-circle</v-icon
                 >
@@ -75,21 +69,21 @@ export default {
   name: "MainNavbar",
   data() {
     return {
-      menu: false,
+      menu: false
     };
-  },
+  }
   // mounted() {
   //   UserService.getUserMenu().then(
   //     response => {
   //       this.menu = response.data;
   //     },
-        //   error => {
-        //         this.menu =
-        //           (error.response && error.response.data) ||
-        //           error.message ||
-        //           error.toString();
-        //         }
-        // )
+  //   error => {
+  //         this.menu =
+  //           (error.response && error.response.data) ||
+  //           error.message ||
+  //           error.toString();
+  //         }
+  // )
   // }
 };
 </script>

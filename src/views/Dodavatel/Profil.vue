@@ -265,7 +265,7 @@ export default {
   name: "Profil",
   props: ["id"],
   components: {
-    ImageUploader: ImageUploader,
+    ImageUploader: ImageUploader
   },
 
   data() {
@@ -309,27 +309,25 @@ export default {
       category: ["Trvanlive", "Maso", "Mlecne vyrobky", "Ovoce", "Zelenina"]
     };
   },
-    watch:{
+  watch: {
     avatar: {
       handler: function() {
-        this.saved = false
+        this.saved = false;
       },
       deep: true
     }
   },
   methods: {
     uploadImage() {
-      this.saving = true
-      setTimeout(() => this.savedAvatar(), 1000)
+      this.saving = true;
+      setTimeout(() => this.savedAvatar(), 1000);
     },
     savedAvatar() {
-      this.saving = false
-      this.saved = true
+      this.saving = false;
+      this.saved = true;
     }
-  },
-}
+  }
+};
 </script>
 
-
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

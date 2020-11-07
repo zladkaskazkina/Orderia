@@ -56,14 +56,14 @@ export default {
       userID: null,
       category: "food",
       userEmail: "",
-      items: ["Jídlo", "Drogerie", "Hračky", "Item 4"],
+      items: ["Jídlo", "Drogerie", "Hračky", "Item 4"]
     };
   },
   methods: {
     submitForm() {
       console.log(this.userBrand);
-    },
-  },
+    }
+  }
 };
 </script>
 

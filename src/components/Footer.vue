@@ -73,7 +73,5 @@ export default {
   font-size: 12px;
   justify-content: center;
   display: grid;
-  }
-
-
+}
 </style>
