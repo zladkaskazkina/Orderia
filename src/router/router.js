@@ -53,7 +53,10 @@ const routes = [
     path: "/produkty",
     name: "Products",
     meta: { layout: ProfilLayout },
-    component: Products
+    component: Products,
+    props: {
+      role: this.$store.users.user.role
+    }
   },
   {
     path: "/produkty/novy",
@@ -112,6 +115,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
-
 
 export default router;

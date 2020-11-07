@@ -23,19 +23,19 @@
 <style lang="scss" scoped></style>
 <script>
 export default {
-  name: "PurSidebar",
+  name: "Sidebar",
   data() {
     return {
       links: [
         { text: "Hlavni", route: "/odberatel" },
-        { text: "Muj profil", route: "/odberatel/profil" },
-        { text: "Objednavky", route: "/odberatel/objednavky" },
-        { text: "Sortiment", route: "/odberatel/sortiment" },
-        { text: "Partneři", route: "/odberatel/partneri" },
-        { text: "Statistiky", route: "/odberatel/statistiky" },
-        { text: "Reklamace", route: "/odberatel/reklamace" }
-      ]
+        { text: "Muj profil", route: "/profil" },
+        { text: "Objednavky", route: "/objednavky" },
+        { text: "Produkty", route: "/produkty" },
+        { text: "Partneři", route: "/partneri" },
+        { text: "Statistiky", route: "/statistiky" },
+        { text: "Reklamace", route: "/reklamace" },
+      ],
     };
-  }
+  },
 };
 </script>

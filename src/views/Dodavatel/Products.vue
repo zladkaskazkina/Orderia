@@ -10,7 +10,7 @@
         right
         class="btn--float"
         router
-        to="/dodavatel/produkty/novy"
+        to="/produkty/novy"
       >
         <v-icon>mdi-plus</v-icon>
       </v-btn>
@@ -33,28 +33,29 @@ import ProductCard from "@/components/ProductCard.vue";
 export default {
   name: "Products",
   components: { ProductCard },
+  props: ["role"],
   data() {
     return {
       fab: false,
       hidden: false,
-      tabs: null
+      tabs: null,
     };
   },
   computed: {
     products() {
       return this.$store.state.products.products;
-    }
+    },
   },
   mounted() {
-    this.$store.dispatch("products/getProducts/");
+    this.$store.dispatch(`${this.role}/products/getProducts/`);
   },
   methods: {
     openItem(event) {
       console.log(event.id + " is clicked");
       const id = event.id;
       this.$router.push({ path: `/dodavatel/produkty/${id}` });
-    }
-  }
+    },
+  },
 };
 </script>
 
