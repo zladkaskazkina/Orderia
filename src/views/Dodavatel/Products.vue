@@ -38,13 +38,13 @@ export default {
     return {
       fab: false,
       hidden: false,
-      tabs: null,
+      tabs: null
     };
   },
   computed: {
     products() {
       return this.$store.state.products.products;
-    },
+    }
   },
   mounted() {
     this.$store.dispatch(`${this.role}/products/getProducts/`);
@@ -54,8 +54,8 @@ export default {
       console.log(event.id + " is clicked");
       const id = event.id;
       this.$router.push({ path: `/dodavatel/produkty/${id}` });
-    },
-  },
+    }
+  }
 };
 </script>
 

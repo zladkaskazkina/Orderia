@@ -36,9 +36,7 @@
           >Registrovat se</v-btn
         >
         <v-spacer></v-spacer>
-        <v-btn color="success" @click="submitForm"
-          >Přihlásit se</v-btn
-        >
+        <v-btn color="success" @click="submitForm">Přihlásit se</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>
@@ -46,16 +44,16 @@
 <style lang="scss" scoped></style>
 
 <script>
-import User from '../models/user';
+import User from "../models/user";
 import { email, required, minLength } from "vuelidate/lib/validators";
 export default {
   name: "Login",
   data() {
     return {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       showPassword: false,
-      category: "food",
+      category: "food"
     };
   },
   validations: {
@@ -92,22 +90,21 @@ export default {
         }, 500);
       }
 
-      if (this.email && this.password){
+      if (this.email && this.password) {
         let user = new User(this.email, this.password);
         this.$store.dispatch("auth/login", user);
 
         let loggedIn = this.$store.state.auth.status.loggedIn;
-        if(loggedIn){
+        if (loggedIn) {
           this.$router.push("/dashboard");
           console.log("joo");
-        }
-        else{
+        } else {
           console.log("nee");
         }
       }
-    } 
+    }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 label {

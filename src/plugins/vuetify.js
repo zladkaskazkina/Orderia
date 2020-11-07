@@ -8,12 +8,12 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
-    primary: '#EBDDCF',
-    secondary: '#c6d6d0',
-    error: '#082940',
-    info: '#d4dfe6',
-    success: '#c1922d'
-  },
-},
-},
+        primary: "#EBDDCF",
+        secondary: "#c6d6d0",
+        error: "#082940",
+        info: "#d4dfe6",
+        success: "#c1922d"
+      }
+    }
+  }
 });

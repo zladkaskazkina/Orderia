@@ -7,8 +7,6 @@ import products from "./modules/products";
 import auth from "./modules/auth";
 import cart from "./modules/cart";
 
-
-
 Vue.use(Vuex, axios);
 
 export const store = new Vuex.Store({
@@ -20,7 +18,7 @@ export const store = new Vuex.Store({
     users,
     products,
     auth,
-    cart,
+    cart
   },
   getters: {}
 });

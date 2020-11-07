@@ -33,9 +33,9 @@ export default {
         { text: "Produkty", route: "/produkty" },
         { text: "Partneři", route: "/partneri" },
         { text: "Statistiky", route: "/statistiky" },
-        { text: "Reklamace", route: "/reklamace" },
-      ],
+        { text: "Reklamace", route: "/reklamace" }
+      ]
     };
-  },
+  }
 };
 </script>

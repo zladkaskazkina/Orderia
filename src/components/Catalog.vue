@@ -2,11 +2,11 @@
   <div></div>
 </template>
 <script>
-import ProductItem from ProductItem;
+import ProductItem from "ProductItem";
 export default {
   name: Catalog,
 
-  props: {},
+  props: [],
   data() {
     return {
       products:[
