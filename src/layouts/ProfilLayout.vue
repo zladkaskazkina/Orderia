@@ -1,7 +1,6 @@
 <template>
   <v-main>
-    <SupSidebar v-if="role === 'dodavatel'" />
-    <PurSidebar v-else-if="role === 'odberatel'" />
+    <Sidebar />
     <v-app-bar clipped-left app>
       <v-spacer></v-spacer>
       <v-toolbar-title
@@ -21,14 +20,12 @@
 </template>
 <script>
 import Footer from "../components/Footer";
-import SupSidebar from "../components/SupSidebar";
-import PurSidebar from "../components/PurSidebar";
+import Sidebar from "../components/Sidebar";
 
 export default {
   name: "StartLayout",
   components: {
-    SupSidebar,
-    PurSidebar,
+    Sidebar,
     Footer
   },
   data() {

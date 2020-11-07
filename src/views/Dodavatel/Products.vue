@@ -20,7 +20,7 @@
         v-for="product in products"
         :key="product.id"
         :productData="product"
-        cols="4"
+        cols="3"
         @click="openItem"
       />
     </v-row>
@@ -46,7 +46,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch("products/getProducts");
+    this.$store.dispatch("products/getProducts/");
   },
   methods: {
     openItem(event) {

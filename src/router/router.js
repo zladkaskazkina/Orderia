@@ -5,7 +5,7 @@ import Home from "../views/Home";
 import Login from "../views/Login";
 import Registration from "../views/Registration";
 import OrderItem from "../views/Dodavatel/OrderItem";
-import Dodavatel from "../views/Dodavatel";
+import Dashboard from "../views/Dashboard";
 import Products from "../views/Dodavatel/Products";
 import ProductItem from "../views/Dodavatel/ProductItem";
 import Partneri from "../views/Partneri";
@@ -14,10 +14,6 @@ import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
 import AddProduct from "../views/Dodavatel/AddProduct";
 import Profil from "../views/Dodavatel/Profil";
-import Odberatel from "../views/Odberatel/Odberatel";
-import OrderList from "../views/Odberatel/OrderList";
-import Partners from "../views/Odberatel/Partneri";
-import Sortiment from "../views/Odberatel/Sortiment";
 
 // Layouts
 import StartLayout from "../layouts/StartLayout";
@@ -48,91 +44,66 @@ const routes = [
 
   // Dodavatel
   {
-    path: "/dodavatel",
-    name: "Dodavatel",
+    path: "/dashboard",
+    name: "Dashboard",
     meta: { layout: ProfilLayout },
-    component: Dodavatel
+    component: Dashboard
   },
   {
-    path: "/dodavatel/produkty",
+    path: "/produkty",
     name: "Products",
     meta: { layout: ProfilLayout },
     component: Products
   },
   {
-    path: "/dodavatel/produkty/novy",
+    path: "/produkty/novy",
     name: "AddProduct",
     meta: { layout: ProfilLayout },
     component: AddProduct
   },
   {
-    path: "/dodavatel/produkty/:id",
+    path: "/produkty/:id",
     name: "ProductItem",
     meta: { layout: ProfilLayout },
     component: ProductItem,
     props: true
   },
   {
-    path: "/dodavatel/partneri",
+    path: "/partneri",
     name: "Partneri",
     meta: { layout: ProfilLayout },
     component: Partneri
   },
   {
-    path: "/dodavatel/objednavky",
+    path: "/objednavky",
     name: "Objednavky",
     meta: { layout: ProfilLayout },
     component: Objednavky
   },
   {
-    path: "/dodavatel/objednavky/:id",
+    path: "/objednavky/:id",
     name: "OrderItem",
     meta: { layout: ProfilLayout },
     component: OrderItem,
     props: true
   },
   {
-    path: "/dodavatel/reklamace",
+    path: "/reklamace",
     name: "Reklamace",
     meta: { layout: ProfilLayout },
     component: Reklamace
   },
   {
-    path: "/dodavatel/statistiky",
+    path: "/statistiky",
     name: "Statistiky",
     meta: { layout: ProfilLayout },
     component: Statistiky
   },
   {
-    path: "/dodavatel/profil",
+    path: "/profil",
     name: "Profil",
     meta: { layout: ProfilLayout },
     component: Profil
-  },
-  // Odberatel
-  {
-    path: "/odberatel/objednavky",
-    name: "OrderList",
-    meta: { layout: ProfilLayout },
-    component: OrderList
-  },
-  {
-    path: "/odberatel",
-    name: "Odberatel",
-    meta: { layout: ProfilLayout },
-    component: Odberatel
-  },
-  {
-    path: "/odberatel/partneri",
-    name: "Partners",
-    meta: { layout: ProfilLayout },
-    component: Partners
-  },
-  {
-    path: "/odberatel/sortiment",
-    name: "Sortiment",
-    meta: { layout: ProfilLayout },
-    component: Sortiment
   }
 ];
 
