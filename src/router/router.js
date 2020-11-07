@@ -14,6 +14,7 @@ import Reklamace from "../views/Dodavatel/Reklamace";
 import Statistiky from "../views/Dodavatel/Statistiky";
 import AddProduct from "../views/Dodavatel/AddProduct";
 import Profil from "../views/Dodavatel/Profil";
+import Cart from "../views/Cart";
 
 // Layouts
 import StartLayout from "../layouts/StartLayout";
@@ -108,6 +109,12 @@ const routes = [
     name: "Profil",
     meta: { layout: ProfilLayout },
     component: Profil
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    meta: { layout: ProfilLayout },
+    component: Cart
   }
 ];
 

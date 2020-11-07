@@ -98,7 +98,7 @@ export default {
 
         let loggedIn = this.$store.state.auth.status.loggedIn;
         if(loggedIn){
-          this.$router.push("/dodavatel");
+          this.$router.push("/dashboard");
           console.log("joo");
         }
         else{

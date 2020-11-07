@@ -4,6 +4,8 @@
     <!-- v-show="!products.length" -->
     <p>Váš košík je prázdný!</p>
 
+    <div> {{ cart }}</div>
+
     <table class="cart-list">
       <!-- v-show="products.length" -->
       <thead>
@@ -15,20 +17,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr v-for="product in cart.cart" v-bind:key="product.id">
           <td>
-            <!-- {{ product.id }} -->
+            {{ product.id }}
           </td>
           <td>
-            <!-- {{ product.title }} -->
+            {{ product.title }}
           </td>
           <td>
-            <!-- {{ product.price }} -->
+            {{ product.price }}
           </td>
           <td>
-            <v-text-field outlined number label="Množství">
+            {{ product.quantity }}
+            <!-- <v-text-field outlined number label="Množství"> -->
               <!-- :value="product.quantity" -->
-            </v-text-field>
+            <!-- </v-text-field> -->
           </td>
           <td>
             <!-- total price per product? -->
@@ -47,6 +50,8 @@
         </td>
       </tfoot>
     </table>
+    <v-btn @click="addTest">Pridat produkt</v-btn>
+
 
     <v-btn>
       <!-- v-show="products.length" -->
@@ -68,6 +73,13 @@ export default {
     return {};
   },
   computed: {
+    cart() {
+      console.log(this.$store.state.cart);
+      return this.$store.state.cart;
+    }
+
+
+
     // total(){
     //   return this.products.reduce((total, product) =>{
     //     return total + product.price * product.quantity
@@ -79,6 +91,16 @@ export default {
     // checkout() {
     //   alert('Celková částka k zaplacení je CZK' + this.total)
     // }
+    addTest() {
+      console.log('Test');
+      this.$store.dispatch(`cart/addProduct`,  {
+             id: 3,
+             title: "Jahoda",
+             price: 129,
+             quantity: 1
+         });
+      
+    }
   }
 };
 </script>
