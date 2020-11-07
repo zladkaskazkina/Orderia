@@ -1,7 +1,59 @@
 <template>
-  <div>
-    <!--  -->
-  </div>
+  <v-container>
+    <h3>Objednávka</h3>
+    <!-- v-show="!products.length" -->
+    <p>Váš košík je prázdný!</p>
+
+    <table class="cart-list">
+      <!-- v-show="products.length" -->
+      <thead>
+        <tr>
+          <td>Kód</td>
+          <td>Název</td>
+          <td>Cena</td>
+          <td>Množství</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <!-- {{ product.id }} -->
+          </td>
+          <td>
+            <!-- {{ product.title }} -->
+          </td>
+          <td>
+            <!-- {{ product.price }} -->
+          </td>
+          <td>
+            <v-text-field outlined number label="Množství">
+              <!-- :value="product.quantity" -->
+            </v-text-field>
+          </td>
+          <td>
+            <!-- total price per product? -->
+          </td>
+          <td>
+            <!-- delete item -->
+            <v-btn icon ripple> <v-icon>mdi-delete</v-icon></v-btn>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td><strong>Total</strong></td>
+        <td>
+          CZK
+          <!-- {{ total }} -->
+        </td>
+      </tfoot>
+    </table>
+
+    <v-btn>
+      <!-- v-show="products.length" -->
+      <!-- @click="checkout" -->
+      Potvrdit objednávku
+    </v-btn>
+  </v-container>
 </template>
 
 <script>
@@ -9,15 +61,25 @@
 //
 
 export default {
-  name: "Products",
+  name: "Cart",
   components: {},
   props: [""],
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    // total(){
+    //   return this.products.reduce((total, product) =>{
+    //     return total + product.price * product.quantity
+    //   }, 0)
+    // }
+  },
   mounted() {},
-  methods: {}
+  methods: {
+    // checkout() {
+    //   alert('Celková částka k zaplacení je CZK' + this.total)
+    // }
+  }
 };
 </script>
 

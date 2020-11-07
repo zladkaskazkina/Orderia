@@ -70,14 +70,27 @@
 }
 </style>
 <script>
+//import UserService from '../services/user.service';
 export default {
   name: "MainNavbar",
   data() {
     return {
       menu: false,
-      offset: true,
     };
-  }
+  },
+  // mounted() {
+  //   UserService.getUserMenu().then(
+  //     response => {
+  //       this.menu = response.data;
+  //     },
+        //   error => {
+        //         this.menu =
+        //           (error.response && error.response.data) ||
+        //           error.message ||
+        //           error.toString();
+        //         }
+        // )
+  // }
 };
 </script>
 <style lang="scss" scoped>

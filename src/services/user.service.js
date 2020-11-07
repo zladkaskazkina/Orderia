@@ -1,22 +1,16 @@
-import axios from "axios";
-import authHeader from './auth-header';
+// import axios from "axios";
+// import authHeader from "./auth-header";
 
-const_API_URL = "http://localhost:8080/api/test/";
+// const_API_URL = "http://localhost:8080/api/test/";
 
-class UserService {
-    getPublicContent() {
-        return axios.get(API_URL + "all");
-    }
+// class UserService {
+//   getPublicContent() {
+//     return axios.get(API_URL + "all");
+//   }
 
+//   getUserMenu() {
+//     return axios.get(API_URL + "user", { headers: authHeader() });
+//   }
+// }
 
-    getUserMenu() {
-      return axios.get(API_URL + 'user', { headers: authHeader() });
-    }
-
-   /* getBuyerMenu() {
-        return axios.get(API_URL + 'buyer', { headers: authHeader() });
-    }*/
-
-}
-
-export default new UserService();
+// export default new UserService();
