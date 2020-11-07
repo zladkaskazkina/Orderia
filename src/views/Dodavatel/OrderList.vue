@@ -19,11 +19,12 @@
         :search="search"
         @click:row="openOrder"
       >
-        <template v-slot:[`item.actions`]="{ item }">
-          <v-icon small class="mr-2" @click="editItem(item)">
+        <template>
+          <!-- v-slot:[`item.actions`]="{ item }" -->
+          <v-icon small class="mr-2">
             mdi-pencil
           </v-icon>
-          <v-icon small @click="deleteItem(item)">
+          <v-icon small>
             mdi-delete
           </v-icon>
         </template>
@@ -50,7 +51,7 @@ export default {
         },
         { text: "ID", value: "id" },
         { text: "Datum", value: "created_at" },
-        { text: "Odberatel", value: "customer" }, //jen pro dodavatele
+        { text: "Odberatel", value: "customerID" }, //jen pro dodavatele
         { text: "Hodnota", value: "total_price" },
         { text: "Status", value: "status" },
         { text: "Actions", value: "actions", sortable: false }
@@ -59,20 +60,22 @@ export default {
   },
   methods: {
     openOrder(event) {
-      console.log(event.id + " is clicked");
-      const id = event.id;
       // this.$router.push({ name: "objednavky", params: { id } }); // -> /user/123
-      this.$router.push({ path: `/dodavatel/objednavky/${id}` });
-      console.log(event.shopName + " is clicked");
+      // this.$router.push({ path: `/dodavatel/objednavky/${id}` });
+      this.$router.push({
+        name: "OrderItem",
+        params: { id: event.id, role: this.role }
+      });
+      console.log(event.id + " is clicked");
     }
   },
   computed: {
     orders() {
-      return this.$store.state.orders.orders;
+      return this.$store.state[`${this.role}Orders`].orders;
     }
   },
   mounted() {
-    this.$store.dispatch(`${this.role}/orders/getOrders/`);
+    this.$store.dispatch(`${this.role}Orders/getOrders`);
   }
 };
 </script>

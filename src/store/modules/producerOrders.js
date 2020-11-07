@@ -7,19 +7,19 @@ const state = {
 const getters = {};
 const actions = {
   getOrders({ commit }) {
-    axios.get("http://localhost:3000/api/orders/").then(response => {
+    axios.get("http://localhost:3000/orders/").then(response => {
       commit("SET_ORDERS", response.data);
     });
   },
   getOrder({ commit }, orderId) {
-    axios.get(`http://localhost:3000/api/orders/${orderId}`).then(response => {
+    axios.get(`http://localhost:3000/orders/${orderId}`).then(response => {
       commit("SET_ORDER", response.data);
     });
   },
 
   acceptOrder({ commit }, id) {
     axios
-      .patch(`http://localhost:3000/api/orders/${id}`, { status: "prijata" })
+      .patch(`http://localhost:3000/orders/${id}`, { status: "prijata" })
       .then(response => {
         commit("ACCEPT_ORDER", response.data);
       });
@@ -27,7 +27,7 @@ const actions = {
   },
   rejectOrder({ commit }, id) {
     axios
-      .patch(`http://localhost:3000/api/orders/${id}`, { status: "zamitnuta" })
+      .patch(`http://localhost:3000/orders/${id}`, { status: "zamitnuta" })
       .then(response => {
         commit("REJECT_ORDER", response.data);
       });

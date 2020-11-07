@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
-import orders from "./modules/orders";
+import producerOrders from "./modules/producerOrders";
 import users from "./modules/users";
 import producerProducts from "./modules/producerProducts";
 import buyerProducts from "./modules/buyerProducts";
@@ -17,7 +17,7 @@ export const store = new Vuex.Store({
   modules: {
     producerProducts,
     buyerProducts,
-    orders,
+    producerOrders,
     users,
     auth,
     cart

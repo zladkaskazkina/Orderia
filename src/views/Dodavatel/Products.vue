@@ -20,7 +20,6 @@
         v-for="product in products"
         :key="product.id"
         :productData="product"
-        cols="3"
         @openIt="openItem"
       />
     </v-row>

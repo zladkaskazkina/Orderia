@@ -83,7 +83,11 @@ const routes = [
     path: "/objednavky",
     name: "Objednavky",
     meta: { layout: ProfilLayout },
-    component: Objednavky
+    component: Objednavky,
+    props: {
+      role: "producer"
+      // role: this.$store.users.user.role
+    }
   },
   {
     path: "/objednavky/:id",
