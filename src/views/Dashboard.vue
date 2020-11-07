@@ -72,6 +72,9 @@
           <v-btn class="ma-2" outlined color="indigo"> Vice </v-btn>
         </v-card>
       </v-col>
+      <v-col>
+        <h3>{{currentUser.username}}</h3>
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -89,13 +92,19 @@ export default {
     value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8],
     width: 2
   }),
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
+    }
+  },
+
   // computed() {
   //   ...mapState({
   //   // ...
   // })
   // };
   created() {
-    this.$store.dispatch("orders/getOrders");
+   // this.$store.dispatch("orders/getOrders");
   },
   methods: {
     byMonths() {
@@ -103,6 +112,11 @@ export default {
     },
     byWeeks() {
       //
+    }
+  },
+  mounted() {
+    if (!this.currentUser) {
+      this.$router.push('/login');
     }
   }
 };

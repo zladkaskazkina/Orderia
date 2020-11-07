@@ -13,9 +13,6 @@ class UserService {
       return axios.get(API_URL + 'user', { headers: authHeader() });
     }
 
-   /* getBuyerMenu() {
-        return axios.get(API_URL + 'buyer', { headers: authHeader() });
-    }*/
 
 }
 
