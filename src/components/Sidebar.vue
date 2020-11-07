@@ -27,15 +27,15 @@ export default {
   data() {
     return {
       links: [
-        { text: "Hlavni", route: "/odberatel" },
+        { text: "Hlavni", route: "/dashboard" },
         { text: "Muj profil", route: "/profil" },
         { text: "Objednavky", route: "/objednavky" },
         { text: "Produkty", route: "/produkty" },
         { text: "Partneři", route: "/partneri" },
         { text: "Statistiky", route: "/statistiky" },
-        { text: "Reklamace", route: "/reklamace" },
-      ],
+        { text: "Reklamace", route: "/reklamace" }
+      ]
     };
-  },
+  }
 };
 </script>

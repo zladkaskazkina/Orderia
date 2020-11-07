@@ -55,7 +55,7 @@ const routes = [
     meta: { layout: ProfilLayout },
     component: Products,
     props: {
-      role: "dodavatel"
+      role: "producer"
       // role: this.$store.users.user.role
     }
   },
