@@ -116,7 +116,6 @@ export default {
     },
 
     removeTest(productId) {
-      console.log(productId);
       this.$store.dispatch(`cart/removeProduct`, productId);
     },
 

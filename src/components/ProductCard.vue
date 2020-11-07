@@ -21,6 +21,9 @@
         <div>ID produktu: {{ productData.id }}</div>
         <div>Skladem: {{ productData.stock }} Ks</div>
       </v-card-text>
+      <v-row no-gutters justify="end" class="pa-4">
+        <v-btn dark><v-icon small dark>mdi-cart-outline</v-icon></v-btn>
+      </v-row>
     </v-card>
   </v-col>
 </template>

@@ -29,14 +29,6 @@ const actions = {
   clearCart({ commit }) {
     commit("CLEAR_CART");
   }
-
-  //  removeFromCart() {
-
-  //  },
-
-  //  clearCartItems() {
-
-  //  }
 };
 
 const mutations = {
