@@ -1,32 +1,32 @@
 
 
- const state = {
-     cart: [
-         {
-             id: 1,
-             title: "Rizoto",
-             price: 129,
-             quantity: 1
-         },
-         {
+const state = {
+    cart: [
+        {
+            id: 1,
+            title: "Rizoto",
+            price: 129,
+            quantity: 1
+        },
+        {
             id: 2,
             title: "Testoviny",
             price: 150,
             quantity: 1,
-         }
+        }
 
-     ],
+    ],
 
- };
+};
 
 const getters = {
 
- };
+};
 
- const actions = {
-    addProductToCart ({ commit }, { product, quantity, id }) {
-         commit('ADD_TO_CART', { product, quantity, id });
-     },
+const actions = {
+    addProduct({ commit }, product) {
+        commit('ADD_TO_CART', product);
+    },
 
     //  fetchCartItems({commit}) {
     //      axios.get(`http://localhost:3000/cart`).then(response => {
@@ -35,16 +35,35 @@ const getters = {
     //  },
 
     //  removeFromCart() {
-         
+
     //  },
 
     //  clearCartItems() {
-        
+
     //  }
 
- };
+};
 
- const mutations = {
+const mutations = {
+    ADD_TO_CART(state, product) {
+
+        let productInCart = state.cart.find(item => {
+            return item.id === product.id;
+        });
+        console.log(productInCart);
+        if (productInCart) {
+            productInCart.quantity++;
+        } else {
+            state.cart.push({
+                ...product,
+                quantity: 1
+            })
+        }
+    }
+
+
+
+
     //  ADD_TO_CART(state, {product}) {
 
     //      let productInCart = state.cart.find(item => {
@@ -68,12 +87,12 @@ const getters = {
 
     //  }
 
- };
+};
 
- export default {
+export default {
     namespaced: true,
-     state,
-     getters,
-     actions,
-     mutations
- }
+    state,
+    getters,
+    actions,
+    mutations
+}

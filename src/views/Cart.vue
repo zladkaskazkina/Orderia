@@ -28,9 +28,10 @@
             {{ product.price }}
           </td>
           <td>
-            <v-text-field outlined number label="Množství">
+            {{ product.quantity }}
+            <!-- <v-text-field outlined number label="Množství"> -->
               <!-- :value="product.quantity" -->
-            </v-text-field>
+            <!-- </v-text-field> -->
           </td>
           <td>
             <!-- total price per product? -->
@@ -49,6 +50,8 @@
         </td>
       </tfoot>
     </table>
+    <v-btn @click="addTest">Pridat produkt</v-btn>
+
 
     <v-btn>
       <!-- v-show="products.length" -->
@@ -88,6 +91,16 @@ export default {
     // checkout() {
     //   alert('Celková částka k zaplacení je CZK' + this.total)
     // }
+    addTest() {
+      console.log('Test');
+      this.$store.dispatch(`cart/addProduct`,  {
+             id: 3,
+             title: "Jahoda",
+             price: 129,
+             quantity: 1
+         });
+      
+    }
   }
 };
 </script>
