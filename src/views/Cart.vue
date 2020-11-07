@@ -1,9 +1,12 @@
 <template>
-  <div></div>
+  <div>
+    <!--  -->
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
+// pri mounted nacteme produkty ze seznamu buyer
+//
 
 export default {
   name: "Products",

@@ -17,7 +17,7 @@
         show-expand
         single-expand
         :search="search"
-        @click:row="handleClick"
+        @click:row="openOrder"
       >
         <template v-slot:[`item.actions`]="{ item }">
           <v-icon small class="mr-2" @click="editItem(item)">
@@ -37,6 +37,7 @@
 
 export default {
   name: "Objednavky",
+  props: ["role"],
   data() {
     return {
       search: "",
@@ -45,108 +46,34 @@ export default {
           text: "Faktura",
           align: "start",
           sortable: true,
-          value: "id",
+          value: "id"
         },
-        { text: "Datum", value: "date" },
-        { text: "Odberatel", value: "shopName" },
-        { text: "Termin dodani", value: "due" },
-        { text: "Hodnota", value: "total" },
+        { text: "ID", value: "id" },
+        { text: "Datum", value: "created_at" },
+        { text: "Odberatel", value: "customer" }, //jen pro dodavatele
+        { text: "Hodnota", value: "total_price" },
         { text: "Status", value: "status" },
-        { text: "Actions", value: "actions", sortable: false },
-      ],
-      orders: [
-        {
-          id: "2110202059",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2110202859",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2140202059",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2100202059",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2110205059",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2110235059",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2125202059",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2110202399",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2110402059",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-        {
-          id: "2112802059",
-          date: "21.10.2020",
-          shopName: "Rohlik",
-          due: "21.10.2020",
-          total: 4000,
-          status: "vyrizena",
-        },
-      ],
+        { text: "Actions", value: "actions", sortable: false }
+      ]
     };
   },
   methods: {
-    handleClick(event) {
+    openOrder(event) {
       console.log(event.id + " is clicked");
       const id = event.id;
       // this.$router.push({ name: "objednavky", params: { id } }); // -> /user/123
       this.$router.push({ path: `/dodavatel/objednavky/${id}` });
       console.log(event.shopName + " is clicked");
-    },
+    }
   },
+  computed: {
+    orders() {
+      return this.$store.state.orders.orders;
+    }
+  },
+  mounted() {
+    this.$store.dispatch(`${this.role}/orders/getOrders/`);
+  }
 };
 </script>
 

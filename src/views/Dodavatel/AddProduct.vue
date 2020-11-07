@@ -8,8 +8,7 @@
         <v-col>
           <div class="dropbox">
             <multiple-file></multiple-file>
-          </div>                
-        
+          </div>
         </v-col>
         <v-col offset-md="1">
           <v-row no-gutters class="mr-2">
@@ -94,25 +93,21 @@
 <script>
 import MultipleFile from "./../../components/MultipleFile.vue";
 
-
 export default {
   components: {
-    MultipleFile: MultipleFile,
+    MultipleFile: MultipleFile
   },
-  
+
   data() {
     return {
-      
       stock: ["Skladem", "Nedostupné", "Vyprodáno"],
       units: ["ks", "g", "kg", "ml", "l"],
       vat: ["15%", "21%", "10%", "bez DPH"],
       productCategories: ["trvanlivé", "mléčné", "maso"]
     };
   },
-  
-  methods: {
-    
-  }
+
+  methods: {}
 };
 </script>
 
@@ -124,5 +119,4 @@ export default {
 .alergen-box {
   border: thin 1px rgb(118, 118, 118);
 }
-
 </style>

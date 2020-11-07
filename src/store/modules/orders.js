@@ -1,35 +1,39 @@
-// import api from "../../api/axiosSettings";
+import axios from "axios";
+const state = {
+  orders: [],
+  order: null
+};
 
-// // initial state
-// const state = {
-//   all: [] // id, name, rate, disabled
-// };
+const getters = {};
+const actions = {
+  getOrders({ commit }) {
+    axios.get("http://localhost:3000/api/orders/").then(response => {
+      commit("SET_ORDERS", response.data);
+    });
+  },
+  getOrder({ commit }, orderId) {
+    axios.get(`http://localhost:3000/api/orders/${orderId}`).then(response => {
+      commit("SET_ORDER", response.data);
+    });
+  },
 
-// const getters = {};
-
-// const actions = {
-//   getOrders({ commit }) {
-//     api.apiClient
-//       .get(`/api/orders`, { crossDomain: true })
-//       .then(response => {
-//         commit("SET_ORDERS", response.data);
-//       })
-//       .catch(e => {
-//         console.log(e); /* eslint-disable-line no-console */
-//       });
-//   },
-
-//   createOrder({ commit }, payload) {
-//     api.apiClient
-//       .post(`/api/orders`, payload, { crossDomain: true })
-//       .then(response => {
-//         commit("CREATE_ORDER", response.data);
-//         console.log(response);
-//       })
-//       .catch(e => {
-//         console.log(e); /* eslint-disable-line no-console */
-//       });
-//   },
+  acceptOrder({ commit }, id) {
+    axios
+      .patch(`http://localhost:3000/api/orders/${id}`, { status: "prijata" })
+      .then(response => {
+        commit("ACCEPT_ORDER", response.data);
+      });
+    //Nebo radeji na backendu! A na frontendu jen zavolam .post(`http://localhost:3000/api/orders/${id}/acceptorder`)
+  },
+  rejectOrder({ commit }, id) {
+    axios
+      .patch(`http://localhost:3000/api/orders/${id}`, { status: "zamitnuta" })
+      .then(response => {
+        commit("REJECT_ORDER", response.data);
+      });
+    //Nebo radeji na backendu! A na frontendu jen zavolam .post(`http://localhost:3000/api/orders/${id}/rejectorder`)
+  }
+};
 
 //   updateOrder({ dispatch }, payload) {
 //     api.apiClient
@@ -68,47 +72,46 @@
 //   }
 // };
 
-// const mutations = {
-//   SET_ORDERS(state, orders) {
-//     state.all = orders.sort(function(a, b) {
-//       var nameA = a.name.toUpperCase();
-//       var nameB = b.name.toUpperCase();
-//       if (nameA < nameB) {
-//         return -1;
-//       }
-//       if (nameA > nameB) {
-//         return 1;
-//       }
-//       return 0;
-//     });
-//   },
+const mutations = {
+  SET_ORDERS(state, orders) {
+    state.orders = orders;
+  },
+  SET_ORDER(state, order) {
+    state.order = order;
+  },
+  ACCEPT_ORDER(state) {
+    state.order.status = "prijata";
+  },
+  REJECT_ORDER(state) {
+    state.order.status = "zamitnuta";
+  }
 
-//   CREATE_ORDER(state, payload) {
-//     state.all.push(payload);
-//   },
+  //   CREATE_ORDER(state, payload) {
+  //     state.all.push(payload);
+  //   },
 
-//   REMOVE_ORDER(state, id) {
-//     for (let i = 0; i < state.all.length; ++i) {
-//       if (state.all[i].id === id) {
-//         state.all.splice(i, 1);
-//         break;
-//       }
-//     }
-//   },
+  //   REMOVE_ORDER(state, id) {
+  //     for (let i = 0; i < state.all.length; ++i) {
+  //       if (state.all[i].id === id) {
+  //         state.all.splice(i, 1);
+  //         break;
+  //       }
+  //     }
+  //   },
 
-//   TOGGLE_ORDER(state, id) {
-//     for (let i = 0; i < state.all.length; ++i) {
-//       if (state.all[i].id === id) {
-//         state.all[i].disabled = !state.all[i].disabled;
-//       }
-//     }
-//   }
-// };
+  //   TOGGLE_ORDER(state, id) {
+  //     for (let i = 0; i < state.all.length; ++i) {
+  //       if (state.all[i].id === id) {
+  //         state.all[i].disabled = !state.all[i].disabled;
+  //       }
+  //     }
+  //   }
+};
 
-// export default {
-//   namespaced: true,
-//   state,
-//   getters,
-//   actions,
-//   mutations
-// };
+export default {
+  namespaced: true,
+  state,
+  getters,
+  actions,
+  mutations
+};
