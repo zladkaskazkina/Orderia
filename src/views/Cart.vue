@@ -4,6 +4,8 @@
     <!-- v-show="!products.length" -->
     <p>Váš košík je prázdný!</p>
 
+    <div> {{ cart }}</div>
+
     <table class="cart-list">
       <!-- v-show="products.length" -->
       <thead>
@@ -15,15 +17,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr v-for="product in cart.cart" v-bind:key="product.id">
           <td>
-            <!-- {{ product.id }} -->
+            {{ product.id }}
           </td>
           <td>
-            <!-- {{ product.title }} -->
+            {{ product.title }}
           </td>
           <td>
-            <!-- {{ product.price }} -->
+            {{ product.price }}
           </td>
           <td>
             <v-text-field outlined number label="Množství">
@@ -68,6 +70,13 @@ export default {
     return {};
   },
   computed: {
+    cart() {
+      console.log(this.$store.state.cart);
+      return this.$store.state.cart;
+    }
+
+
+
     // total(){
     //   return this.products.reduce((total, product) =>{
     //     return total + product.price * product.quantity

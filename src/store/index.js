@@ -5,6 +5,7 @@ import orders from "./modules/orders";
 import users from "./modules/users";
 import products from "./modules/products";
 import auth from "./modules/auth";
+import cart from "./modules/cart";
 
 
 
@@ -19,6 +20,7 @@ export const store = new Vuex.Store({
     users,
     products,
     auth,
+    cart,
   },
   getters: {}
 });
