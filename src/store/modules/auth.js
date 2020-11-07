@@ -1,16 +1,17 @@
-import AuthService from '../services/auth.service';
+import AuthService from '../../services/auth-service';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const initialState = user
   ? { status: { loggedIn: true }, user }
   : { status: { loggedIn: false }, user: null };
 
-export const auth = {
-  namespaced: true,
-  state: initialState,
-  actions: {
+
+  
+  const state = initialState;
+  const getters = {};
+  const actions = {
     login({ commit }, user) {
-      return AuthService.login(user).then(
+      /*return AuthService.login(user).then(
         user => {
           commit('loginSuccess', user);
           return Promise.resolve(user);
@@ -19,13 +20,25 @@ export const auth = {
           commit('loginFailure');
           return Promise.reject(error);
         }
-      );
+      );*/
+      
+      let authResponse = AuthService.login(user);
+      if(authResponse !== null)
+      {
+          commit('loginSuccess', authResponse);
+          return authResponse;
+      }
+      else
+      {
+          commit('loginFailure');
+          return null;
+      }
     },
     logout({ commit }) {
       AuthService.logout();
       commit('logout');
-    },
-    register({ commit }, user) {
+    }
+   /* register({ commit }, user) {
       return AuthService.register(user).then(
         response => {
           commit('registerSuccess');
@@ -36,9 +49,10 @@ export const auth = {
           return Promise.reject(error);
         }
       );
-    }
-  },
-  mutations: {
+    }*/
+  };
+
+  const mutations = {
     loginSuccess(state, user) {
       state.status.loggedIn = true;
       state.user = user;
@@ -57,6 +71,13 @@ export const auth = {
     registerFailure(state) {
       state.status.loggedIn = false;
     }
-  }
-};
+  };
+
+export default {
+  namespaced: true,
+  state,
+  getters,
+  actions,
+  mutations,
+}
 

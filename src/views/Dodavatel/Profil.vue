@@ -263,6 +263,7 @@ import ImageUploader from "./../../components/ImageUploader.vue";
 
 export default {
   name: "Profil",
+  props: ["id"],
   components: {
     ImageUploader: ImageUploader,
   },
@@ -325,8 +326,8 @@ export default {
       this.saving = false
       this.saved = true
     }
-  }
-};
+  },
+}
 </script>
 
 

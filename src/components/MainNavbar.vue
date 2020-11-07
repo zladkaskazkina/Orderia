@@ -17,6 +17,9 @@
             Přihlásit se
           </v-btn>
         </v-col>
+        <v-col cols="2" class="d-flex justify-end">
+          
+        </v-col>
       </v-row>
     </v-toolbar>
   </nav>
