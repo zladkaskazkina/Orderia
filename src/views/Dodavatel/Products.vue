@@ -21,7 +21,11 @@
         :key="product.id"
         :productData="product"
         @openIt="openItem"
+        @addItem="addTest"
       />
+    </v-row>
+    <v-row no-gutters justify="center">
+      <v-btn dark @click="goToCart">Prejit do kosiku</v-btn>
     </v-row>
   </div>
 </template>
@@ -57,6 +61,18 @@ export default {
         name: "ProductItem",
         params: { id: event, role: this.role }
       });
+    },
+
+    addTest(event) {
+      console.log(event);
+      this.$store.dispatch(`cart/addProduct`, {
+        product: event,
+        quantity: 1
+      });
+    },
+
+    goToCart() {
+      this.$router.push(`/cart`);
     }
   }
 };
