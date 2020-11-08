@@ -37,11 +37,12 @@
 
 export default {
   name: "Objednavky",
-  props: ["role"],
+  props: [""],
   data() {
     return {
       search: "",
       model: null,
+      currentUser: this.$store.state.users.loggedUser,
       entries: [],
       isLoading: false,
       headers: [
@@ -52,9 +53,9 @@ export default {
           value: "id"
         },
         { text: "ID", value: "id" },
-        { text: "Datum", value: "created_at" },
-        { text: "Odberatel", value: "customerID" }, //jen pro dodavatele
-        { text: "Hodnota", value: "total_price" },
+        { text: "Datum", value: "createdAt" },
+        { text: "Odberatel", value: "buyerID" }, //jen pro dodavatele
+        { text: "Hodnota", value: "totalPrice" },
         { text: "Status", value: "status" }
       ]
     };
@@ -65,14 +66,14 @@ export default {
       // this.$router.push({ path: `/dodavatel/objednavky/${id}` });
       this.$router.push({
         name: "OrderItem",
-        params: { id: event.id, role: this.role }
+        params: { id: event.id }
       });
       console.log(event.id + " is clicked");
     }
   },
   computed: {
     orders() {
-      return this.$store.state[`${this.role}Orders`].orders;
+      return this.$store.state[`${this.currentUser.role}Orders`].orders;
     },
     fields() {
       if (!this.model) return [];
@@ -107,21 +108,21 @@ export default {
       this.isLoading = true;
 
       // Lazily load input items
-      fetch("https://orderia/api/orders")
-        .then(res => res.json())
-        .then(res => {
-          const { count, entries } = res;
-          this.count = count;
-          this.entries = entries;
-        })
-        .catch(err => {
-          console.log(err);
-        })
-        .finally(() => (this.isLoading = false));
+      // fetch("https://orderia/api/orders")
+      //   .then(res => res.json())
+      //   .then(res => {
+      //     const { count, entries } = res;
+      //     this.count = count;
+      //     this.entries = entries;
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   })
+      //   .finally(() => (this.isLoading = false));
     }
   },
   mounted() {
-    this.$store.dispatch(`${this.role}Orders/getOrders`);
+    this.$store.dispatch(`${this.currentUser.role}Orders/getOrders`);
   }
 };
 </script>

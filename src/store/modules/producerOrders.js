@@ -7,14 +7,16 @@ const state = {
 const getters = {};
 const actions = {
   getOrders({ commit }) {
-    axios.get("http://localhost:3000/orders/").then(response => {
+    axios.get("http://localhost:3000/orders").then(response => {
       commit("SET_ORDERS", response.data);
     });
   },
-  getOrder({ commit }, orderId) {
+  getOrder(ctx, orderId) {
     console.log(orderId);
     axios.get(`http://localhost:3000/orders/${orderId}`).then(response => {
-      commit("SET_ORDER", response.data);
+      ctx.commit("SET_ORDER", response.data);
+      // return axios.get(`http://localhost:3000/users/${response.data.customerID}`);
+      ctx.dispatch("users/getUser", response.data.buyerID, { root: true });
     });
   },
 

@@ -5,7 +5,7 @@
       "title": "Risotto rajcatove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
       "price": 129,
-      "userId": "3",
+      "producerID": "3",
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
       "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
@@ -17,7 +17,7 @@
       "title": "Risotto hribkove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
       "price": 129,
-      "userId": "1",
+      "producerID": "1",
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
       "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
@@ -29,7 +29,7 @@
       "title": "Risotto dynove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
       "price": 129,
-      "userId": "3",
+      "producerID": "3",
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
       "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
@@ -41,7 +41,7 @@
       "title": "Risotto safranove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
       "price": 159,
-      "userId": "1",
+      "producerID": "1",
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
       "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
@@ -52,12 +52,12 @@
   "orders": [
     {
       "id": 1,
-      "status": "nevyrizena",
+      "status": "prijata",
       "transport_price": 50,
       "total_price": 656,
-      "userId": "3",
-      "customer": "Kosik",
-      "created_at": "2020-10-31 20:51:37",
+      "producerID": 3,
+      "buyerID": 2,
+      "createdAt": "2020-10-31 20:51:37",
       "items": [
         {
           "id": 2,
@@ -78,9 +78,9 @@
       "status": "zamitnuta",
       "transport_price": 50,
       "total_price": 656,
-      "producerID": "1",
-      "customerID": "2",
-      "created_at": "2020-10-31 20:51:37",
+      "producerID": 1,
+      "buyerID": 2,
+      "createdAt": "2020-10-31 20:51:37",
       "items": [
         {
           "id": 4,
@@ -102,9 +102,9 @@
       "status": "zamitnuta",
       "transport_price": 50,
       "total_price": 656,
-      "userId": "3",
-      "customerID": "Scuk",
-      "created_at": "2020-10-31 20:51:37",
+      "producerID": "3",
+      "buyerID": "Scuk",
+      "createdAt": "2020-10-31 20:51:37",
       "items": [
         {
           "id": 2,
@@ -124,9 +124,9 @@
       "status": "vyrizena",
       "transport_price": 50,
       "total_price": 656,
-      "userId": "1",
-      "customerID": "Kosik",
-      "created_at": "2020-10-31 20:51:37",
+      "producerID": "1",
+      "buyerID": "Kosik",
+      "createdAt": "2020-10-31 20:51:37",
       "items": [
         {
           "id": 2,
@@ -145,9 +145,9 @@
   "users": [
     {
       "id": 1,
-      "role": "dodavatel",
+      "role": "producer",
       "ico": 456789056789,
-      "company_name": "Na italske farme s.r.o.",
+      "companyName": "Na italske farme s.r.o.",
       "name": "",
       "email": "naitalskefarme@gmail.com",
       "password": "123456",
@@ -156,7 +156,7 @@
         "city": "Prague",
         "street": "Olgy Havlove",
         "number": 10,
-        "postale_code": "130 00"
+        "postaleCode": "130 00"
       },
       "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
       "web": "naitalskefarme.cz",
@@ -164,9 +164,9 @@
     },
     {
       "id": 2,
-      "role": "odberatel",
+      "role": "buyer",
       "ico": 456783756789,
-      "company_name": "Scuk",
+      "companyName": "Scuk",
       "name": "",
       "email": "naitalskefarme@gmail.com",
       "password": "534829",
@@ -175,7 +175,7 @@
         "city": "Prague",
         "street": "Olgy Havlove",
         "number": 10,
-        "postale_code": 13000
+        "postaleCode": 13000
       },
       "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
       "web": "scuk.cz",
@@ -183,9 +183,9 @@
     },
     {
       "id": 3,
-      "role": "dodavatel",
+      "role": "producer",
       "ico": 493789056789,
-      "company_name": "Nase kase s.r.o.",
+      "companyName": "Nase kase s.r.o.",
       "name": "",
       "email": "info@nasekase.com",
       "password": "123456",
@@ -194,7 +194,7 @@
         "city": "Prague",
         "street": "Olgy Havlove",
         "number": 10,
-        "postale_code": 13000
+        "postaleCode": 13000
       },
       "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
       "web": "nasekase.cz",
@@ -202,9 +202,9 @@
     },
     {
       "id": 4,
-      "role": "odberatel",
+      "role": "buyer",
       "ico": 456789196789,
-      "company_name": "Kosik",
+      "companyName": "Kosik",
       "name": "",
       "email": "info@kosik.cz",
       "password": "128556",
@@ -213,7 +213,7 @@
         "city": "Prague",
         "street": "Olgy Havlove",
         "number": 10,
-        "postale_code": 13000
+        "postaleCode": 13000
       },
       "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
       "web": "kosik.cz",
