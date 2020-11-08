@@ -12,30 +12,56 @@
         </v-col>
         <v-col offset-md="1">
           <v-row no-gutters class="mr-2">
-            <v-text-field label="Název" outlined></v-text-field>
+            <v-text-field
+              label="Název"
+              outlined
+              v-model="product.title"
+            ></v-text-field>
           </v-row>
           <v-row no-gutters class="mr-2">
-            <v-textarea label="Popis" outlined counter="300"></v-textarea>
+            <v-textarea
+              label="Popis"
+              outlined
+              counter="300"
+              v-model="product.description"
+            ></v-textarea>
           </v-row>
         </v-col>
       </v-row>
       <v-row no-gutters class="ma-2">
         <v-col>
-          <v-select :items="stock" label="Dostupnost" outlined></v-select>
-          <v-text-field label="Skladové zásoby" outlined></v-text-field>
+          <!-- <v-select :items="stock" label="Dostupnost" outlined></v-select> -->
+          <v-text-field
+            label="Skladové zásoby"
+            outlined
+            v-model.number="product.stock"
+          ></v-text-field>
+          <v-text-field
+            label="ProducerId"
+            outlined
+            v-model.number="product.producerID"
+          ></v-text-field>
         </v-col>
 
         <v-col offset-md="1" class="mr-2">
           <v-row no-gutters>
-            <v-textarea label="Složení" outlined></v-textarea>
+            <v-textarea
+              label="Složení"
+              outlined
+              v-model="product.ingredients"
+            ></v-textarea>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <v-text-field label="Objem" outlined></v-text-field>
+              <v-text-field
+                label="Vaha"
+                outlined
+                v-model.number="product.weight"
+              ></v-text-field>
             </v-col>
-            <v-col md="3" class="ml-4">
+            <!-- <v-col md="3" class="ml-4">
               <v-select :items="units" label="Jednotka" outlined></v-select>
-            </v-col>
+            </v-col> -->
           </v-row>
         </v-col>
       </v-row>
@@ -43,15 +69,19 @@
       <v-row no-gutters class="ma-2">
         <v-col>
           <span class="font-weight-medium">Cena</span>
-          <v-text-field label="Základní cena" outlined></v-text-field>
-          <v-text-field label="Cena VIP partnera" outlined></v-text-field>
-          <v-text-field label="Individuální cena" outlined></v-text-field>
-          <v-select :items="vat" label="DPH" outlined></v-select>
-          <v-text-field label="Doporučená cena" outlined></v-text-field>
+          <v-text-field
+            label="Základní cena"
+            outlined
+            v-model.number="product.price"
+          ></v-text-field>
+          <!-- <v-text-field label="Cena VIP partnera" outlined></v-text-field>
+          <v-text-field label="Individuální cena" outlined></v-text-field> -->
+          <!-- <v-select :items="vat" label="DPH" outlined></v-select> -->
+          <!-- <v-text-field label="Doporučená cena" outlined></v-text-field> -->
         </v-col>
 
         <v-col offset-md="1" class="mr-2">
-          <span class="font-weight-medium">Alergeny</span>
+          <!-- <span class="font-weight-medium">Alergeny</span>
           <v-sheet outlined rounded class="px-4 alergen-box">
             <v-row no-gutters>
               <v-col>
@@ -73,18 +103,23 @@
                 <v-checkbox label="14"></v-checkbox>
               </v-col>
             </v-row>
-          </v-sheet>
+          </v-sheet> -->
 
           <div class="my-8">
             <v-select
               :items="productCategories"
               label="Kategorie"
-              multiple
               outlined
+              v-model="product.type"
             ></v-select>
-            <v-text-field label="Čárový kód" outlined></v-text-field>
+            <!-- <v-text-field label="Čárový kód" outlined></v-text-field> -->
           </div>
         </v-col>
+      </v-row>
+      <v-row no-gutters justify="center">
+        <v-btn dark @click="saveNewProduct(product)">
+          Uložit
+        </v-btn>
       </v-row>
     </v-card>
   </v-container>
@@ -100,14 +135,38 @@ export default {
 
   data() {
     return {
-      stock: ["Skladem", "Nedostupné", "Vyprodáno"],
-      units: ["ks", "g", "kg", "ml", "l"],
-      vat: ["15%", "21%", "10%", "bez DPH"],
-      productCategories: ["trvanlivé", "mléčné", "maso"]
+      product: {
+        id: null,
+        title: "",
+        image: "",
+        price: null,
+        producerID: "",
+        description: "",
+        ingredients: "",
+        type: "",
+        weight: null,
+        stock: null
+      },
+
+      // stock: ["Skladem", "Nedostupné", "Vyprodáno"],
+      // units: ["ks", "g", "kg", "ml", "l"],
+      // vat: ["15%", "21%", "10%", "bez DPH"],
+      productCategories: [
+        "trvanlive jidlo",
+        "mlecne vyrobky",
+        "ovoce",
+        "zelenina"
+      ]
     };
   },
 
-  methods: {}
+  methods: {
+    saveNewProduct(product) {
+      
+      this.$store.dispatch(`producerProducts/createProduct`, product)
+      console.log(this.product);
+    }
+  }
 };
 </script>
 

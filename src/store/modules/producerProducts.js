@@ -20,6 +20,7 @@ const actions = {
   createProduct({ commit }) {
     axios.post(`http://localhost:3000/products/`).then(response => {
       commit("CREATE_PRODUCT", response.data);
+      console.log('Test');
     });
   }
 };
@@ -32,6 +33,7 @@ const mutations = {
   },
   CREATE_PRODUCT(state, product) {
     state.products.push(product);
+    console.log('test');
   }
 };
 export default {
