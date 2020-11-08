@@ -23,7 +23,6 @@
         :items="orders"
         :items-per-page="15"
         class="elevation-1 ma-5"
-        show-expand
         single-expand
         :search="search"
         @click:row="openOrder"

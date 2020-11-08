@@ -1,26 +1,33 @@
+/* eslint-disable */
 <template>
   <v-col cols="3">
-    <v-card class="mx-auto" max-width="400" @click="clickIt">
-      <v-img
-        class="white--text align-end"
-        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-        max-height="200px"
-        :src="productData.image"
-      >
-        <v-card-title>
-          {{ productData.title }}
-        </v-card-title>
-      </v-img>
-      <v-card-subtitle class="pb-0">
-        {{ productData.price }} Kč
-      </v-card-subtitle>
+    <v-card class="mx-auto" max-width="400">
+      <div @click="clickIt">
+        <v-img
+          class="white--text align-end"
+          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+          max-height="200px"
+          :src="productData.image"
+        >
+          <v-card-title>
+            {{ productData.title }}
+          </v-card-title>
+        </v-img>
+        <v-card-subtitle class="pb-0">
+          {{ productData.price }} Kč
+        </v-card-subtitle>
 
-      <v-card-text class="text--primary">
-        <div>{{ productData.description }}</div>
+        <v-card-text class="text--primary">
+          <div>{{ productData.description }}</div>
 
-        <div>ID produktu: {{ productData.id }}</div>
-        <div>Skladem: {{ productData.stock }} Ks</div>
-      </v-card-text>
+          <div>ID produktu: {{ productData.id }}</div>
+          <div>Skladem: {{ productData.stock }} Ks</div>
+        </v-card-text>
+      </div>
+
+      <v-row no-gutters justify="end" class="pa-4">
+        <v-btn dark @click="addTest"><v-icon small dark>mdi-cart-outline</v-icon></v-btn>
+      </v-row>
     </v-card>
   </v-col>
 </template>
@@ -35,7 +42,17 @@ export default {
     clickIt() {
       this.$emit("openIt", this.productData.id);
       console.log(this.productData.id);
+    },
+
+     addTest() {
+      console.log(this.productData);
+      this.$store.dispatch(`cart/addProduct`, {
+        product: this.productData,
+        quantity: 1
+      })
     }
-  }
+  },
+
+   
 };
 </script>
