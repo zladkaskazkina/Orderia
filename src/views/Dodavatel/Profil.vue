@@ -1,10 +1,10 @@
 <template>
   <div>
     <v-container>
-      <v-card>
-        <v-card-title class="justify-center pa-4">
+      <v-card class="ma-10">
+        <v-card-title class="justify-center pa-5">
           <h3>
-            Nastaveni profilu
+            Profil
           </h3>
         </v-card-title>
         <v-row no-gutters class="pa-6 mx-4">
@@ -254,6 +254,7 @@
             Ulozit zmeny
           </v-btn>
         </v-row>
+        <v-btn fab large absolute top right class="success"><v-icon>mdi-pencil</v-icon></v-btn>
       </v-card>
     </v-container>
   </div>
