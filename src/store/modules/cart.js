@@ -1,59 +1,59 @@
 const state = {
-  cart: [] 
+    cart: []
 };
 
 const getters = {};
 
 const actions = {
-  addProduct({ commit }, product) {
-    commit("ADD_TO_CART", product);
-  },
+    addProduct({ commit }, product) {
+        commit("ADD_TO_CART", product);
+    },
 
-  removeProduct({ commit }, product) {
-    commit("REMOVE_FROM_CART", product);
-  },
+    removeProduct({ commit }, product) {
+        commit("REMOVE_FROM_CART", product);
+    },
 
-  clearCart({ commit }) {
-    commit("CLEAR_CART");
-  }
+    clearCart({ commit }) {
+        commit("CLEAR_CART");
+    }
 };
 
 const mutations = {
-  ADD_TO_CART(state, {product, quantity}) {
-      state.cart.push({
-          product,
-          quantity
-      })
+    ADD_TO_CART(state, { product, quantity }) {
+        
+      let productInCart = state.cart.find(item => {
+           return item.product.id === product.id;
+       });
+       console.log(productInCart);
+    if (productInCart) {
+           productInCart.quantity += quantity;
+           return;
+        } else {
+            state.cart.push({
+                product,
+              quantity: 1
+            });
+        }
     },
-    // let productInCart = state.cart.find(item => {
-    //   return item.id === product.id;
-    // });
-    // console.log(productInCart);
-    // if (productInCart) {
-    //   productInCart.quantity++;
-    // } else {
-    //   state.cart.push({
-    //     ...product,
-    //     quantity: 1
-    //   });
-    // }
 
-  REMOVE_FROM_CART(state, productId) {
-    state.cart = state.cart.filter(item => {
-      return item.id !== productId;
-    });
-  },
+        REMOVE_FROM_CART(state, product) {
+            console.log(state.cart);
+            state.cart = state.cart.filter(item => {
+                return item.product.id !== product.id;
+            });
+            console.log();
+        },
 
-  CLEAR_CART(state) {
-      state.cart = [];
-  }
-};
+        CLEAR_CART(state) {
+            state.cart = [];
+        }
+    };
 
 
-export default {
-  namespaced: true,
-  state,
-  getters,
-  actions,
-  mutations
-};
+    export default {
+        namespaced: true,
+        state,
+        getters,
+        actions,
+        mutations
+    };

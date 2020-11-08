@@ -13,6 +13,7 @@
         <div>{{ product.description }}</div>
         <div>Slozeni: {{ product.ingredients }}</div>
       </v-card-text>
+      <v-btn fab absolute bottom right large @click="editProduct"><v-icon>mdi-pencil</v-icon></v-btn>
     </v-card>
     <div></div>
   </div>
@@ -36,6 +37,10 @@ export default {
     this.$store.dispatch(`${this.role}Products/getProduct`, this.id);
     console.log(this.$route.params);
   },
-  methods: {}
+  methods: {
+    editProduct() {
+    }
+    // editace produktu -  presmerovani na novou stranku?
+  }
 };
 </script>

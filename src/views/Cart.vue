@@ -7,12 +7,11 @@
 
       <!-- v-show="!products.length" -->
       <!-- <p>Váš košík je prázdný!</p> -->
-      <div> {{cart}}</div>
      
     
-      <table class="pa-5 cart-list">
+      <table class="pa-5 cart-list" v-for="product in cart.cart" v-bind:key="product.id">
         <!-- v-show="products.length" -->
-        <thead class="cart-list--head">
+        <thead class="cart-list--head" >
           <tr>
             <td>Kód</td>
             <td>Název</td>
@@ -21,15 +20,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="product in cart.cart" v-bind:key="product.id">
+          <tr>
             <td>
-              {{ product.id }}
+              {{ product.product.id }}
             </td>
             <td>
-              {{ product.title }}
+              {{ product.product.title }}
             </td>
             <td>
-              {{ product.price }}
+              {{ product.product.price }}
             </td>
             <td>
               {{ product.quantity }}
@@ -42,7 +41,7 @@
             </td>
             <td>
               <!-- delete item -->
-              <v-btn icon ripple @click="removeTest(product.id)">
+              <v-btn icon ripple @click="removeTest(item)">
                 <v-icon>mdi-delete</v-icon></v-btn
               >
             </td>
@@ -82,13 +81,16 @@ export default {
   components: {},
   props:[],
   data() {
-    return {};
+    return {
+    };
   },
   computed: {
     cart() {
       console.log(this.$store.state.cart);
-      return this.$store.state.cart;
-    }
+       return this.$store.state.cart;
+     },
+
+     
 
     // total(){
     //   return this.products.reduce((total, product) =>{
@@ -96,21 +98,15 @@ export default {
     //   }, 0)
     // }
   },
-  mounted() {},
   methods: {
     // checkout() {
     //   alert('Celková částka k zaplacení je CZK' + this.total)
     // }
-    // addTest() {
-    //   console.log("Test");
-      // this.$store.dispatch(`cart/addProduct`, {
-      //   product,
-      //   quantity
-      // });
+    
     
 
-    removeTest(productId) {
-      this.$store.dispatch(`cart/removeProduct`, productId);
+    removeTest(product) {
+      this.$store.dispatch(`cart/removeProduct`, product);
     },
 
     clearCart() {
