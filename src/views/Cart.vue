@@ -7,7 +7,7 @@
 
       <!-- v-show="!products.length" -->
       <!-- <p>Váš košík je prázdný!</p> -->
-
+      <div> {{cart}}</div>
      
     
       <table class="pa-5 cart-list">
@@ -58,10 +58,6 @@
       </table>
 
       <v-row no-gutters class="pa-5">
-      <v-btn @click="addTest">Pridat produkt</v-btn>
-      </v-row>
-
-      <v-row no-gutters class="pa-5">
       <v-btn @click="clearCart">Vymazat kosik</v-btn>
       </v-row>
 
@@ -84,7 +80,7 @@
 export default {
   name: "Cart",
   components: {},
-  props: [""],
+  props:[],
   data() {
     return {};
   },
@@ -105,15 +101,13 @@ export default {
     // checkout() {
     //   alert('Celková částka k zaplacení je CZK' + this.total)
     // }
-    addTest() {
-      console.log("Test");
-      this.$store.dispatch(`cart/addProduct`, {
-        id: 3,
-        title: "Jahoda",
-        price: 129,
-        quantity: 1
-      });
-    },
+    // addTest() {
+    //   console.log("Test");
+      // this.$store.dispatch(`cart/addProduct`, {
+      //   product,
+      //   quantity
+      // });
+    
 
     removeTest(productId) {
       this.$store.dispatch(`cart/removeProduct`, productId);
@@ -123,9 +117,7 @@ export default {
       console.log("Mazu vse");
        this.$store.dispatch(`cart/clearCart`);
     }
-
-
-  }
+  },
 };
 </script>
 
