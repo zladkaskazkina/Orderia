@@ -86,7 +86,25 @@
         </v-data-table>
       </div>
       <v-row no-gutters justify="end" class="pa-4">
-        <v-btn color="error" @click="acceptOrder">PŘIJMOUT OBJEDNÁVKU</v-btn>
+        <v-btn
+          v-if="role === 'producer'"
+          outlined
+          color="error"
+          @click="rejectOrder"
+        >
+          ODMITNOUT OBJEDNÁVKU
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-btn
+          v-if="role === 'producer'"
+          color="error"
+          v-on:click="acceptOrder"
+        >
+          PŘIJMOUT OBJEDNÁVKU
+        </v-btn>
+        <v-btn v-if="role === 'buyer'" color="error" @click="deleteOrder">
+          ZRISIT OBJEDNÁVKU
+        </v-btn>
       </v-row>
     </v-card>
   </v-container>
@@ -132,8 +150,15 @@ export default {
       // Pass the element id here
       this.$htmlToPaper("printMe");
     },
-    acceptOder() {
-      this.$store.dispatch("orders/acceptOrder", this.id);
+    acceptOrder() {
+      this.$store.dispatch(`${this.role}Orders/acceptOrder`, this.id);
+      console.log(this.id);
+    },
+    rejectOrder() {
+      this.$store.dispatch(`${this.role}Orders/rejectOrder`, this.id);
+    },
+    deleteOrder() {
+      this.$store.dispatch(`${this.role}Orders/deleteOrder`, this.id);
     }
   }
 };

@@ -2,12 +2,21 @@
   <div>
     <v-card>
       <v-card-title>
-        <v-text-field
-          v-model="search"
-          label="Search"
-          single-line
-          hide-details
-        ></v-text-field>
+        <v-autocomplete
+          v-model="model"
+          :items="items"
+          :loading="isLoading"
+          :search-input.sync="search"
+          color="black"
+          hide-no-data
+          hide-selected
+          item-text="Description"
+          item-value="API"
+          label="Hledat dle jmena"
+          placeholder="Zaznete psat jmeno"
+          prepend-icon="mdi-database-search"
+          return-object
+        ></v-autocomplete>
       </v-card-title>
       <v-data-table
         :headers="headers"
@@ -19,15 +28,6 @@
         :search="search"
         @click:row="openOrder"
       >
-        <template>
-          <!-- v-slot:[`item.actions`]="{ item }" -->
-          <v-icon small class="mr-2">
-            mdi-pencil
-          </v-icon>
-          <v-icon small>
-            mdi-delete
-          </v-icon>
-        </template>
       </v-data-table>
     </v-card>
   </div>
@@ -42,6 +42,9 @@ export default {
   data() {
     return {
       search: "",
+      model: null,
+      entries: [],
+      isLoading: false,
       headers: [
         {
           text: "Faktura",
@@ -53,8 +56,7 @@ export default {
         { text: "Datum", value: "created_at" },
         { text: "Odberatel", value: "customerID" }, //jen pro dodavatele
         { text: "Hodnota", value: "total_price" },
-        { text: "Status", value: "status" },
-        { text: "Actions", value: "actions", sortable: false }
+        { text: "Status", value: "status" }
       ]
     };
   },
@@ -72,6 +74,51 @@ export default {
   computed: {
     orders() {
       return this.$store.state[`${this.role}Orders`].orders;
+    },
+    fields() {
+      if (!this.model) return [];
+
+      return Object.keys(this.model).map(key => {
+        return {
+          key,
+          value: this.model[key] || "n/a"
+        };
+      });
+    },
+    items() {
+      return this.entries.map(entry => {
+        const Description =
+          entry.Description.length > this.descriptionLimit
+            ? entry.Description.slice(0, this.descriptionLimit) + "..."
+            : entry.Description;
+
+        return Object.assign({}, entry, { Description });
+      });
+    }
+  },
+
+  watch: {
+    search() {
+      // Items have already been loaded
+      if (this.items.length > 0) return;
+
+      // Items have already been requested
+      if (this.isLoading) return;
+
+      this.isLoading = true;
+
+      // Lazily load input items
+      fetch("https://orderia/api/orders")
+        .then(res => res.json())
+        .then(res => {
+          const { count, entries } = res;
+          this.count = count;
+          this.entries = entries;
+        })
+        .catch(err => {
+          console.log(err);
+        })
+        .finally(() => (this.isLoading = false));
     }
   },
   mounted() {

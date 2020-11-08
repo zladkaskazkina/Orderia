@@ -12,29 +12,24 @@ const actions = {
     });
   },
   getOrder({ commit }, orderId) {
-    console.log(orderId);
     axios.get(`http://localhost:3000/orders/${orderId}`).then(response => {
       commit("SET_ORDER", response.data);
     });
   },
 
-  acceptOrder({ commit }, id) {
+  changeOrder({ commit }, changedOrder) {
     axios
-      .patch(`http://localhost:3000/orders/${id}`, { status: "prijata" })
+      .put(`http://localhost:3000/orders/${changedOrder.id}`, changedOrder)
       .then(response => {
         commit("ACCEPT_ORDER", response.data);
       });
     //Nebo radeji na backendu! A na frontendu jen zavolam .post(`http://localhost:3000/api/orders/${id}/acceptorder`)
     alert("Objednavka byla prijata");
   },
-  rejectOrder({ commit }, id) {
-    axios
-      .patch(`http://localhost:3000/orders/${id}`, { status: "zamitnuta" })
-      .then(response => {
-        commit("REJECT_ORDER", response.data);
-      });
-    alert("Objednavka byla odmitnuta");
-    //Nebo radeji na backendu! A na frontendu jen zavolam .post(`http://localhost:3000/api/orders/${id}/rejectorder`)
+  deleteOrder({ commit }, orderId) {
+    axios.delete(`http://localhost:3000/orders/${orderId}`).then(response => {
+      commit("DELETE_ORDER", response.data);
+    });
   }
 };
 
@@ -87,6 +82,9 @@ const mutations = {
   },
   REJECT_ORDER(state) {
     state.order.status = "zamitnuta";
+  },
+  DELETE_ORDER(state) {
+    state.order = "";
   }
 
   //   CREATE_ORDER(state, payload) {

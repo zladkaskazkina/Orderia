@@ -36,7 +36,6 @@
       "weight": 0.22,
       "stock": 3
     },
-
     {
       "id": 4,
       "title": "Risotto safranove",
@@ -60,35 +59,64 @@
       "customer": "Kosik",
       "created_at": "2020-10-31 20:51:37",
       "items": [
-        { "id": 2, "title": "Risotto safranove", "quantity": 3, "price": 159 },
-        { "id": 1, "title": "Risotto rajcatove", "quantity": 1, "price": 129 }
+        {
+          "id": 2,
+          "title": "Risotto safranove",
+          "quantity": 3,
+          "price": 159
+        },
+        {
+          "id": 1,
+          "title": "Risotto rajcatove",
+          "quantity": 1,
+          "price": 129
+        }
       ]
     },
     {
       "id": 2,
-      "status": "nevyrizena",
+      "status": "zamitnuta",
       "transport_price": 50,
       "total_price": 656,
       "producerID": "1",
       "customerID": "2",
       "created_at": "2020-10-31 20:51:37",
       "items": [
-        { "id": 4, "title": "Risotto safranove", "quantity": 3, "price": 159 },
-        { "id": 2, "title": "Risotto rajcatove", "quantity": 1, "price": 129 }
+        {
+          "id": 4,
+          "title": "Risotto safranove",
+          "quantity": 3,
+          "price": 159
+        },
+        {
+          "id": 2,
+          "title": "Risotto rajcatove",
+          "quantity": 1,
+          "price": 129
+        }
       ],
       "payment_method": "prevodem"
     },
     {
       "id": 3,
-      "status": "ceka na schvaleni",
+      "status": "zamitnuta",
       "transport_price": 50,
       "total_price": 656,
       "userId": "3",
       "customerID": "Scuk",
       "created_at": "2020-10-31 20:51:37",
       "items": [
-        { "id": 2, "title": "Risotto safranove", "quantity": 3, "price": 159 },
-        { "title": "Risotto rajcatove", "quantity": 1, "price": 129 }
+        {
+          "id": 2,
+          "title": "Risotto safranove",
+          "quantity": 3,
+          "price": 159
+        },
+        {
+          "title": "Risotto rajcatove",
+          "quantity": 1,
+          "price": 129
+        }
       ]
     },
     {
@@ -100,8 +128,17 @@
       "customerID": "Kosik",
       "created_at": "2020-10-31 20:51:37",
       "items": [
-        { "id": 2, "title": "Risotto safranove", "quantity": 3, "price": 159 },
-        { "title": "Risotto rajcatove", "quantity": 1, "price": 129 }
+        {
+          "id": 2,
+          "title": "Risotto safranove",
+          "quantity": 3,
+          "price": 159
+        },
+        {
+          "title": "Risotto rajcatove",
+          "quantity": 1,
+          "price": 129
+        }
       ]
     }
   ],
