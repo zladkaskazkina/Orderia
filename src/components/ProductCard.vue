@@ -26,7 +26,9 @@
       </div>
 
       <v-row no-gutters justify="end" class="pa-4">
-        <v-btn dark @click="clickToCart"><v-icon small dark>mdi-cart-outline</v-icon></v-btn>
+        <v-btn dark @click="clickToCart"
+          ><v-icon small dark>mdi-cart-outline</v-icon></v-btn
+        >
       </v-row>
     </v-card>
   </v-col>
@@ -44,14 +46,10 @@ export default {
       console.log(this.productData.id);
     },
 
-  
-
     clickToCart() {
       console.log(this.productData);
       this.$emit("addItem", this.productData);
     }
-  },
-
-   
+  }
 };
 </script>

@@ -2,7 +2,7 @@
   <v-container fluid class="product-form">
     <v-card class="pa-4">
       <v-card-title class="headline ma-2 error--text">
-        <h3>Nový produkt</h3>
+        Nový produkt
       </v-card-title>
       <v-row no-gutters class="ma-2" style="height: 300px">
         <v-col>

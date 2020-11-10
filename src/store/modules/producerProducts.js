@@ -3,9 +3,14 @@ export const namespaced = true;
 
 const state = {
   products: [],
-  product: null
+  product: {}
 };
-const getters = {};
+const getters = {
+  getProduct: state => {
+    console.log("jsem tu");
+    return state.product;
+  }
+};
 const actions = {
   getProducts({ commit }) {
     axios.get("http://localhost:3000/products/").then(response => {
@@ -13,9 +18,12 @@ const actions = {
     });
   },
   getProduct({ commit }, productId) {
-    axios.get(`http://localhost:3000/products/${productId}`).then(response => {
-      commit("SET_PRODUCT", response.data);
-    });
+    console.log("zacatek get produkt");
+    return axios
+      .get(`http://localhost:3000/products/${productId}`)
+      .then(response => {
+        commit("SET_PRODUCT", response.data);
+      });
   },
   createProduct({ commit }) {
     axios.post(`http://localhost:3000/products/`).then(response => {

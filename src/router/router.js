@@ -8,6 +8,7 @@ import OrderItem from "../views/Dodavatel/OrderItem";
 import Dashboard from "../views/Dashboard";
 import Products from "../views/Dodavatel/Products";
 import ProductItem from "../views/Dodavatel/ProductItem";
+import EditProduct from "../views/EditProduct";
 import Partneri from "../views/Partneri";
 import Objednavky from "../views/Dodavatel/OrderList";
 import Reklamace from "../views/Dodavatel/Reklamace";
@@ -72,6 +73,12 @@ const routes = [
     meta: { layout: ProfilLayout },
     component: ProductItem,
     props: true
+  },
+  {
+    path: "/produkty/:id/upravit",
+    name: "EditProduct",
+    meta: { layout: ProfilLayout },
+    component: EditProduct
   },
   {
     path: "/partneri",

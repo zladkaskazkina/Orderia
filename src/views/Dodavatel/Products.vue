@@ -36,9 +36,10 @@ import ProductCard from "@/components/ProductCard.vue";
 export default {
   name: "Products",
   components: { ProductCard },
-  props: ["role"],
+  props: [""],
   data() {
     return {
+      currentUser: this.$store.state.users.loggedUser,
       fab: false,
       hidden: false,
       tabs: null
@@ -46,11 +47,11 @@ export default {
   },
   computed: {
     products() {
-      return this.$store.state[`${this.role}Products`].products;
+      return this.$store.state[`${this.currentUser.role}Products`].products;
     }
   },
   mounted() {
-    this.$store.dispatch(`${this.role}Products/getProducts`, null, {
+    this.$store.dispatch(`${this.currentUser.role}Products/getProducts`, null, {
       root: true
     });
   },
@@ -59,7 +60,7 @@ export default {
       console.log(event);
       this.$router.push({
         name: "ProductItem",
-        params: { id: event, role: this.role }
+        params: { id: event }
       });
     },
 

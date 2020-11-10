@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card v-if="product" class="ma-5 pa-10">
+    <v-card v-if="product" class="mx-auto my-10 pa-10" max-width="600">
       <v-img
         :src="product.image"
         class="white--text align-end"
@@ -13,7 +13,9 @@
         <div>{{ product.description }}</div>
         <div>Slozeni: {{ product.ingredients }}</div>
       </v-card-text>
-      <v-btn fab absolute bottom right large @click="editProduct"><v-icon>mdi-pencil</v-icon></v-btn>
+      <v-btn fab absolute bottom right large @click="goToEditor"
+        ><v-icon>mdi-pencil</v-icon></v-btn
+      >
     </v-card>
     <div></div>
   </div>
@@ -24,21 +26,29 @@
 
 export default {
   name: "ProductItem",
-  props: ["id", "role"],
+  props: ["id", ""],
   data() {
-    return {};
+    return {
+      currentUser: this.$store.state.users.loggedUser
+    };
   },
   computed: {
     product() {
-      return this.$store.state[`${this.role}Products`].product;
+      return this.$store.state[`${this.currentUser.role}Products`].product;
     }
   },
   mounted() {
-    this.$store.dispatch(`${this.role}Products/getProduct`, this.id);
-    console.log(this.$route.params);
+    this.$store.dispatch(
+      `${this.currentUser.role}Products/getProduct`,
+      this.id
+    );
   },
   methods: {
-    editProduct() {
+    goToEditor() {
+      this.$router.push({
+        name: "EditProduct",
+        params: { id: this.id }
+      });
     }
     // editace produktu -  presmerovani na novou stranku?
   }
