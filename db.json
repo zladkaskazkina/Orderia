@@ -47,6 +47,30 @@
       "type": "trvanlive jidlo",
       "weight": 0.22,
       "stock": 3
+    },
+    {
+      "id": 5,
+      "title": "Jahodový džem",
+      "image": "",
+      "price": 103,
+      "producerID": 158,
+      "description": "Hromada jahod ve skleničce",
+      "ingredients": "Jahody a cukr",
+      "type": "trvanlive jidlo",
+      "weight": 500,
+      "stock": 1
+    },
+    {
+      "id": 6,
+      "title": "Pivino",
+      "image": "",
+      "price": 85,
+      "producerID": 111111,
+      "description": "Pivo a vino v jednom",
+      "ingredients": "Vino a chmel",
+      "type": "trvanlive jidlo",
+      "weight": 250,
+      "stock": 10
     }
   ],
   "orders": [

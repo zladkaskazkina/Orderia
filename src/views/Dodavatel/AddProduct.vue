@@ -165,6 +165,8 @@ export default {
       
       this.$store.dispatch(`producerProducts/createProduct`, product)
       console.log(this.product);
+      alert(`Nový produkt ${product.title} byl přidán.`);
+      this.$router.push("/produkty");
     }
   }
 };
