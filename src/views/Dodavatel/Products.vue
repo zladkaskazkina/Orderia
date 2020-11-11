@@ -25,7 +25,7 @@
       />
     </v-row>
     <v-row no-gutters justify="center">
-      <v-btn dark @click="goToCart">Prejit do kosiku</v-btn>
+      <v-btn dark @click="goToCart">{{ cartItemCount }} Prejit do kosiku</v-btn>
     </v-row>
   </div>
 </template>
@@ -48,6 +48,10 @@ export default {
   computed: {
     products() {
       return this.$store.state[`${this.currentUser.role}Products`].products;
+    },
+
+    cartItemCount() {
+      return this.$store.getters["cart/countItems"];
     }
   },
   mounted() {
@@ -70,11 +74,14 @@ export default {
         product: event,
         quantity: 1
       });
+      //alert("Zboží bylo přidáno do košíku!");
     },
 
     goToCart() {
       this.$router.push(`/cart`);
-    }
+    },
+
+
   }
 };
 </script>
