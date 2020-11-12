@@ -18,7 +18,6 @@ const actions = {
     });
   },
   getProduct({ commit }, productId) {
-    console.log("zacatek get produkt");
     return axios
       .get(`http://localhost:3000/products/${productId}`)
       .then(response => {
@@ -26,10 +25,17 @@ const actions = {
       });
   },
   createProduct({ commit }, product) {
-    axios.post(`http://localhost:3000/products/`,product).then(response => {
+    axios.post(`http://localhost:3000/products/`, product).then(response => {
       commit("CREATE_PRODUCT", response.data);
-      console.log('Test');
     });
+  },
+  editProduct({ commit }, payload) {
+    axios
+      .patch(`http://localhost:3000/products/${payload.id}`, payload)
+      .then(response => {
+        commit("EDIT_PRODUCT", response.data);
+        console.log("The product was edit");
+      });
   }
 };
 const mutations = {
@@ -41,7 +47,9 @@ const mutations = {
   },
   CREATE_PRODUCT(state, product) {
     state.products.push(product);
-    console.log('test');
+  },
+  EDIT_PRODUCT() {
+    //
   }
 };
 export default {

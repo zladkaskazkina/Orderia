@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const state = {
-    cart: []
+  cart: []
 };
 
 const getters = {
@@ -25,21 +25,21 @@ const getters = {
 };
 
 const actions = {
-    addProduct({ commit }, product) {
-        commit("ADD_TO_CART", product);
-    },
+  addProduct({ commit }, product) {
+    commit("ADD_TO_CART", product);
+  },
 
-    removeProduct({ commit }, product) {
-        commit("REMOVE_FROM_CART", product);
-    },
+  removeProduct({ commit }, product) {
+    commit("REMOVE_FROM_CART", product);
+  },
 
-    clearCart({ commit }) {
-        commit("CLEAR_CART");
-    },
+  clearCart({ commit }) {
+    commit("CLEAR_CART");
+  },
 
-    increaseQuant({ commit }, id) {
-        commit("INCREASE_QUANTITY", id);
-    },
+  increaseQuant({ commit }, id) {
+    commit("INCREASE_QUANTITY", id);
+  },
 
     decreaseQuant({ commit }, id) {
         commit("DECREASE_QUANTITY", id);
@@ -95,22 +95,22 @@ const mutations = {
         }
     },
 
-    REMOVE_FROM_CART(state, product) {
-        state.cart = state.cart.filter(item => {
-            return item.product.id !== product;
-        });
-    },
+  REMOVE_FROM_CART(state, product) {
+    state.cart = state.cart.filter(item => {
+      return item.product.id !== product;
+    });
+  },
 
-    CLEAR_CART(state) {
-        state.cart = [];
-    },
+  CLEAR_CART(state) {
+    state.cart = [];
+  },
 
-    INCREASE_QUANTITY(state, id) {
-        let productInCart = state.cart.find( item => {
-            return item.product.id === id;
-        })
-        productInCart.quantity++;
-    },
+  INCREASE_QUANTITY(state, id) {
+    let productInCart = state.cart.find(item => {
+      return item.product.id === id;
+    });
+    productInCart.quantity++;
+  },
 
     DECREASE_QUANTITY(state, id) {
         let productInCart = state.cart.find( item => {
@@ -130,11 +130,10 @@ const mutations = {
     
 };
 
-
 export default {
-    namespaced: true,
-    state,
-    getters,
-    actions,
-    mutations
+  namespaced: true,
+  state,
+  getters,
+  actions,
+  mutations
 };

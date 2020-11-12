@@ -167,7 +167,7 @@ export default {
   methods: {
     saveNewProduct(product) {
       product.producerID = `${this.$store.state.users.loggedUser.id}`;
-      this.$store.dispatch(`producerProducts/createProduct`, product)
+      this.$store.dispatch(`producerProducts/createProduct`, product);
       console.log(this.product);
       alert(`Nový produkt ${product.title} byl přidán.`);
       this.$router.push("/produkty");
