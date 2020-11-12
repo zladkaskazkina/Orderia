@@ -50,6 +50,10 @@ export default {
   computed: {
     products() {
       return this.$store.state[`${this.currentUser.role}Products`].products;
+    },
+
+    cartItemCount() {
+      return this.$store.getters["cart/countItems"];
     }
   },
   mounted() {
@@ -66,12 +70,13 @@ export default {
       });
     },
 
-    addTest(event) {
-      console.log(event);
+    addTest(event, quantity) {
+      console.log(quantity);
       this.$store.dispatch(`cart/addProduct`, {
         product: event,
-        quantity: 1
+        quantity: quantity
       });
+      //alert("Zboží bylo přidáno do košíku!");
     },
 
     goToCart() {

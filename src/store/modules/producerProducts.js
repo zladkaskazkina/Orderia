@@ -25,8 +25,8 @@ const actions = {
         commit("SET_PRODUCT", response.data);
       });
   },
-  createProduct({ commit }) {
-    axios.post(`http://localhost:3000/products/`).then(response => {
+  createProduct({ commit }, product) {
+    axios.post(`http://localhost:3000/products/`, product).then(response => {
       commit("CREATE_PRODUCT", response.data);
     });
   },

@@ -26,9 +26,14 @@
       </div>
 
       <v-row no-gutters justify="end" class="pa-4">
+        <v-col>
+        <v-text-field label="Mnozstvi" outlined type="number" v-model.number="quantity"></v-text-field>
+        </v-col>
+        <v-col class="pl-10">
         <v-btn dark @click="clickToCart"
           ><v-icon small dark>mdi-cart-outline</v-icon></v-btn
         >
+        </v-col>
       </v-row>
     </v-card>
   </v-col>
@@ -38,7 +43,9 @@ export default {
   name: "ProductItem",
   props: ["productData"],
   data() {
-    return {};
+    return {
+      quantity: 1,
+    };
   },
   methods: {
     clickIt() {
@@ -48,7 +55,7 @@ export default {
 
     clickToCart() {
       console.log(this.productData);
-      this.$emit("addItem", this.productData);
+      this.$emit("addItem", this.productData, this.quantity);
     }
   }
 };

@@ -1,17 +1,20 @@
 <template>
   <div>
     <v-card class="ma-5 pa-10">
-    <v-card-title class="pa-5">
-      <h3>Objednávka</h3>
-    </v-card-title>
+      <v-card-title class="pa-5">
+        <h3>Objednávka</h3>
+      </v-card-title>
 
       <!-- v-show="!products.length" -->
       <!-- <p>Váš košík je prázdný!</p> -->
-     
-    
-      <table class="pa-5 cart-list" v-for="product in cart.cart" v-bind:key="product.id">
+
+      <table
+        class="pa-5 cart-list"
+        v-for="product in cart.cart"
+        v-bind:key="product.id"
+      >
         <!-- v-show="products.length" -->
-        <thead class="cart-list--head" >
+        <thead class="cart-list--head">
           <tr>
             <td>Kód</td>
             <td>Název</td>
@@ -32,16 +35,21 @@
             </td>
             <td>
               {{ product.quantity }}
-              <!-- <v-text-field outlined number label="Množství"> -->
-              <!-- :value="product.quantity" -->
-              <!-- </v-text-field> -->
             </td>
             <td>
               <!-- total price per product? -->
             </td>
             <td>
+              <v-btn icon ripple @click="increaseQuant(product.product.id)">
+                <v-icon>mdi-plus-circle-outline</v-icon>
+              </v-btn>
+              <v-btn icon ripple @click="decreaseQuant(product.product.id)">
+                <v-icon>mdi-minus-circle-outline</v-icon>
+              </v-btn>
+            </td>
+            <td>
               <!-- delete item -->
-              <v-btn icon ripple @click="removeTest(item)">
+              <v-btn icon ripple @click="removeTest(product.product.id)">
                 <v-icon>mdi-delete</v-icon></v-btn
               >
             </td>
@@ -57,17 +65,16 @@
       </table>
 
       <v-row no-gutters class="pa-5">
-      <v-btn @click="clearCart">Vymazat kosik</v-btn>
+        <v-btn @click="clearCart">Vymazat kosik</v-btn>
       </v-row>
 
       <v-row no-gutters class="pa-5">
-      <v-btn>
-        <!-- v-show="products.length" -->
-        <!-- @click="checkout" -->
-        Potvrdit objednávku
-      </v-btn>
+        <v-btn>
+          <!-- v-show="products.length" -->
+          <!-- @click="checkout" -->
+          Potvrdit objednávku
+        </v-btn>
       </v-row>
-
     </v-card>
   </div>
 </template>
@@ -79,18 +86,15 @@
 export default {
   name: "Cart",
   components: {},
-  props:[],
+  props: [],
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
     cart() {
       console.log(this.$store.state.cart);
-       return this.$store.state.cart;
-     },
-
-     
+      return this.$store.state.cart;
+    }
 
     // total(){
     //   return this.products.reduce((total, product) =>{
@@ -102,8 +106,6 @@ export default {
     // checkout() {
     //   alert('Celková částka k zaplacení je CZK' + this.total)
     // }
-    
-    
 
     removeTest(product) {
       this.$store.dispatch(`cart/removeProduct`, product);
@@ -111,14 +113,22 @@ export default {
 
     clearCart() {
       console.log("Mazu vse");
-       this.$store.dispatch(`cart/clearCart`);
+      this.$store.dispatch(`cart/clearCart`);
+    },
+
+    increaseQuant(id) {
+      this.$store.dispatch(`cart/increaseQuant`, id);
+    },
+
+    decreaseQuant(id) {
+      this.$store.dispatch(`cart/decreaseQuant`, id);
     }
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.cart-list{
+.cart-list {
   width: 100%;
   border: 1px solid grey;
 }
