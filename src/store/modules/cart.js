@@ -47,7 +47,7 @@ const mutations = {
         } else {
             state.cart.push({
                 product,
-                quantity: 1
+                quantity: quantity
             });
         }
     },

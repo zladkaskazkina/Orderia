@@ -34,13 +34,15 @@
           <v-text-field
             label="Skladové zásoby"
             outlined
+            type="number"
             v-model.number="product.stock"
           ></v-text-field>
-          <v-text-field
+          <!-- <v-text-field
             label="ProducerId"
             outlined
             v-model.number="product.producerID"
           ></v-text-field>
+          producerID ziskavat z backendu ve chvili, kdy je zalogovany user, doplnit!!! -->
         </v-col>
 
         <v-col offset-md="1" class="mr-2">
@@ -56,6 +58,7 @@
               <v-text-field
                 label="Vaha"
                 outlined
+                type="number"
                 v-model.number="product.weight"
               ></v-text-field>
             </v-col>
@@ -72,6 +75,7 @@
           <v-text-field
             label="Základní cena"
             outlined
+            type="number"
             v-model.number="product.price"
           ></v-text-field>
           <!-- <v-text-field label="Cena VIP partnera" outlined></v-text-field>
@@ -162,7 +166,7 @@ export default {
 
   methods: {
     saveNewProduct(product) {
-      
+      product.producerID = `${this.$store.state.users.loggedUser.id}`;
       this.$store.dispatch(`producerProducts/createProduct`, product)
       console.log(this.product);
       alert(`Nový produkt ${product.title} byl přidán.`);
