@@ -22,6 +22,7 @@
 
           <div>ID produktu: {{ productData.id }}</div>
           <div>Skladem: {{ productData.stock }} Ks</div>
+          <div><strong>Dodavatel: {{ productData.producerID}} </strong></div>
         </v-card-text>
       </div>
 

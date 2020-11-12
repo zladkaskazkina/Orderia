@@ -69,7 +69,7 @@
       </v-row>
 
       <v-row no-gutters class="pa-5">
-        <v-btn>
+        <v-btn @click="checkout">
           <!-- v-show="products.length" -->
           <!-- @click="checkout" -->
           Potvrdit objednávku
@@ -95,6 +95,8 @@ export default {
       console.log(this.$store.state.cart);
       return this.$store.state.cart;
     }
+
+
 
     // total(){
     //   return this.products.reduce((total, product) =>{
@@ -122,6 +124,10 @@ export default {
 
     decreaseQuant(id) {
       this.$store.dispatch(`cart/decreaseQuant`, id);
+    },
+
+    checkout(){
+      this.$store.dispatch(`cart/checkout`);
     }
   }
 };
