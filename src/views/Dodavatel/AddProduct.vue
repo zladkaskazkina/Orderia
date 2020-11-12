@@ -162,8 +162,7 @@ export default {
 
   methods: {
     saveNewProduct(product) {
-      
-      this.$store.dispatch(`producerProducts/createProduct`, product)
+      this.$store.dispatch(`producerProducts/createProduct`, product);
       console.log(this.product);
     }
   }

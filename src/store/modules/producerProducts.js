@@ -28,8 +28,15 @@ const actions = {
   createProduct({ commit }) {
     axios.post(`http://localhost:3000/products/`).then(response => {
       commit("CREATE_PRODUCT", response.data);
-      console.log('Test');
     });
+  },
+  editProduct({ commit }, productProxy, productId) {
+    axios
+      .patch(`http://localhost:3000/products/${productId}`, productProxy)
+      .then(response => {
+        commit("EDIT_PRODUCT", response.data);
+        console.log("The product was edit");
+      });
   }
 };
 const mutations = {
@@ -41,7 +48,9 @@ const mutations = {
   },
   CREATE_PRODUCT(state, product) {
     state.products.push(product);
-    console.log('test');
+  },
+  EDIT_PRODUCT() {
+    //
   }
 };
 export default {
