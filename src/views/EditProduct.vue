@@ -67,12 +67,16 @@ export default {
   },
   methods: {
     editProduct() {
-      this.$store.dispatch(
-        `producerProducts/editProduct`,
-        this.productProxy,
-        this.productId
-      );
-      console.log(this.productProxy);
+      const id = this.productId;
+      const params = {
+        id: this.productId,
+        title: this.productProxy.name,
+        description: this.productProxy.description,
+        price: this.productProxy.price,
+        ingredients: this.productProxy.ingredients
+      };
+      this.$store.dispatch(`producerProducts/editProduct`, params);
+      console.log("edit product: ", this.productProxy, id);
     }
   }
 };

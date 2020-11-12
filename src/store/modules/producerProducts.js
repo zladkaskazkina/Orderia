@@ -18,7 +18,6 @@ const actions = {
     });
   },
   getProduct({ commit }, productId) {
-    console.log("zacatek get produkt");
     return axios
       .get(`http://localhost:3000/products/${productId}`)
       .then(response => {
@@ -30,9 +29,9 @@ const actions = {
       commit("CREATE_PRODUCT", response.data);
     });
   },
-  editProduct({ commit }, productProxy, productId) {
+  editProduct({ commit }, payload) {
     axios
-      .patch(`http://localhost:3000/products/${productId}`, productProxy)
+      .patch(`http://localhost:3000/products/${payload.id}`, payload)
       .then(response => {
         commit("EDIT_PRODUCT", response.data);
         console.log("The product was edit");
