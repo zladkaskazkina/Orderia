@@ -2,6 +2,7 @@ import axios from "axios";
 
 const state = {
   user: {},
+  users: [],
   loggedUser: {
     id: 1,
     role: "producer",
@@ -38,6 +39,12 @@ const actions = {
       console.log("user data", response.data);
       commit("SET_USER", response.data);
     });
+  },
+  addUser({ commit }, payload) {
+    axios.post("http://localhost:3000/users", payload).then(response => {
+      commit("ADD_USER", response.data);
+      console.log("The USER was add");
+    });
   }
 };
 
@@ -49,6 +56,9 @@ const mutations = {
   SET_USER(state, user) {
     state.user = { ...user };
     console.log(state.user);
+  },
+  ADD_USER(state, user) {
+    state.users.push(user);
   }
 };
 

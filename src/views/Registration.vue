@@ -78,7 +78,7 @@ export default {
     return {
       companyName: "",
       ico: null,
-      category: "food",
+      category: "",
       role: "",
       web: "",
       name: "",
@@ -108,6 +108,25 @@ export default {
   },
   methods: {
     submitForm() {
+      const newUser = {
+        companyName: this.companyName,
+        ico: this.ico,
+        category: this.category,
+        role: this.role,
+        web: this.web,
+        name: this.name,
+        phone: this.phone,
+        email: this.email,
+        password: this.password,
+        address: {
+          city: this.city,
+          street: this.street,
+          number: this.number,
+          postaleCode: this.postaleCode
+        },
+        dph: this.dph
+      };
+      this.$store.dispatch("users/addUser", newUser);
       alert("Dekujeme za registraci!");
     }
   }

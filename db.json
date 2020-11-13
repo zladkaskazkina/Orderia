@@ -463,6 +463,20 @@
       "logo": "http://naitalskefarme.cz/wp-content/uploads/2019/04/cropped-Na-italsk%C3%A9-farm%C4%9B.png",
       "web": "kosik.cz",
       "dph": true
+    },
+    {
+      "companyName": "Orderia",
+      "ico": 5735142,
+      "category": "",
+      "role": "buyer",
+      "web": "orderia.cz",
+      "name": "",
+      "phone": "",
+      "email": "",
+      "password": "123456",
+      "address": {},
+      "dph": false,
+      "id": 5
     }
   ],
   "cart": []

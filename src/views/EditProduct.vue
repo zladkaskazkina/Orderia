@@ -67,7 +67,6 @@ export default {
   },
   methods: {
     editProduct() {
-      const id = this.productId;
       const params = {
         id: this.productId,
         title: this.productProxy.name,
@@ -76,7 +75,6 @@ export default {
         ingredients: this.productProxy.ingredients
       };
       this.$store.dispatch(`producerProducts/editProduct`, params);
-      console.log("edit product: ", this.productProxy, id);
     }
   }
 };
