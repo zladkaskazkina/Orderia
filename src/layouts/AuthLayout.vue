@@ -1,5 +1,5 @@
 <template>
-  <v-content class="grey lighten-4">
+  <v-main class="grey lighten-4">
     <v-toolbar>
       <v-spacer></v-spacer>
       <v-toolbar-title
@@ -12,7 +12,7 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <router-view></router-view>
-  </v-content>
+  </v-main>
 </template>
 <script>
 export default {
