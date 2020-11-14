@@ -1,101 +1,30 @@
 <template>
-  <div>
+  <div class="pa-10">
+    <h1 class="px-5">Nástěnka</h1>
     <v-container fluid>
-      <h1>Nástěnka</h1>
-      <div class="display-1 font-weight-thin">
-        Historie objednavek
-        <v-btn class="ma-2" outlined color="indigo" @click="byMonths">
-          Mesic
-        </v-btn>
-        <v-btn class="ma-2" outlined color="indigo" @click="byWeeks">
-          Tyden
-        </v-btn>
-      </div>
-
-      <v-sparkline
-        :fill="fill"
-        line-width="2"
-        padding="4"
-        :smooth="radius || false"
-        :value="value"
-        auto-draw
-      >
-        <template v-slot:label="item"> ${{ item.value }} </template>
-      </v-sparkline>
+      <ProjectChart></ProjectChart>
     </v-container>
     <v-row>
-      <v-col cols="6">
-        <v-card flat tile class="mx-5 pa-5 success">
-          <v-card-title>Posledni objednavky</v-card-title>
-          <v-card class="mb-5" v-for="item in lastOrders" :key="item.id">
-            <v-card-title class="headline">
-              Nazev firmy
-            </v-card-title>
-            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
-          </v-card>
-          <v-card class="mb-5">
-            <v-card-title class="headline">
-              Nazev firmy
-            </v-card-title>
-            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
-          </v-card>
-          <v-card class="mb-5">
-            <v-card-title class="headline">
-              Nazev firmy
-            </v-card-title>
-            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
-          </v-card>
-          <v-btn class="ma-2" outlined color="indigo"> Vice </v-btn>
-        </v-card>
-      </v-col>
-      <v-col cols="6">
-        <v-card flat tile class="mx-5 pa-5 success">
-          <v-card-title>Nevyrizene objednavky</v-card-title>
-          <v-card class="mb-5">
-            <v-card-title class="headline">
-              Nazev firmy
-            </v-card-title>
-            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
-          </v-card>
-          <v-card class="mb-5">
-            <v-card-title class="headline">
-              Nazev firmy
-            </v-card-title>
-            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
-          </v-card>
-          <v-card class="mb-5">
-            <v-card-title class="headline">
-              Nazev firmy
-            </v-card-title>
-            <v-card-subtitle>Cislo objednavky</v-card-subtitle>
-          </v-card>
-          <v-btn class="ma-2" outlined color="indigo"> Vice </v-btn>
-        </v-card>
-      </v-col>
-      <v-col>
-        <h3>{{ currentUser.username }}</h3>
-      </v-col>
+      <TopOrders title="Posledni objednavky" :orders="lastOrders"></TopOrders>
+      <TopOrders title="Nevyrizene objednavky"></TopOrders>
     </v-row>
   </div>
 </template>
 
 <script>
 // import { mapState } from "vuex";
-// @ is an alias to /src
+import TopOrders from "../components/TopOrders";
+import ProjectChart from "../components/ProjectChart";
 export default {
-  name: "Dodavatel",
-  components: {},
+  name: "Dashboard",
+  components: { TopOrders, ProjectChart },
   data: () => ({
-    fill: true,
-    padding: 8,
-    radius: 10,
-    value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8],
-    width: 2
+    // currentUser: this.$store.state.users.loggedUser
   }),
   computed: {
-    currentUser() {
-      return this.$store.state.auth.user;
-    }
+    // lastOrders() {
+    //   return this.$store.state[`${this.currentUser.role}Orders`].orders;
+    // }
   },
 
   // computed() {
@@ -105,19 +34,9 @@ export default {
   // };
   created() {
     // this.$store.dispatch("orders/getOrders");
-  },
-  methods: {
-    byMonths() {
-      //
-    },
-    byWeeks() {
-      //
-    }
-  },
-  mounted() {
-    if (!this.currentUser) {
-      this.$router.push("/login");
-    }
   }
+  // mounted() {
+  //   this.$store.dispatch(`${this.currentUser.role}Orders/getOrders`);
+  // }
 };
 </script>
