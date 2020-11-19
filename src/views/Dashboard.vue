@@ -19,12 +19,12 @@ export default {
   name: "Dashboard",
   components: { TopOrders, ProjectChart },
   data: () => ({
-    // currentUser: this.$store.state.users.loggedUser
+    //currentUser: this.$store.state.users.loggedUser
   }),
   computed: {
-    // lastOrders() {
-    //   return this.$store.state[`${this.currentUser.role}Orders`].orders;
-    // }
+     lastOrders() {
+       return null;//this.$store.state[`${this.currentUser.role}Orders`].orders;
+     }
   },
 
   // computed() {
@@ -33,10 +33,11 @@ export default {
   // })
   // };
   created() {
-    // this.$store.dispatch("orders/getOrders");
+    //this.$store.dispatch("orders/getOrders");
+  //}
+  //mounted() {
+     //this.$store.dispatch(`${this.currentUser.role}Orders/getOrders`);
+
   }
-  // mounted() {
-  //   this.$store.dispatch(`${this.currentUser.role}Orders/getOrders`);
-  // }
 };
 </script>

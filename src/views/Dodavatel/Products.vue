@@ -25,9 +25,9 @@
       />
     </v-row>
     <v-row no-gutters justify="center">
-      <v-btn dark @click="goToCart" v-if="currentUser === 'buyer' && products"
-        >Prejit do kosiku</v-btn
-      >
+      <v-btn dark @click="goToCart" 
+        >Prejit do kosiku ({{cartItemCount}} ks)</v-btn>
+        <!-- v-if="currentUser === 'buyer' && products -->
     </v-row>
   </div>
 </template>

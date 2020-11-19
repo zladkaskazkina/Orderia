@@ -5,24 +5,25 @@
         <h3>Objednávka</h3>
       </v-card-title>
 
-      <!-- v-show="!products.length" -->
-      <!-- <p>Váš košík je prázdný!</p> -->
+      <v-row no-gutters class="px-5" v-show="itemCount === 0">
+      <p >Váš košík je prázdný a smutný!</p>
+      </v-row>
 
       <table
         class="pa-5 cart-list"
         v-for="product in cart.cart"
         v-bind:key="product.id"
       >
-        <!-- v-show="products.length" -->
-        <thead class="cart-list--head">
+        <thead class="list--head">
           <tr>
             <td>Kód</td>
             <td>Název</td>
-            <td>Cena</td>
+            <td>Jednotková cena</td>
             <td>Množství</td>
+            <td>Cena celkem</td>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="list--body">
           <tr>
             <td>
               {{ product.product.id }}
@@ -37,7 +38,7 @@
               {{ product.quantity }}
             </td>
             <td>
-              <!-- total price per product? -->
+              {{ product.product.price * product.quantity }}
             </td>
             <td>
               <v-btn icon ripple @click="increaseQuant(product.product.id)">
@@ -55,25 +56,26 @@
             </td>
           </tr>
         </tbody>
-        <tfoot>
-          <td><strong>Total</strong></td>
-          <td>
-            CZK
-            <!-- {{ total }} -->
-          </td>
-        </tfoot>
       </table>
 
-      <v-row no-gutters class="pa-5">
-        <v-btn @click="clearCart">Vymazat kosik</v-btn>
+      <v-row no-gutters class="pa-5" justify="space-between">
+        <p>
+          <strong>Celkový součet položek: {{ itemCount}} </strong>
+        </p>
+
+        <p>
+          <strong>Celková cena objednávky: {{ totalPrice }} Kč </strong>
+        </p>
       </v-row>
 
-      <v-row no-gutters class="pa-5">
-        <v-btn @click="checkout">
-          <!-- v-show="products.length" -->
-          <!-- @click="checkout" -->
-          Potvrdit objednávku
-        </v-btn>
+       
+
+      <v-row no-gutters class="px-5" justify="space-between">
+        
+          <v-btn @click="clearCart" :disabled="cartEmpty ? '' : disabled">Vymazat kosik</v-btn>
+       
+          <v-btn @click="checkout" :disabled="cartEmpty ? '' : disabled"> Potvrdit objednávku </v-btn>
+     
       </v-row>
     </v-card>
   </div>
@@ -94,21 +96,21 @@ export default {
     cart() {
       console.log(this.$store.state.cart);
       return this.$store.state.cart;
+    },
+
+    totalPrice() {
+      return this.$store.getters["cart/totalPrice"];
+    },
+
+    itemCount() {
+      return this.$store.getters["cart/countItems"];
+    },
+
+    cartEmpty() {
+      return this.itemCount === 0;
     }
-
-
-
-    // total(){
-    //   return this.products.reduce((total, product) =>{
-    //     return total + product.price * product.quantity
-    //   }, 0)
-    // }
   },
   methods: {
-    // checkout() {
-    //   alert('Celková částka k zaplacení je CZK' + this.total)
-    // }
-
     removeTest(product) {
       this.$store.dispatch(`cart/removeProduct`, product);
     },
@@ -126,10 +128,10 @@ export default {
       this.$store.dispatch(`cart/decreaseQuant`, id);
     },
 
-    checkout(){
+    checkout() {
       this.$store.dispatch(`cart/checkout`);
-    }
-  }
+    },
+  },
 };
 </script>
 
