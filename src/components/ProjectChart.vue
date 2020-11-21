@@ -10,11 +10,12 @@
       </v-btn>
     </div>
     <v-sparkline
+      color="indigo" 
       :fill="fill"
       line-width="2"
-      padding="4"
+      padding="10"
       :smooth="radius || false"
-      :value="turnover"
+      :value="dailyStatistics.turnover"
       auto-draw
     >
       <template v-slot:label="item"> {{ item.value }} </template>
@@ -40,23 +41,65 @@ export default {
       return this.$store.state[`${this.currentUser.role}Orders`].orders;
     },
 
-    turnover() {
-      let dailyTurnover = [];
-      for(let i = 1; i <= this.numDays; i++)
-      {
-        dailyTurnover.push(i);
+    dailyStatistics() {
+      let daily = {
+        turnover: [],
+        numOrders: [],
+        date: [],
+      };
+      if (this.orders.length === 0) {
+        return daily;
       }
-      return dailyTurnover;
-    }
+      // index for last item in orders array
+      let idx = this.orders.length - 1;
+      let today = new Date();
+      let day = new Date();
+      
+      //iterate days: today, yesterday, ..., today-numdays+1
+      for(let i = 0; i < this.numDays; i++) {
+        day.setDate(today.getDate() - i);
+        let date = `${day.getFullYear()}-${this.pad(day.getMonth() + 1)}-${this.pad(day.getDate())}`;
+        let thisOrderDate = this.orders[idx].createdAt.slice(0, 10);
+        //console.log(thisOrderDate);
+        let dayTurnover = 0;
+        let dayNumOrders = 0;
+        let dayDate = date;
+
+        while(thisOrderDate === date) {
+          dayTurnover += this.orders[idx].total_price;
+          dayNumOrders++;
+      
+          if (idx > 0 ) {
+            idx--;
+            thisOrderDate = this.orders[idx].createdAt.slice(0, 10);
+          } else {
+            break;
+          }
+          
+        }
+        // get orders from database
+        daily.turnover.unshift(dayTurnover);
+        daily.numOrders.unshift(dayNumOrders);
+        daily.date.unshift(dayDate);
+      }
+
+      return daily;
+    },
   },
   methods: {
-
-
     byMonths() {
       this.numDays = 30;
     },
     byWeeks() {
       this.numDays = 7;
+    },
+
+    pad(num) {
+      let numstr = `${num}`;
+      while (numstr.length < 2) {
+        numstr = "0" + numstr;
+      }
+      return numstr;
     },
   },
 

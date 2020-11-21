@@ -48,7 +48,7 @@ const actions = {
     let order = {
       id: null,
       status: "ceka na schvaleni",
-      transport_price: null,
+      transport_price: 0,
       total_price: getters.totalPrice(state),
       producerID: state.cart[0].product.producerID,
       buyerID: "",
