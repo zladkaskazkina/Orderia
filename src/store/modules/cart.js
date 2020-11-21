@@ -43,8 +43,8 @@ const actions = {
   },
 
   checkout({ commit }) {
-    console.log(state);
     let d = new Date();
+    console.log(d);
     let order = {
       id: null,
       status: "ceka na schvaleni",
@@ -52,7 +52,7 @@ const actions = {
       total_price: getters.totalPrice(state),
       producerID: state.cart[0].product.producerID,
       buyerID: "",
-      createdAt: `${d.getFullYear()}-${d.getMonth()}-${d.getDay()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`,
+      createdAt: `${d.getFullYear()}-${pad(d.getMonth()+ 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`,
       items: []
     };
     for (let i = 0; i < state.cart.length; i++) {
@@ -64,7 +64,6 @@ const actions = {
       };
       order.items.push(item);
     }
-    console.log(order);
     axios.post(`http://localhost:3000/orders`, order);
     commit("CHECKOUT");
     alert("Objednavka vytvorena.");
@@ -128,6 +127,14 @@ const mutations = {
   }
 };
 
+function pad(num) {
+  let numstr = `${num}`;
+  while(numstr.length < 2) {
+    numstr = "0" + numstr;
+  }
+  return numstr;
+};
+
 export default {
   namespaced: true,
   state,
@@ -135,3 +142,4 @@ export default {
   actions,
   mutations
 };
+

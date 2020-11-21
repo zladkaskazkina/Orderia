@@ -85,6 +85,8 @@
               </tr>
             </template>
           </v-data-table>
+
+          kokos 
         </div>
       </div>
       <v-row no-gutters justify="end" class="pa-4">
@@ -143,7 +145,9 @@ export default {
     customer() {
       console.log("computed", this.$store.state.users);
       return this.$store.state.users.user;
-    }
+    },
+
+   
     // producer() {
     //   return this.$store.state.users.user; //???? jak zobrazit ten  konkretni
     // }

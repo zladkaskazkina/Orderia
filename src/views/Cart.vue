@@ -72,9 +72,9 @@
 
       <v-row no-gutters class="px-5" justify="space-between">
         
-          <v-btn @click="clearCart" :disabled="cartEmpty ? '' : disabled">Vymazat kosik</v-btn>
+          <v-btn @click="clearCart" :disabled="cartEmpty">Vymazat kosik</v-btn>
        
-          <v-btn @click="checkout" :disabled="cartEmpty ? '' : disabled"> Potvrdit objednávku </v-btn>
+          <v-btn @click="checkout" :disabled="cartEmpty"> Potvrdit objednávku </v-btn>
      
       </v-row>
     </v-card>
@@ -94,7 +94,6 @@ export default {
   },
   computed: {
     cart() {
-      console.log(this.$store.state.cart);
       return this.$store.state.cart;
     },
 
