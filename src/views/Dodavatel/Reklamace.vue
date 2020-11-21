@@ -10,7 +10,7 @@
         right
         class="btn--float"
         router
-        to="/produkty/novy"
+        to="/reklamace/nova"
       >
         <v-icon>mdi-plus</v-icon>
       </v-btn>
