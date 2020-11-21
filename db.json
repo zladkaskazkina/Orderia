@@ -108,7 +108,7 @@
       "createdAt": "2020-10-31 20:51:37",
       "items": [
         {
-          "id": 2,
+          "id": 4,
           "title": "Risotto safranove",
           "quantity": 2,
           "price": 159
@@ -155,12 +155,13 @@
       "createdAt": "2020-11-07 20:51:37",
       "items": [
         {
-          "id": 2,
+          "id": 4,
           "title": "Risotto safranove",
           "quantity": 1,
           "price": 159
         },
         {
+          "id": 1,
           "title": "Risotto rajcatove",
           "quantity": 2,
           "price": 129
@@ -177,12 +178,13 @@
       "createdAt": "2020-11-15 20:51:37",
       "items": [
         {
-          "id": 2,
+          "id": 4,
           "title": "Risotto safranove",
           "quantity": 3,
           "price": 159
         },
         {
+          "id": 1,
           "title": "Risotto rajcatove",
           "quantity": 1,
           "price": 129
