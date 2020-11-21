@@ -12,36 +12,35 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-col class="d-flex justify-end">
-          <v-menu
-            bottom
-            offset-y
-            v-bind:close-on-content-click="false"
-            v-model="menu"
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn depressed color="transparent" v-bind="attrs" v-on="on">
-                <v-icon x-large class="ikona-user" color="black"
-                  >mdi-account-circle</v-icon
-                >
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item>
-                <router-link to="/profil">
-                  <v-btn class="my-2" v-on:click="menu = false">
-                    Profil
-                  </v-btn>
-                </router-link>
-              </v-list-item>
-              <v-list-item>
-                <v-btn>
-                  Odhlásit
+        <v-menu
+          bottom
+          offset-y
+          v-bind:close-on-content-click="false"
+          v-model="menu"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn depressed color="transparent" v-bind="attrs" v-on="on">
+              <v-icon x-large class="ikona-user" color="black"
+                >mdi-account-circle</v-icon
+              >
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item>
+              <router-link to="/profil">
+                <v-btn class="my-2" v-on:click="menu = false">
+                  Profil
                 </v-btn>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </v-col>
-      
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <v-btn>
+                Odhlásit
+              </v-btn>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-col>
     </v-app-bar>
 
     <router-view />
@@ -62,7 +61,7 @@ export default {
   data() {
     return {
       role: "dodavatel",
-      menu: false,
+      menu: false
     };
   }
 };

@@ -387,6 +387,57 @@
       ]
     }
   ],
+  "complaints": [
+    {
+      "id": 1,
+      "status": "vyrizena",
+      "transport_price": 50,
+      "total_price": 656,
+      "producerID": 3,
+      "buyerID": 2,
+      "createdAt": "2020-10-31 20:51:37",
+      "due": "21.10.2020",
+      "items": [
+        {
+          "id": 2,
+          "title": "Risotto safranove",
+          "quantity": 3,
+          "price": 159
+        },
+        {
+          "id": 1,
+          "title": "Risotto rajcatove",
+          "quantity": 1,
+          "price": 129
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "status": "zamitnuta",
+      "transport_price": 50,
+      "total_price": 656,
+      "producerID": 1,
+      "buyerID": 2,
+      "createdAt": "2020-10-31 20:51:37",
+      "due": "21.10.2020",
+      "items": [
+        {
+          "id": 4,
+          "title": "Risotto safranove",
+          "quantity": 3,
+          "price": 159
+        },
+        {
+          "id": 2,
+          "title": "Risotto rajcatove",
+          "quantity": 1,
+          "price": 129
+        }
+      ],
+      "payment_method": "prevodem"
+    }
+  ],
   "users": [
     {
       "id": 1,

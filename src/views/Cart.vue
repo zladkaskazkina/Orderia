@@ -6,7 +6,7 @@
       </v-card-title>
 
       <v-row no-gutters class="px-5" v-show="itemCount === 0">
-      <p >Váš košík je prázdný a smutný!</p>
+        <p>Váš košík je prázdný a smutný!</p>
       </v-row>
 
       <table
@@ -60,7 +60,7 @@
 
       <v-row no-gutters class="pa-5" justify="space-between">
         <p>
-          <strong>Celkový součet položek: {{ itemCount}} </strong>
+          <strong>Celkový součet položek: {{ itemCount }} </strong>
         </p>
 
         <p>
@@ -68,14 +68,14 @@
         </p>
       </v-row>
 
-       
-
       <v-row no-gutters class="px-5" justify="space-between">
-        
-          <v-btn @click="clearCart" :disabled="cartEmpty ? '' : disabled">Vymazat kosik</v-btn>
-       
-          <v-btn @click="checkout" :disabled="cartEmpty ? '' : disabled"> Potvrdit objednávku </v-btn>
-     
+        <v-btn @click="clearCart" :disabled="cartEmpty ? '' : disabled"
+          >Vymazat kosik</v-btn
+        >
+
+        <v-btn @click="checkout" :disabled="cartEmpty ? '' : disabled">
+          Potvrdit objednávku
+        </v-btn>
       </v-row>
     </v-card>
   </div>
@@ -130,8 +130,8 @@ export default {
 
     checkout() {
       this.$store.dispatch(`cart/checkout`);
-    },
-  },
+    }
+  }
 };
 </script>
 

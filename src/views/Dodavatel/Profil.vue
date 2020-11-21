@@ -254,7 +254,9 @@
             Ulozit zmeny
           </v-btn>
         </v-row>
-        <v-btn fab large absolute top right class="success"><v-icon>mdi-pencil</v-icon></v-btn>
+        <v-btn fab large absolute top right class="success"
+          ><v-icon>mdi-pencil</v-icon></v-btn
+        >
       </v-card>
     </v-container>
   </div>

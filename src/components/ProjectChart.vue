@@ -32,7 +32,7 @@ export default {
       radius: 10,
       //value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8],
       width: 2,
-      numDays: 7,
+      numDays: 7
     };
   },
   computed: {
@@ -40,28 +40,30 @@ export default {
       return this.$store.state[`${this.currentUser.role}Orders`].orders;
     },
 
+    complaints() {
+      return this.$store.state[`${this.currentUser.role}Complaints`].complaints;
+    },
+
     turnover() {
       let dailyTurnover = [];
-      for(let i = 1; i <= this.numDays; i++)
-      {
+      for (let i = 1; i <= this.numDays; i++) {
         dailyTurnover.push(i);
       }
       return dailyTurnover;
     }
   },
   methods: {
-
-
     byMonths() {
       this.numDays = 30;
     },
     byWeeks() {
       this.numDays = 7;
-    },
+    }
   },
 
   mounted() {
     this.$store.dispatch(`${this.currentUser.role}Orders/getOrders`);
-  },
+    this.$store.dispatch(`${this.currentUser.role}Complaints/getComplaints`);
+  }
 };
 </script>
