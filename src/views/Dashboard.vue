@@ -6,7 +6,7 @@
     </v-container>
     <v-row>
       <TopOrders title="Posledni objednavky" :orders="lastOrders"></TopOrders>
-      <TopOrders title="Nevyrizene objednavky"></TopOrders>
+      <TopOrders title="Nevyrizene objednavky" :orders="pendingOrders"></TopOrders>
     </v-row>
   </div>
 </template>
@@ -22,9 +22,14 @@ export default {
     //currentUser: this.$store.state.users.loggedUser
   }),
   computed: {
-     lastOrders() {
-       return null;//this.$store.state[`${this.currentUser.role}Orders`].orders;
-     }
+    lastOrders() {
+      return this.$store.state[`${this.$store.state.users.loggedUser.role}Orders`].orders.slice(-3);
+    },
+    pendingOrders() {
+      return this.$store.state[`${this.$store.state.users.loggedUser.role}Orders`].orders
+      .filter(x => (x.status === "čeká na schválení"))
+      .slice(-3);
+    },
   },
 
   // computed() {
@@ -34,10 +39,12 @@ export default {
   // };
   created() {
     //this.$store.dispatch("orders/getOrders");
-  //}
-  //mounted() {
-     //this.$store.dispatch(`${this.currentUser.role}Orders/getOrders`);
-
-  }
+    //}
+  },
+  mounted() {
+    this.$store.dispatch(
+      `${this.$store.state.users.loggedUser.role}Orders/getOrders`
+    );
+  },
 };
 </script>

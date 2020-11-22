@@ -109,6 +109,7 @@ export default {
   methods: {
     submitForm() {
       const newUser = {
+        id: null,
         companyName: this.companyName,
         ico: this.ico,
         category: this.category,
@@ -119,10 +120,10 @@ export default {
         email: this.email,
         password: this.password,
         address: {
-          city: this.city,
-          street: this.street,
-          number: this.number,
-          postaleCode: this.postaleCode
+          city: this.address.city,
+          street: this.address.street,
+          number: this.address.number,
+          postaleCode: this.address.postaleCode
         },
         dph: this.dph
       };

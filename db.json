@@ -5,7 +5,7 @@
       "title": "Risotto rajcatove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
       "price": "135",
-      "producerID": "3",
+      "producerID": 3,
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
       "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
@@ -17,7 +17,7 @@
       "title": "Risotto hribkove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
       "price": 129,
-      "producerID": "1",
+      "producerID": 1,
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
       "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
@@ -29,7 +29,7 @@
       "title": "Risotto dynove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
       "price": 129,
-      "producerID": "3",
+      "producerID": 3,
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
       "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
@@ -41,7 +41,7 @@
       "title": "Risotto safranove",
       "image": "http://naitalskefarme.cz/wp-content/uploads/2019/06/IMG_0316.jpg",
       "price": 159,
-      "producerID": "1",
+      "producerID": 1,
       "description": "Právé italské risotto ze susenych rajcat do 20 minut!",
       "ingredients": "italská rýže Arborio 91 %, italská sušená rajčata 5 %, sušená cuketa 2 %, sušená zelenina: mrkev, česnek, cibule, celer, petržel, bazalka.",
       "type": "trvanlive jidlo",
@@ -53,7 +53,7 @@
       "title": "Jahodový džem",
       "image": "",
       "price": 103,
-      "producerID": "158",
+      "producerID": 3,
       "description": "Hromada jahod ve skleničce",
       "ingredients": "Jahody a cukr",
       "type": "trvanlive jidlo",
@@ -65,7 +65,7 @@
       "title": "Pivino",
       "image": "",
       "price": 85,
-      "producerID": "111111",
+      "producerID": 5,
       "description": "Pivo a vino v jednom",
       "ingredients": "Vino a chmel",
       "type": "trvanlive jidlo",
@@ -77,7 +77,7 @@
       "title": "qrwrfw",
       "image": "",
       "price": 1,
-      "producerID": "1",
+      "producerID": 1,
       "description": "wfwef",
       "ingredients": "vgdg",
       "type": "trvanlive jidlo",
@@ -89,7 +89,7 @@
       "title": "banana",
       "image": "",
       "price": 10,
-      "producerID": "1",
+      "producerID": 1,
       "description": "banana",
       "ingredients": "fasjkgbaeh",
       "type": "ovoce",
@@ -98,29 +98,6 @@
     }
   ],
   "orders": [
-    {
-      "id": 1,
-      "status": "prijata",
-      "transport_price": 50,
-      "total_price": 497,
-      "producerID": 3,
-      "buyerID": 2,
-      "createdAt": "2020-10-31 20:51:37",
-      "items": [
-        {
-          "id": 4,
-          "title": "Risotto safranove",
-          "quantity": 2,
-          "price": 159
-        },
-        {
-          "id": 1,
-          "title": "Risotto rajcatove",
-          "quantity": 1,
-          "price": 129
-        }
-      ]
-    },
     {
       "id": 2,
       "status": "zamitnuta",
@@ -149,15 +126,15 @@
       "id": 3,
       "status": "zamitnuta",
       "transport_price": 50,
-      "total_price": 467,
-      "producerID": "3",
-      "buyerID": "Scuk",
+      "total_price": 1103,
+      "producerID": 3,
+      "buyerID": 2,
       "createdAt": "2020-11-07 20:51:37",
       "items": [
         {
           "id": 4,
           "title": "Risotto safranove",
-          "quantity": 1,
+          "quantity": 5,
           "price": 159
         },
         {
@@ -173,8 +150,8 @@
       "status": "vyrizena",
       "transport_price": 50,
       "total_price": 656,
-      "producerID": "1",
-      "buyerID": "Kosik",
+      "producerID": 1,
+      "buyerID": 4,
       "createdAt": "2020-11-15 20:51:37",
       "items": [
         {
@@ -193,53 +170,18 @@
     },
     {
       "id": 5,
-      "status": "ceka na schvaleni",
+      "status": "čeká na schválení",
       "transport_price": 0,
-      "total_price": 393,
-      "producerID": "3",
-      "buyerID": "",
-      "createdAt": "2020-11-21 10:50:37",
+      "total_price": 425,
+      "producerID": 5,
+      "buyerID": 1,
+      "createdAt": "2020-11-22 21:53:56",
       "items": [
         {
-          "id": 1,
-          "title": "Risotto rajcatove",
-          "price": 135,
-          "quantity": 1
-        },
-        {
-          "id": 3,
-          "title": "Risotto dynove",
-          "price": 129,
-          "quantity": 2
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "status": "ceka na schvaleni",
-      "transport_price": 0,
-      "total_price": 401,
-      "producerID": "1",
-      "buyerID": "",
-      "createdAt": "2020-11-21 14:35:06",
-      "items": [
-        {
-          "id": 2,
-          "title": "Risotto hribkove",
-          "price": 129,
-          "quantity": 1
-        },
-        {
-          "id": 7,
-          "title": "qrwrfw",
-          "price": 1,
-          "quantity": 2
-        },
-        {
-          "id": 8,
-          "title": "banana",
-          "price": 10,
-          "quantity": 27
+          "id": 6,
+          "title": "Pivino",
+          "price": 85,
+          "quantity": 5
         }
       ]
     }
@@ -322,19 +264,23 @@
       "dph": true
     },
     {
-      "companyName": "Orderia",
-      "ico": 5735142,
-      "category": "",
-      "role": "buyer",
-      "web": "orderia.cz",
-      "name": "",
-      "phone": "",
-      "email": "",
-      "password": "123456",
-      "address": {},
-      "dph": false,
-      "id": 5
+      "id": 5,
+      "companyName": "Monopolo",
+      "ico": 464121654,
+      "category": "durable",
+      "role": "producer",
+      "web": "www.monopolo.cz",
+      "name": "AK",
+      "phone": "602156474",
+      "email": "kokos@kokos.cz",
+      "password": "losos1",
+      "address": {
+        "city": "Brno",
+        "street": "Mecirova",
+        "number": "6",
+        "postaleCode": "60200"
+      },
+      "dph": false
     }
-  ],
-  "cart": []
+  ]
 }

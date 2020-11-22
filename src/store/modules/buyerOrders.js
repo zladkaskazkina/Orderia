@@ -7,25 +7,28 @@ const state = {
 const getters = {};
 const actions = {
   getOrders({ commit }) {
-    axios.get("http://localhost:3000/orders/").then(response => {
+    return axios.get("http://localhost:3000/orders/").then(response => {
       commit("SET_ORDERS", response.data);
     });
   },
-  getOrder({ commit }, orderId) {
-    axios.get(`http://localhost:3000/orders/${orderId}`).then(response => {
-      commit("SET_ORDER", response.data);
-    });
-  },
+  getOrder(ctx, orderId) {
+    // console.log(orderId);
+     return axios.get(`http://localhost:3000/orders/${orderId}`).then(response => {
+       ctx.commit("SET_ORDER", response.data);
+       // return axios.get(`http://localhost:3000/users/${response.data.customerID}`);
+       ctx.dispatch("users/getUser", response.data.producerID, { root: true });
+     });
+   },
 
-  changeOrder({ commit }, changedOrder) {
-    axios
-      .put(`http://localhost:3000/orders/${changedOrder.id}`, changedOrder)
-      .then(response => {
-        commit("ACCEPT_ORDER", response.data);
-      });
-    //Nebo radeji na backendu! A na frontendu jen zavolam .post(`http://localhost:3000/api/orders/${id}/acceptorder`)
-    alert("Objednavka byla prijata");
-  },
+  // changeOrder({ commit }, changedOrder) {
+  //   axios
+  //     .put(`http://localhost:3000/orders/${changedOrder.id}`, changedOrder)
+  //     .then(response => {
+  //       commit("ACCEPT_ORDER", response.data);
+  //     });
+  //   //Nebo radeji na backendu! A na frontendu jen zavolam .post(`http://localhost:3000/api/orders/${id}/acceptorder`)
+  //   alert("Objednavka byla prijata");
+  // },
   deleteOrder({ commit }, orderId) {
     axios.delete(`http://localhost:3000/orders/${orderId}`).then(response => {
       commit("DELETE_ORDER", response.data);
@@ -77,14 +80,8 @@ const mutations = {
   SET_ORDER(state, order) {
     state.order = order;
   },
-  ACCEPT_ORDER(state) {
-    state.order.status = "prijata";
-  },
-  REJECT_ORDER(state) {
-    state.order.status = "zamitnuta";
-  },
   DELETE_ORDER(state) {
-    state.order = "";
+    state.order = null;
   }
 
   //   CREATE_ORDER(state, payload) {

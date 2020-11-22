@@ -128,7 +128,7 @@ export default {
     },
 
     checkout() {
-      this.$store.dispatch(`cart/checkout`);
+      this.$store.dispatch(`cart/checkout`, this.$store.state.users.loggedUser);
     },
   },
 };

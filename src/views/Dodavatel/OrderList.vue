@@ -55,7 +55,7 @@ export default {
         { text: "ID", value: "id" },
         { text: "Datum", value: "createdAt" },
         { text: "Odberatel", value: "buyerID" }, //jen pro dodavatele
-        { text: "Hodnota", value: "totalPrice" },
+        { text: "Hodnota", value: "total_price" },
         { text: "Status", value: "status" }
       ]
     };

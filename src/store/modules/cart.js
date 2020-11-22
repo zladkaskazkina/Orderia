@@ -42,16 +42,16 @@ const actions = {
     commit("DECREASE_QUANTITY", id);
   },
 
-  checkout({ commit }) {
+  checkout({ commit }, user) {
     let d = new Date();
     console.log(d);
     let order = {
       id: null,
-      status: "ceka na schvaleni",
+      status: "čeká na schválení",
       transport_price: 0,
       total_price: getters.totalPrice(state),
       producerID: state.cart[0].product.producerID,
-      buyerID: "",
+      buyerID: user.id,
       createdAt: `${d.getFullYear()}-${pad(d.getMonth()+ 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`,
       items: []
     };
