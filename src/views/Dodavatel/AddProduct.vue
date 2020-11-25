@@ -144,7 +144,7 @@ export default {
         title: "",
         image: "",
         price: null,
-        producerID: "",
+        producerID: null,
         description: "",
         ingredients: "",
         type: "",
@@ -166,7 +166,7 @@ export default {
 
   methods: {
     saveNewProduct(product) {
-      product.producerID = `${this.$store.state.users.loggedUser.id}`;
+      product.producerID = this.$store.state.users.loggedUser.id;
       this.$store.dispatch(`producerProducts/createProduct`, product);
       console.log(this.product);
       alert(`Nový produkt ${product.title} byl přidán.`);

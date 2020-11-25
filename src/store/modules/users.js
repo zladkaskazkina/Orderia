@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const state = {
-  user: {},
+  user: null,
   users: [],
   loggedUser: {
     id: 1,
@@ -55,7 +55,7 @@ const mutations = {
 
   SET_USER(state, user) {
     state.user = { ...user };
-    console.log(state.user);
+  //  console.log(state.user);
   },
   ADD_USER(state, user) {
     state.users.push(user);

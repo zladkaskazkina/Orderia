@@ -8,10 +8,11 @@
         v-for="order in orders"
         :key="order.id"
       >
+        
         <v-card-title class="headline">
-          {{ order.name }}
+          {{ order.id }}
         </v-card-title>
-        <v-card-subtitle>{{ order.totalPrice }}</v-card-subtitle>
+        <v-card-subtitle>{{ order.total_price }}</v-card-subtitle>
       </v-card>
       <v-btn class="ma-2" outlined color="indigo"> Vice </v-btn>
     </v-card>
@@ -24,11 +25,14 @@ export default {
   data: () => ({
     //
   }),
-  // computed: {
+  computed: {
+    // orders() {
+    //   return this.$store.state[`${this.$store.state.users.loggedUser.role}Orders`].orders;
+    // },
   //   orders() {
   //    return
   //   }
-  // }
+  },
   methods: {
     openOrder() {
       console.log("open order");

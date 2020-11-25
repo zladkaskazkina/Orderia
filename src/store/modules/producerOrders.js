@@ -7,13 +7,13 @@ const state = {
 const getters = {};
 const actions = {
   getOrders({ commit }) {
-    axios.get("http://localhost:3000/orders").then(response => {
+    return axios.get("http://localhost:3000/orders").then(response => {
       commit("SET_ORDERS", response.data);
     });
   },
   getOrder(ctx, orderId) {
-    console.log(orderId);
-    axios.get(`http://localhost:3000/orders/${orderId}`).then(response => {
+   // console.log(orderId);
+    return axios.get(`http://localhost:3000/orders/${orderId}`).then(response => {
       ctx.commit("SET_ORDER", response.data);
       // return axios.get(`http://localhost:3000/users/${response.data.customerID}`);
       ctx.dispatch("users/getUser", response.data.buyerID, { root: true });
@@ -37,6 +37,14 @@ const actions = {
       });
     alert("Objednavka byla odmitnuta");
     //Nebo radeji na backendu! A na frontendu jen zavolam .post(`http://localhost:3000/api/orders/${id}/rejectorder`)
+  },
+  changeOrder({ commit}, order) {
+    axios
+      .put(`http://localhost:3000/orders/${order.id}`, order)
+      .then(response => {
+        commit("SET_ORDER", response.data);
+      });
+      alert("Objednávka byla upravena.");
   }
 };
 
