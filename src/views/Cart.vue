@@ -69,21 +69,11 @@
       </v-row>
 
       <v-row no-gutters class="px-5" justify="space-between">
-<<<<<<< HEAD
-        <v-btn @click="clearCart" :disabled="cartEmpty ? '' : disabled"
-          >Vymazat kosik</v-btn
-        >
-
-        <v-btn @click="checkout" :disabled="cartEmpty ? '' : disabled">
-          Potvrdit objednávku
-        </v-btn>
-=======
         
           <v-btn @click="clearCart" :disabled="cartEmpty">Vymazat kosik</v-btn>
        
           <v-btn @click="checkout" :disabled="cartEmpty"> Potvrdit objednávku </v-btn>
      
->>>>>>> b9c92fb799c38f3e1ff9670a3e5dde1048679735
       </v-row>
     </v-card>
   </div>
@@ -136,15 +126,9 @@ export default {
     },
 
     checkout() {
-<<<<<<< HEAD
-      this.$store.dispatch(`cart/checkout`);
-    }
-  }
-=======
       this.$store.dispatch(`cart/checkout`, this.$store.state.users.loggedUser);
     },
   },
->>>>>>> b9c92fb799c38f3e1ff9670a3e5dde1048679735
 };
 </script>
 

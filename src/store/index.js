@@ -21,11 +21,8 @@ export const store = new Vuex.Store({
     producerProducts,
     buyerProducts,
     producerOrders,
-<<<<<<< HEAD
     producerComplaints,
-=======
     buyerOrders,
->>>>>>> b9c92fb799c38f3e1ff9670a3e5dde1048679735
     users,
     auth,
     cart
