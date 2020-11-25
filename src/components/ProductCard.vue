@@ -22,18 +22,25 @@
 
           <div>ID produktu: {{ productData.id }}</div>
           <div>Skladem: {{ productData.stock }} Ks</div>
-          <div><strong>Dodavatel: {{ productData.producerID}} </strong></div>
+          <div>
+            <strong>Dodavatel: {{ productData.producerID }} </strong>
+          </div>
         </v-card-text>
       </div>
 
       <v-row no-gutters justify="end" class="pa-4">
         <v-col>
-        <v-text-field label="Mnozstvi" outlined type="number" v-model.number="quantity"></v-text-field>
+          <v-text-field
+            label="Mnozstvi"
+            outlined
+            type="number"
+            v-model.number="quantity"
+          ></v-text-field>
         </v-col>
         <v-col class="pl-10">
-        <v-btn dark @click="clickToCart"
-          ><v-icon small dark>mdi-cart-outline</v-icon></v-btn
-        >
+          <v-btn dark @click="clickToCart"
+            ><v-icon small dark>mdi-cart-outline</v-icon></v-btn
+          >
         </v-col>
       </v-row>
     </v-card>
@@ -45,7 +52,7 @@ export default {
   props: ["productData"],
   data() {
     return {
-      quantity: 1,
+      quantity: 1
     };
   },
   methods: {

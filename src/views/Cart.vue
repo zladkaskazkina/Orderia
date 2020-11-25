@@ -6,7 +6,7 @@
       </v-card-title>
 
       <v-row no-gutters class="px-5" v-show="itemCount === 0">
-      <p >Váš košík je prázdný a smutný!</p>
+        <p>Váš košík je prázdný a smutný!</p>
       </v-row>
 
       <table
@@ -60,15 +60,13 @@
 
       <v-row no-gutters class="pa-5" justify="space-between">
         <p>
-          <strong>Celkový součet položek: {{ itemCount}} </strong>
+          <strong>Celkový součet položek: {{ itemCount }} </strong>
         </p>
 
         <p>
           <strong>Celková cena objednávky: {{ totalPrice }} Kč </strong>
         </p>
       </v-row>
-
-       
 
       <v-row no-gutters class="px-5" justify="space-between">
         

@@ -43,6 +43,17 @@ export default {
       return this.$store.state[`${this.$store.state.users.loggedUser.role}Orders`].orders;
     },
 
+    complaints() {
+      return this.$store.state[`${this.currentUser.role}Complaints`].complaints;
+    },
+
+    turnover() {
+      let dailyTurnover = [];
+      for (let i = 1; i <= this.numDays; i++) {
+        dailyTurnover.push(i);
+      }
+    },
+
     statistics() {
       if (this.orders.length === 0) {
         return {
@@ -62,6 +73,9 @@ export default {
     byMonths() {
       this.statisticsType = this.monthlyStatistics;
       //this.numDays = 30;
+    },
+    byWeeks() {
+      this.numDays = 7;
     },
     byDays() {
       this.statisticsType = this.dailyStatistics;
@@ -157,9 +171,11 @@ export default {
       }
       return monthly;
     }
-
   },
 
- 
-};
+  mounted() {
+    this.$store.dispatch(`${this.currentUser.role}Orders/getOrders`);
+    this.$store.dispatch(`${this.currentUser.role}Complaints/getComplaints`);
+  }
+}
 </script>

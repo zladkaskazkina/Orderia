@@ -12,6 +12,8 @@ import EditProduct from "../views/EditProduct";
 import Partneri from "../views/Partneri";
 import Objednavky from "../views/Dodavatel/OrderList";
 import Reklamace from "../views/Dodavatel/Reklamace";
+import AddComplaint from "../views/Dodavatel/AddComplaint";
+import ComplaintItem from "../views/Dodavatel/ComplaintItem";
 import Statistiky from "../views/Dodavatel/Statistiky";
 import AddProduct from "../views/Dodavatel/AddProduct";
 import Profil from "../views/Dodavatel/Profil";
@@ -108,6 +110,19 @@ const routes = [
     name: "Reklamace",
     meta: { layout: ProfilLayout },
     component: Reklamace
+  },
+  {
+    path: "/reklamace/nova",
+    name: "AddComplaint",
+    meta: { layout: ProfilLayout },
+    component: AddComplaint
+  },
+  {
+    path: "/reklamace/:id",
+    name: "ComplaintItem",
+    meta: { layout: ProfilLayout },
+    component: ComplaintItem,
+    props: true
   },
   {
     path: "/statistiky",

@@ -23,7 +23,6 @@
             Přihlásit se
           </v-btn>
         </v-col>
-        
       </v-row>
     </v-toolbar>
   </nav>
@@ -39,8 +38,7 @@
 export default {
   name: "MainNavbar",
   data() {
-    return {
-    };
+    return {};
   }
   // mounted() {
   //   UserService.getUserMenu().then(
