@@ -1,10 +1,10 @@
 <template>
-  <div class="dashboard pa-10">
-    <h1 class="px-5">Nástěnka</h1>
-    <v-container fluid>
+  <div class="dashboard ma-10">
+    <h1 class="ma-5">Nástěnka</h1>
+    <div class="ma-10">
       <ProjectChart></ProjectChart>
-    </v-container>
-    <v-row>
+    </div>
+    <v-row no-gutters class="ma-10">
       <TopOrders title="Posledni objednavky" :orders="lastOrders"></TopOrders>
       <TopOrders title="Nevyrizene objednavky" :orders="pendingOrders"></TopOrders>
     </v-row>

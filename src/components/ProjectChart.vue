@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="pr-10">
     <div class="display-1 font-weight-thin">
       Historie objednavek
-      <v-btn class="ma-2" outlined color="indigo" @click="byMonths">
+      <v-btn class="ma-2" outlined color="error" @click="byMonths">
         Měsíce
       </v-btn>
-      <v-btn class="ma-2" outlined color="indigo" @click="byDays">
+      <v-btn class="ma-2" outlined color="error" @click="byDays">
         Dny
       </v-btn>
     </div>
     <v-sparkline
-      color="indigo" 
+      color="primary" 
       :fill="fill"
       line-width="2"
       padding="10"

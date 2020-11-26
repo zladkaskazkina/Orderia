@@ -29,8 +29,8 @@
             </template>
             <v-list>
               <v-list-item>
-                <router-link to="/profil">
-                  <v-btn width="145px" class="my-2 success menu_btn" v-on:click="menu = false"> Profil </v-btn>
+                <router-link class="btn-link" to="/profil">
+                  <v-btn width="145px" class="my-2 success" v-on:click="menu = false"> Profil </v-btn>
                 </router-link>
               </v-list-item>
               <v-list-item>
@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.menu_btn {
+.btn-link {
   text-decoration: none;
 }
 
