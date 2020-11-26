@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid class="product-form">
+  <div class="product-form ma-10">
     <v-card class="pa-4">
-      <v-card-title class="headline ma-2 error--text">
+      <v-card-title class="headline ma-10 error--text">
         Nový produkt
       </v-card-title>
       <v-row no-gutters class="ma-2" style="height: 300px">
@@ -126,7 +126,7 @@
         </v-btn>
       </v-row>
     </v-card>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -179,6 +179,7 @@ export default {
 <style lang="scss" scoped>
 .headline {
   justify-content: center;
+  font-weight: bold;
 }
 
 .alergen-box {

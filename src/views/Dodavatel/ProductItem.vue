@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="product-item">
     <v-card v-if="product" class="mx-auto my-10 pa-10" max-width="600">
       <v-img
         :src="product.image"
@@ -54,3 +54,8 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.product-item {
+  min-height: 100vh;
+}
+</style>

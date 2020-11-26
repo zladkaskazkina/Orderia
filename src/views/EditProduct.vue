@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-card class="ma-5 pa-10">
+  <v-container class="edit-product">
+    <v-card class="ma-10 pa-10">
       <v-img
         class="white--text align-end"
         gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -20,8 +20,8 @@
       </v-card-text>
       <v-btn @click="editProduct"> Ulozit upravy </v-btn>
     </v-card>
-    <div></div>
-  </div>
+    
+  </v-container>
 </template>
 
 <script>
@@ -79,3 +79,8 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.edit-product {
+  min-height: 100vh;
+}
+</style>
