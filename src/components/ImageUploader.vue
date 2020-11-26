@@ -1,3 +1,5 @@
+<!-- neni dokonceno -->
+
 <template>
   <div>
     <!-- slot for parent component to activate the file changer -->

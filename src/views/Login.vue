@@ -2,7 +2,7 @@
   <v-container class="fill-height">
     <v-card width="400px" class="mx-auto">
       <v-card-title>
-        <h1>Login</h1>
+        <h2>Login</h2>
       </v-card-title>
       <v-card-text>
         <v-form>

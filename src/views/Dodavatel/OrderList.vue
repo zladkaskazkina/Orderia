@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card>
+    <v-card flat class="ma-10" min-height="100vh">
       <v-card-title>
         <v-autocomplete
           v-model="model"

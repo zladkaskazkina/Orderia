@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-10">
+  <div class="dashboard pa-10">
     <h1 class="px-5">Nástěnka</h1>
     <v-container fluid>
       <ProjectChart></ProjectChart>
@@ -48,3 +48,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.dashboard {
+  min-height: 100vh;
+}
+</style>

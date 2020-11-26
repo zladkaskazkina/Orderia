@@ -2,16 +2,18 @@
   <v-main>
     <Sidebar />
     <v-app-bar clipped-left app>
-      <v-spacer></v-spacer>
-      <v-toolbar-title
-        @click="$router.push('/')"
-        style="cursor:pointer"
-        class="headline text-uppercase success--text"
-      >
-        Orderia
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-col class="d-flex justify-end">
+      <v-row>
+        <v-col></v-col>
+        <v-col class="d-flex justify-center">
+          <v-toolbar-title
+            @click="$router.push('/')"
+            style="cursor: pointer"
+            class="headline text-uppercase success--text"
+          >
+            Orderia
+          </v-toolbar-title>
+        </v-col>
+        <v-col class="d-flex justify-end">
           <v-menu
             bottom
             offset-y
@@ -28,20 +30,16 @@
             <v-list>
               <v-list-item>
                 <router-link to="/profil">
-                  <v-btn class="my-2" v-on:click="menu = false">
-                    Profil
-                  </v-btn>
+                  <v-btn width="145px" class="my-2 success menu_btn" v-on:click="menu = false"> Profil </v-btn>
                 </router-link>
               </v-list-item>
               <v-list-item>
-                <v-btn>
-                  Odhlásit
-                </v-btn>
+                <v-btn width="145px" class="success"> Odhlásit </v-btn>
               </v-list-item>
             </v-list>
           </v-menu>
         </v-col>
-      
+      </v-row>
     </v-app-bar>
 
     <router-view />
@@ -57,13 +55,24 @@ export default {
   name: "StartLayout",
   components: {
     Sidebar,
-    Footer
+    Footer,
   },
   data() {
     return {
       role: "dodavatel",
       menu: false,
     };
-  }
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.menu_btn {
+  text-decoration: none;
+}
+
+.v-application .headline {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600;
+}
+</style>

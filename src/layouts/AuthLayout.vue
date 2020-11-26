@@ -23,12 +23,9 @@ export default {
 };
 </script>
 <style scoped>
-.brand {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-  color: #39b982;
-  text-decoration: none;
+.v-application .headline {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600;
 }
 
 .nav-item {

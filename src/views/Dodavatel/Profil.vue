@@ -1,5 +1,4 @@
 <template>
-  <div>
     <v-container>
       <v-card class="ma-10">
         <v-card-title class="justify-center pa-5">
@@ -257,7 +256,6 @@
         <v-btn fab large absolute top right class="success"><v-icon>mdi-pencil</v-icon></v-btn>
       </v-card>
     </v-container>
-  </div>
 </template>
 <script>
 import ImageUploader from "./../../components/ImageUploader.vue";

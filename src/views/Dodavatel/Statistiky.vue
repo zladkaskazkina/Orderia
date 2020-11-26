@@ -1,5 +1,5 @@
 <template>
-  <div class="statistiky">
+  <div class="statistics ma-10">
     <v-container fluid>
       <h1>Dashboard</h1>
       <div class="display-1 font-weight-thin">
@@ -31,3 +31,10 @@ export default {
   })
 };
 </script>
+
+<style lang="scss" scoped>
+.statistics {
+  min-height: 100vh;
+}
+
+</style>

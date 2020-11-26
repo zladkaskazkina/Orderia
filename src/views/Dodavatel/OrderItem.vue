@@ -1,11 +1,12 @@
 <template>
   <v-container fluid class="supplier-order">
-    <v-card class="px-4 py-6" id="printMe">
+    <!-- upravit na responsive -->
+    <v-card class="ma-10 px-6 py-6" id="printMe">
       <v-card-title class="justify-left">
         <h3>Objednávka č. {{ this.id }} </h3>
       </v-card-title>
       <v-row no-gutters class="px-5">
-      <p v-if="orderCopy"> status: {{orderCopy.status}} </p>
+      <p v-if="orderCopy"> <strong> status: {{orderCopy.status}} </strong> </p>
       </v-row>
 
       <v-btn @click="print" absolute top right class="success"
@@ -45,7 +46,7 @@
               {{ customer.address.postaleCode }} {{ customer.address.city }}
             </p>
             <br />
-            <span class="font-weight-medium">Zpusob platby:</span>
+            <span class="font-weight-medium">Zpusob platby: </span>
             <span>{{ orderCopy.payment_method }}</span>
           </v-col>
         </v-row>
@@ -62,31 +63,33 @@
             show-select
           >
             <template slot="body.append">
-              <tr>
+              <tr class="info total-row">
                 <th></th>
                 <th>Celkem</th>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th>{{ orderCopy.total_price - orderCopy.transport_price }} Kč</th>
+                <th></th>
               </tr>
               <tr>
-                <td></td>
-                <td>Doprava</td>
-                <td>PPL</td>
-                <td>1</td>
-                <td>{{ orderCopy.transport_price }} Kč</td>
-                <td>{{ orderCopy.transport_price }} Kč</td>
+                <th></th>
+                <th>Doprava</th>
+                <th>PPL</th>
+                <th>1</th>
+                <th>{{ orderCopy.transport_price }} Kč</th>
+                <th>{{ orderCopy.transport_price }} Kč</th>
+                <th></th>
               </tr>
-              <tr class="primary">
+              <tr class="secondary">
                 <th></th>
                 <th>Celkem k platbe</th>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th>{{ orderCopy.total_price }} Kč</th>
-                <th v-if="currentUser.role === 'producer'">
-                  <v-btn color="error" @click="confirmChanges">
+                <th v-if="currentUser.role === 'producer'" class="change-column">
+                  <v-btn outlined color="error" @click="confirmChanges">
                     ULOŽ ZMĚNY
                   </v-btn>
                 </th>
@@ -272,4 +275,9 @@ p {
   margin: 0;
   padding: 0;
 }
+
+ .v-input {
+ max-width: 150px;
+}
+
 </style>

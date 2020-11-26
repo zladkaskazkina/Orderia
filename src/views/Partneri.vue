@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="partner-cards ma-8">
     <v-fab-transition>
       <v-btn
         color="success"
+        fixed
         fab
         large
-        light
         top
         right
         class="btn--float"
@@ -118,11 +118,11 @@ export default {
 </script>
 
 <style lang="scss">
-.btn--float {
-  top: 0;
-  right: 0;
-  position: absolute;
-  z-index: 1;
-  margin: 0 0 16px 16px;
+.partner-cards{
+  min-height: 100vh;
+}
+
+.container {
+  padding: 0;
 }
 </style>

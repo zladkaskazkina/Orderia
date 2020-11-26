@@ -1,21 +1,22 @@
 <template>
   <nav>
+    <!-- upravit na responsive -->
     <v-toolbar app class="main-bar">
       <v-row>
-        <v-col cols="2"> </v-col>
-        <v-col class="d-flex justify-space-around">
+        <v-col class="sm-1"></v-col>
+        <v-col class="d-flex justify-center">
           <v-toolbar-title
             @click="$router.push('/')"
-            style="cursor:pointer"
+            style="cursor: pointer"
             class="headline text-uppercase error--text"
           >
             Orderia
           </v-toolbar-title>
         </v-col>
-        <v-col class="d-flex">
+        <v-col class="d-flex justify-end">
           <v-btn
             dark
-            color="#082940"
+            color="error"
             class="mr-5 pa-4 login-btn"
             router
             to="/login"
@@ -23,7 +24,6 @@
             Přihlásit se
           </v-btn>
         </v-col>
-        
       </v-row>
     </v-toolbar>
   </nav>
@@ -39,9 +39,8 @@
 export default {
   name: "MainNavbar",
   data() {
-    return {
-    };
-  }
+    return {};
+  },
   // mounted() {
   //   UserService.getUserMenu().then(
   //     response => {
@@ -62,7 +61,9 @@ export default {
   z-index: 1;
 }
 
-.login-btn {
-  border-radius: 1px;
+
+.v-application .headline {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600;
 }
 </style>

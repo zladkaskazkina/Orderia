@@ -1,11 +1,11 @@
 <template>
-  <v-content class="fill-height mainPage">
+  <v-main class="fill-height mainPage">
     <MainNavbar />
 
     <router-view />
 
     <Footer />
-  </v-content>
+  </v-main>
 </template>
 <script>
 import MainNavbar from "../components/MainNavbar";
@@ -19,3 +19,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+
+</style>

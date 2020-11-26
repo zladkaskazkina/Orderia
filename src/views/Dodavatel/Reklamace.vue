@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="complaints ma-10">
     <v-data-table
       :headers="headers"
       :items="complaints"
@@ -134,5 +134,9 @@ export default {
   position: absolute;
   z-index: 1;
   margin: 0 0 16px 16px;
+}
+
+.complaints {
+  min-height: 100vh;
 }
 </style>

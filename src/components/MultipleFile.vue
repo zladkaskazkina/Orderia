@@ -1,3 +1,5 @@
+<!-- neni dokonceno -->
+
 <template>
   <div class="container">
     <!--UPLOAD-->

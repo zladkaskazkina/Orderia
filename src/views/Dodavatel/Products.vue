@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="product-cards ma-8">
     <v-fab-transition>
       <v-btn
         color="success"
+        fixed
         fab
         large
-        light
         top
         right
         class="btn--float"
@@ -15,6 +15,8 @@
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </v-fab-transition>
+
+   
     <v-row class="mx-5">
       <ProductCard
         v-for="product in products"
@@ -24,11 +26,14 @@
         @addItem="addTest"
       />
     </v-row>
-    <v-row no-gutters justify="center">
-      <v-btn dark @click="goToCart" 
-        >Prejit do kosiku ({{cartItemCount}} ks)</v-btn>
-        <!-- v-if="currentUser === 'buyer' && products -->
+    <!-- vyresit zobrazovani kosiku / horni lista? -->
+     <v-row no-gutters justify="center" class="py-5">
+      <v-btn class="success" v-ripple @click="goToCart"
+        >Prejit do kosiku ({{ cartItemCount }} ks)</v-btn
+      >
+      <!-- v-if="currentUser === 'buyer' && products -->
     </v-row>
+    
   </div>
 </template>
 
@@ -44,7 +49,7 @@ export default {
       currentUser: this.$store.state.users.loggedUser,
       fab: false,
       hidden: false,
-      tabs: null
+      tabs: null,
     };
   },
   computed: {
@@ -54,11 +59,11 @@ export default {
 
     cartItemCount() {
       return this.$store.getters["cart/countItems"];
-    }
+    },
   },
   mounted() {
     this.$store.dispatch(`${this.currentUser.role}Products/getProducts`, null, {
-      root: true
+      root: true,
     });
   },
   methods: {
@@ -66,7 +71,7 @@ export default {
       console.log(event);
       this.$router.push({
         name: "ProductItem",
-        params: { id: event }
+        params: { id: event },
       });
     },
 
@@ -74,24 +79,22 @@ export default {
       console.log(quantity);
       this.$store.dispatch(`cart/addProduct`, {
         product: event,
-        quantity: quantity
+        quantity: quantity,
       });
       //alert("Zboží bylo přidáno do košíku!");
     },
 
     goToCart() {
       this.$router.push(`/cart`);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-.btn--float {
-  top: 0;
-  right: 0;
-  position: absolute;
-  z-index: 1;
-  margin: 0 0 16px 16px;
+
+
+.product-cards {
+  min-height: 100vh;
 }
 </style>
