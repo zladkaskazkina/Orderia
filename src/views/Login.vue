@@ -36,7 +36,7 @@
           >Registrovat se</v-btn
         >
         <v-spacer></v-spacer>
-        <v-btn color="success" @click="submitForm">Přihlásit se</v-btn>
+        <v-btn color="success" @click="submitForm" router to="/profil">Přihlásit se</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>

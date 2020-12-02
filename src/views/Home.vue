@@ -94,13 +94,13 @@
               Při vyplnění registračního formuláře zvolíte, že jste výrobce
             </li>
             <li>
-              Vyplníte svůj profil s popisem a důležitými údaji
+              Vyplníte svůj profil s popisem, logem a všemi důležitými údaji
             </li>
             <li>
               Prostřednictvím jednoduchého formuláře vložíte svoje produkty
             </li>
             <li>
-              Snadno spravujete příchozí objednávky na jednom místě
+              Přijímate objednávky a snadno je spravujete na jednom místě
             </li>
             <li>Díky statistikám máte přehled, které zboží zákazníci nejvíce kupují</li>
           </ul>
@@ -186,7 +186,7 @@
         <v-row no-gutters justify="center" class="py-4">
           <ul class="hp-list">
             <li>Při vyplnění registračního formuláře zvolíte, že jste prodejce</li>
-            <li>Vyplníte svůj profil s popisem a důležitými údaji</li>
+            <li>Vyplníte svůj profil s popisem, logem a všemi důležitými údaji</li>
             <li>Vyberete si produkty nabízené registrovanými dodavateli</li>
             <li>Snadno objednáte a sledujete všechny objednávky na jednom místě</li>
             <li>Díky statistikám máte přehled nejen o svých výdajích</li>
@@ -298,6 +298,8 @@ export default {
 .hp-list {
   margin: 0;
   color: #082940;
+//   list-style: none;
+//   text-align: center;
 }
 
 .checkmark {

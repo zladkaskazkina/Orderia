@@ -184,6 +184,23 @@
           "quantity": 5
         }
       ]
+    },
+    {
+      "id": 6,
+      "status": "čeká na schválení",
+      "transport_price": 0,
+      "total_price": 135,
+      "producerID": 3,
+      "buyerID": 1,
+      "createdAt": "2020-12-02 22:35:55",
+      "items": [
+        {
+          "id": 1,
+          "title": "Risotto rajcatove",
+          "price": "135",
+          "quantity": 1
+        }
+      ]
     }
   ],
   "users": [
